@@ -1,0 +1,7818 @@
+entity AanwezigeDeelnemer {
+	aanvangAanwezigheid String
+	eindeAanwezigheid String
+	naam String
+	rol String
+	vertegenwoordigtOrganisatie String
+}
+
+entity Agendapunt {
+	nummer String
+	omschrijving String
+	titel String
+}
+
+entity Categorie {
+	naam String
+}
+
+entity Collegelid {
+	achternaam String
+	datumAanstelling String
+	datumUittreding String
+	fractie String
+	portefeuille String
+	titel String
+	voornaam String
+}
+
+entity Dossier {
+	naam String
+}
+
+entity Indiener {
+	naam String
+	omschrijving String
+}
+
+entity Programma {
+	naam String
+}
+
+entity Raadscommissie {
+	naam String
+}
+
+entity Raadslid {
+	achternaam String
+	datumAanstelling String
+	datumUittreding String
+	fractie String
+	titel String
+	voornaam String
+}
+
+entity Raadsstuk {
+	besloten String
+	datumExpiratie String
+	datumPublicatie String
+	datumRegistratie String
+	typeRaadsstuk String
+}
+
+entity Stemming {
+	resultaat String
+	stemmingstype String
+}
+
+entity Taakveld {
+	naam String
+}
+
+entity Vergadering {
+	eindtijd String
+	locatie String
+	starttijd String
+	titel String
+}
+
+entity Activiteit {
+	omschrijving String
+}
+
+entity AOMStatus {
+	datumBeginStatus String
+	datumEindeStatus String
+	status String
+	statuscode String
+	statusVolgorde String
+}
+
+entity Bevinding {
+	aangemaaktDoor String
+	activiteit String
+	controleElement String
+	controleniveau String
+	datumAanmaak String
+	datumMutatie String
+	diepte String
+	fase String
+	gemuteerdDoor String
+	resultaat String
+	risico String
+}
+
+entity BOA {
+}
+
+entity Combibon {
+	sanctie String
+}
+
+entity Fietsregistratie {
+	gelabeld String
+	verwijderd String
+}
+
+entity Grondslag {
+	code String
+	omschrijving String
+}
+
+entity Heffinggrondslag {
+	bedrag String
+	domein String
+	hoofdstuk String
+	omschrijving String
+	paragraaf String
+}
+
+entity Heffingsverordening {
+}
+
+entity Indiener {
+}
+
+entity Inspectie {
+	aangemaaktDoor String
+	datumAanmaak String
+	datumGepland String
+	datumInspectie String
+	datumMutatie String
+	gemuteerdDoor String
+	inspectietype String
+	kenmerk String
+	omschrijving String
+	opmerkingen String
+	status String
+}
+
+entity Kosten {
+	aangemaaktDoor String
+	aantal String
+	bedrag String
+	bedragTotaal String
+	datumAanmaak String
+	datumMutatie String
+	eenheid String
+	geaccordeerd String
+	gefactureerdOp String
+	gemuteerdDoor String
+	naam String
+	omschrijving String
+	opBasisVanGrondslag String
+	tarief String
+	type String
+	vastgesteldBedrag String
+}
+
+entity LegesGrondslag {
+	aangemaaktDoor String
+	aantalOpgegeven String
+	aantalVastgesteld String
+	automatisch String
+	datumAanmaak String
+	datumMutatie String
+	eenheid String
+	gemuteerdDoor String
+	legesGrondslag String
+	omschrijving String
+}
+
+entity Ligplaatsontheffing {
+	stickernummer String
+}
+
+entity MORAanvraagOfMelding {
+	CROW String
+	locatie String
+	locatieOmschrijving String
+	meldingOmschrijving String
+	meldingTekst String
+}
+
+entity OpenbareActiviteit {
+	datumEinde String
+	datumStart String
+	evenmentnaam String
+	locatieOmschrijving String
+	status String
+}
+
+entity Precario {
+}
+
+entity Producttype {
+	omschrijving String
+}
+
+entity SubProducttype {
+	omschrijving String
+	prioriteit String
+}
+
+entity Vaartuig {
+	breedte String
+	hoogte String
+	kleur String
+	lengte String
+	naamVaartuig String
+	registratienummer String
+}
+
+entity VomAanvraagOfMelding {
+	activiteiten String
+	adres String
+	BAGID String
+	dossiernummer String
+	intaketype String
+	internNummer String
+	kadastraleAanduiding String
+	kenmerk String
+	locatie String
+	locatieOmschrijving String
+	toelichting String
+}
+
+entity Vordering {
+	aangemaaktDoor String
+	bedragBTW String
+	datumAanmaak String
+	datumMutatie String
+	geaccordeerd String
+	geaccordeerdDoor String
+	geaccordeerdOp String
+	geexporteerd String
+	gemuteerdDoor String
+	omschrijving String
+	totaalbedrag String
+	totaalbedragInclusief String
+	vorderingnummer String
+}
+
+entity Vorderingregel {
+	Aangemaakt_door String
+	Aanmaakdatum String
+	Bedrag_excl_btw String
+	Bedrag_incl_btw String
+	Btwcategorie String
+	Gemuteerd_door String
+	Mutatiedatum String
+	Omschrijving String
+	Periodiek String
+	Type String
+}
+
+entity VTHAanvraagOfMelding {
+	omschrijving String
+}
+
+entity VTHMelding {
+	activiteit String
+	beoordeling String
+	datumSeponering String
+	datumtijdTot String
+	geseponeerd String
+	locatie String
+	organisatieonderdeel String
+	overtredingscode String
+	overtredingsgroep String
+	referentienummer String
+	resultaat String
+	soortVTHMelding String
+	status String
+	straatnaam String
+	taaktype String
+	zaaknummer String
+}
+
+entity VTHZaak {
+	behandelaar String
+	bevoegdGezag String
+	prioritering String
+	teamBehandelaar String
+	uitvoerendeInstantie String
+	verkamering String
+}
+
+entity Waarneming {
+}
+
+entity WABOAanvraagOfMelding {
+	bouwkosten String
+	OLONummer String
+	omschrijving String
+	projectkosten String
+	registratienummer String
+}
+
+entity WoonfraudeAanvraagOfMelding {
+	adres String
+	categorie String
+	locatieOmschrijving String
+	meldingOmschrijving String
+	meldingTekst String
+}
+
+entity WoonoverlastAanvraagOfMelding {
+	locatie String
+	locatieOmschrijving String
+	meldingOmschrijving String
+	meldingTekst String
+}
+
+entity Belprovider {
+	code String
+}
+
+entity MulderFeit {
+	bedrag String
+	bezwaarAfgehandeld String
+	bezwaarIngetrokken String
+	bezwaarToegewezen String
+	bonnummer String
+	datumBetaling String
+	datumBezwaar String
+	datumGeseponeerd String
+	datumIndiening String
+	dienstCD String
+	organisatie String
+	overtreding String
+	parkeertarief String
+	redenSeponeren String
+	vorderingnummer String
+}
+
+entity Naheffing {
+	bedrag String
+	bezwaarAfgehandeld String
+	bezwaarIngetrokken String
+	bezwaarToegewezen String
+	bonnummer String
+	datumBetaling String
+	datumBezwaar String
+	datumGeseponeerd String
+	datumIndiening String
+	dienstCD String
+	fiscaal String
+	organisatie String
+	overtreding String
+	parkeertarief String
+	redenSeponeren String
+	vorderingnummer String
+}
+
+entity Parkeergarage {
+}
+
+entity Parkeerrecht {
+	aanmaaktijd String
+	bedragAankoop String
+	bedragBTW String
+	datumtijdEinde String
+	datumtijdStart String
+	productnaam String
+	productomschrijving String
+}
+
+entity Parkeerscan {
+	codeGebruiker String
+	codeScanvoertuig String
+	coordinaten String
+	foto String
+	kenteken String
+	parkeerrecht String
+	tijdstip String
+	transactieID String
+}
+
+entity Parkeervergunning {
+	datumEindeGeldigheid String
+	datumReservering String
+	datumStart String
+	kenteken String
+	minutenAfgeschreven String
+	minutenGeldig String
+	minutenResterend String
+	nummer String
+	type String
+}
+
+entity Parkeervlak {
+	aantal String
+	coordinaten String
+	doelgroep String
+	fiscaal String
+	plaats String
+	vlakID String
+}
+
+entity Perkeerzone {
+	aantalParkeervlakken String
+	alleenDagtarief String
+	dagtarief String
+	eindedag String
+	eindtijd String
+	gebruik String
+	geometrie String
+	IPMCode String
+	IPMNaam String
+	naam String
+	parkeergarage String
+	sectorcode String
+	soortCode String
+	startdag String
+	starttarief String
+	starttijd String
+	typeCode String
+	typeNaam String
+	uurtarief String
+}
+
+entity Productgroep {
+	beslisboom String
+	code String
+	omschrijving String
+}
+
+entity Productsoort {
+	code String
+	omschrijving String
+	tarief String
+	tariefperiode String
+}
+
+entity Straatsectie {
+	code String
+	omschrijving String
+	zoneCode String
+}
+
+entity Voertuig {
+	kenteken String
+	kleur String
+	land String
+	merk String
+	type String
+}
+
+entity Stremming {
+	aantalGehinderden String
+	datumAanmelding String
+	datumEinde String
+	datumStart String
+	datumWijziging String
+	delenToegestaan String
+	geschiktVoorPublicatie String
+	hinderklasse String
+	locatie String
+	naam String
+	status String
+}
+
+entity Strooidag {
+	datum String
+	maximumtemperatuur String
+	minimumtemperatuur String
+	tijdMaximumtemperatuur String
+	tijdMinimumtemperatuur String
+}
+
+entity Strooiroute {
+	route String
+}
+
+entity StrooirouteUitvoering {
+	geplandEinde String
+	geplandStart String
+	route String
+	werkelijkEinde String
+	werkelijkeStart String
+}
+
+entity Verkeersbesluit {
+	datumBesluit String
+	datumEinde String
+	datumStart String
+	huisnummer String
+	postcode String
+	referentienummer String
+	straat String
+	titel String
+}
+
+entity Verkeerstelling {
+	aantal String
+	tijdTot String
+	tijdVanaf String
+}
+
+entity VLogInfo {
+	detectieVerkeer String
+	eindegroen String
+	snelheid String
+	startgroen String
+	tijdstip String
+	verkeerWilGroen String
+	wachttijd String
+}
+
+entity Contact {
+	contactsoort String
+	datum String
+	tekst String
+}
+
+entity Hotel {
+	aantalKamers String
+}
+
+entity Hotelbezoek {
+	datumEinde String
+	datumStart String
+}
+
+entity Verkooppunt {
+	winkelformule String
+}
+
+entity Werkgelegenheid {
+	aantalFulltimeMannen String
+	aantalFulltimeVrouwen String
+	aantalParttimeMannen String
+	aantalParttimeVrouwen String
+	grootteklasse String
+}
+
+entity Winkelvloeroppervlak {
+	aantalKassa String
+	bronWVO String
+	leegstand String
+	winkelvloeroppervlakte String
+	WVOKlasse String
+}
+
+entity AanvraagLeerlingenvervoer {
+}
+
+entity AanvraagOfMelding {
+	datum String
+	opmerkingen String
+	reden String
+	soortVerzuimOfAanvraag String
+}
+
+entity AanvraagVrijstelling {
+	buitenlandseSchoollocatie String
+	datumAanvraag String
+}
+
+entity BeschikkingLeerlingenvervoer {
+}
+
+entity Beslissing {
+	datum String
+	opmerkingen String
+	reden String
+}
+
+entity DoorgeleidingOM {
+	afdoening String
+}
+
+entity HALTVerwijzing {
+	afdoening String
+	datumMutatie String
+	datumRetour String
+	memo String
+}
+
+entity KlachtLeerlingenvervoer {
+}
+
+entity Leerplichtambtenaar {
+}
+
+entity ProcesverbaalOnderwijs {
+	datumAfgehandeld String
+	datumEindeProeftijd String
+	datumIngelicht String
+	datumUitspraak String
+	datumZitting String
+	geldboete String
+	geldboeteVoorwaardelijk String
+	opmerkingen String
+	proeftijd String
+	reden String
+	sanctiesoort String
+	uitspraak String
+	verzuimsoort String
+}
+
+entity Verlofaanvraag {
+	datumStart String
+	datumTot String
+	soortVerlof String
+}
+
+entity Vervoerder {
+}
+
+entity Verzuimmelding {
+	datumEinde String
+	datumStart String
+	voorstelSchool String
+}
+
+entity Vrijstelling {
+	aanvraagToegekend String
+	buitenlandseSchoollocatie String
+	datumEinde String
+	datumStart String
+	verzuimsoort String
+}
+
+entity ZiekmeldingLeerlingenvervoer {
+}
+
+entity Inschrijving {
+	datum String
+}
+
+entity Leerjaar {
+	jaarEinde String
+	jaarStart String
+}
+
+entity Leerling {
+	kwetsbareJongere String
+}
+
+entity Locatie {
+	adres String
+}
+
+entity Loopbaanstap {
+	klas String
+	onderwijstype String
+	schooljaar String
+}
+
+entity Onderwijsloopbaan {
+}
+
+entity Onderwijsniveau {
+}
+
+entity Onderwijssoort {
+	omschrijving String
+	onderwijstype String
+}
+
+entity OuderOfVerzorger {
+}
+
+entity School {
+	naam String
+}
+
+entity Startkwalificatie {
+	datumBehaald String
+}
+
+entity Uitschrijving {
+	datum String
+	diplomaBehaald String
+}
+
+entity Archeologiebesluit {
+}
+
+entity Artefact {
+	artefectnummer String
+	beschrijving String
+	conserveren String
+	datering String
+	dateringComplex String
+	determinatieniveau String
+	dianummer String
+	doosnummer String
+	exposabel String
+	fotonummer String
+	functie String
+	herkomst String
+	key String
+	keyDoos String
+	keyMagazijnplaatsing String
+	keyPut String
+	keyVondst String
+	literatuur String
+	maten String
+	naam String
+	opmerkingen String
+	origine String
+	projectCD String
+	putnummer String
+	restauratieWenselijk String
+	tekeningnummer String
+	type String
+	vondstnummer String
+}
+
+entity Artefactsoort {
+	code String
+	naam String
+	omschrijving String
+}
+
+entity Boring {
+}
+
+entity Doos {
+	doosnummer String
+	herkomst String
+	inhoud String
+	key String
+	keyMagazijnlocatie String
+	projectCD String
+}
+
+entity Kaart {
+	kaart String
+	naam String
+	omschrijving String
+}
+
+entity Locatie {
+	locatie String
+}
+
+entity Magazijnlocatie {
+	key String
+	stelling String
+	vaknummer String
+	volgletter String
+}
+
+entity MagazijnPlaatsing {
+	beschrijving String
+	datumGeplaatst String
+	herkomst String
+	key String
+	keyDoos String
+	keyMagazijnlocatie String
+	projectCD String
+	uitgeleend String
+}
+
+entity Project {
+	coordinaten String
+	datumEinde String
+	datumStart String
+	jaarTot String
+	jaarVan String
+	locatie String
+	naam String
+	naamcode String
+	projectCD String
+	toponiem String
+	trefwoorden String
+}
+
+entity Put {
+	key String
+	projectCD String
+	putnummer String
+}
+
+entity Spoor {
+	aard String
+	beschrijving String
+	datering String
+	datum String
+	hoogteBoven String
+	hoogteOnder String
+	key String
+	keyVlak String
+	projectCD String
+	putnummer String
+	spoornummer String
+	vlaknummer String
+	vorm String
+}
+
+entity Stelling {
+	inhoud String
+	stellingcode String
+}
+
+entity Vindplaats {
+	aard String
+	begindatering String
+	beschrijving String
+	bibliografie String
+	datering String
+	depot String
+	documentatie String
+	einddatering String
+	gemeente String
+	locatie String
+	mobilia String
+	onderzoek String
+	projectcode String
+	vindplaats String
+}
+
+entity Vlak {
+	diepteTot String
+	diepteVan String
+	key String
+	keyPut String
+	projectCD String
+	putnummer String
+	vlaknummer String
+}
+
+entity Vondst {
+	datum String
+	key String
+	keyVulling String
+	omschrijving String
+	omstandigheden String
+	projectCD String
+	putnummer String
+	spoornummer String
+	vlaknummer String
+	vondstnummer String
+	vullingnummer String
+	XCoordinaat String
+	YCoordinaat String
+}
+
+entity Vulling {
+	grondsoort String
+	key String
+	keySpoor String
+	kleur String
+	projectCD String
+	putnummer String
+	spoornummer String
+	structuur String
+	vlaknummer String
+	vullingnummer String
+}
+
+entity Aanvraag {
+	datumtijd String
+}
+
+entity Archief {
+	archiefnummer String
+	naam String
+	omschrijving String
+	openbaarheidsbeperking String
+}
+
+entity Archiefcategorie {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Archiefstuk {
+	beschrijving String
+	inventarisnummer String
+	omvang String
+	openbaarheidsbeperking String
+	trefwoorden String
+	uiterlijkeVorm String
+}
+
+entity Auteur {
+	datumGeboorte String
+	datumOverlijden String
+}
+
+entity Bezoeker {
+}
+
+entity Depot {
+	naam String
+	omschrijving String
+}
+
+entity DigitaalBestand {
+	blob String
+	mimetype String
+	naam String
+	omschrijving String
+}
+
+entity Indeling {
+	indelingsoort String
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Index {
+	indexnaam String
+	indexwaarde String
+}
+
+entity Kast {
+	kastnummer String
+}
+
+entity NadereToegang {
+}
+
+entity Ordeningsschema {
+	naam String
+	text String
+}
+
+entity Plank {
+	planknummer String
+}
+
+entity Rechthebbende {
+}
+
+entity Stelling {
+	stellingnummer String
+}
+
+entity Uitgever {
+}
+
+entity Vindplaats {
+}
+
+entity ErfgoedObject {
+	dateringTot String
+	dateringVanaf String
+	omschrijving String
+	titel String
+}
+
+entity Historische Rol {
+	naam String
+	omschrijving String
+}
+
+entity HistorischPersoon {
+	beroep String
+	datumGeboorte String
+	datumOverlijden String
+	naam String
+	omschrijving String
+	publiekToegankelijk String
+	woondeOp String
+}
+
+entity Objectclassificatie {
+	naam String
+	omschrijving String
+}
+
+entity Ambacht {
+	ambachtsoort String
+	jaarAmbachtTot String
+	jaarAmbachtVanaf String
+}
+
+entity BeschermdeStatus {
+	bronnen String
+	complex String
+	datumInschrijvingRegister String
+	gemeentelijkMonumentCode String
+	gezichtscode String
+	naam String
+	omschrijving String
+	opmerkingen String
+	rijksmonumentcode String
+	type String
+}
+
+entity Bouwactiviteit {
+	bouwjaarklasse String
+	bouwjaarTot String
+	bouwjaarVan String
+	indicatie String
+	omschrijving String
+}
+
+entity Bouwstijl {
+	hoofdstijl String
+	substijl String
+	toelichting String
+	zuiverheid String
+}
+
+entity Bouwtype {
+	hoofdcategorie String
+	subcategorie String
+	toelichting String
+}
+
+entity OorspronkelijkeFunctie {
+	functie String
+	functiesoort String
+	hoofdcategorie String
+	hoofdfunctie String
+	subcategorie String
+	toelichting String
+	verbijzondering String
+}
+
+entity Activiteit {
+	aantalPersonen String
+	naam String
+	omschrijving String
+}
+
+entity Activiteitsoort {
+	naam String
+	omschrijving String
+}
+
+entity Balieverkoop {
+	aantal String
+	kanaal String
+	verkooptijd String
+}
+
+entity BalieverkoopEntreekaart {
+	datumEindeGeldigheid String
+	datumStart String
+	gebruiktOp String
+	rondleiding String
+}
+
+entity Belanghebbende {
+	datumStart String
+	datumTot String
+}
+
+entity Belangtype {
+	naam String
+	omschrijving String
+}
+
+entity Bruikleen {
+	aanvraagDoor String
+	datumAanvraag String
+	datumEinde String
+	datumStart String
+	toestemmingDoor String
+}
+
+entity Collectie {
+	naam String
+	omschrijving String
+}
+
+entity Doelgroep {
+	branch String
+	naam String
+	omschrijving String
+	segment String
+}
+
+entity Entreekaart {
+	rondleiding String
+}
+
+entity Incident {
+	datum String
+	locatie String
+	naam String
+	omschrijving String
+}
+
+entity Lener {
+	opmerkingen String
+}
+
+entity Mailing {
+	datum String
+	naam String
+	omschrijving String
+}
+
+entity Museumobject {
+	afmeting String
+	bezitTot String
+	bezitVanaf String
+	medium String
+	verkrijging String
+}
+
+entity Museumrelatie {
+	relatiesoort String
+}
+
+entity Omzetgroep {
+	naam String
+	omschrijving String
+}
+
+entity Prijs {
+	bedrag String
+	datumEindeGeldigheid String
+	datumStart String
+}
+
+entity Product {
+	codeMuseumjaarkaart String
+	datumEindeGeldigheid String
+	datumStart String
+	entreekaart String
+	omschrijving String
+	prijs String
+}
+
+entity Productgroep {
+	naam String
+	omschrijving String
+}
+
+entity ProductieEenheid {
+}
+
+entity Programma {
+	BTW String
+	eindtijd String
+	locatie String
+	naam String
+	omschrijving String
+	prijsExclusiefBTW String
+	publiekstaak String
+	schoolniveau String
+	starttijd String
+}
+
+entity Programmasoort {
+	naam String
+	omschrijving String
+}
+
+entity Reservering {
+	aantal String
+	BTW String
+	tijdTot String
+	tijdVanaf String
+	totaalprijs String
+}
+
+entity Rol {
+	naam String
+	omschrijving String
+}
+
+entity Rondleiding {
+	eindtijd String
+	naam String
+	omschrijving String
+	starttijd String
+}
+
+entity Samensteller {
+	rol String
+}
+
+entity Standplaats {
+	adres String
+	beschrijving String
+	naamInstelling String
+}
+
+entity Tentoonstelling {
+	datumEinde String
+	datumStart String
+	omschrijving String
+	subtitel String
+	titel String
+}
+
+entity Voorziening {
+	aantalBeschikbaar String
+	naam String
+	omschrijving String
+}
+
+entity Winkelverkoopgroep {
+}
+
+entity Winkelvoorraaditem {
+	aantal String
+	aantalInBestelling String
+	datumLeveringBestelling String
+	locatie String
+}
+
+entity Zaal {
+	capaciteit String
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Aantal {
+	aantal String
+}
+
+entity Belijning {
+	naam String
+}
+
+entity Bezetting {
+}
+
+entity Binnenlocatie {
+	adres String
+	bouwjaar String
+	gemeentelijk String
+	geschatteKostenPerJaar String
+	gymzaal String
+	klokurenOnderwijs String
+	klokurenVerenigingen String
+	locatie String
+	onderhoudsniveau String
+	onderhoudsstatus String
+	sporthal String
+	vloeroppervlakte String
+}
+
+entity Onderhoudskosten {
+}
+
+entity Sport {
+	naam String
+}
+
+entity Sportlocatie {
+	naam String
+}
+
+entity Sportmateriaal {
+	naam String
+}
+
+entity Sportpark {
+}
+
+entity Sportvereniging {
+	aantalNormTeams String
+	adres String
+	binnensport String
+	buitensport String
+	email String
+	ledenaantal String
+	naam String
+	typeSport String
+}
+
+entity Veld {
+}
+
+entity Gemeentebegrafenis {
+	achtergrondMelding String
+	begrafeniskosten String
+	datumAfgedaan String
+	datumBegrafenis String
+	datumGemeld String
+	datumRuimingGraf String
+	doodsoorzaak String
+	gemeentelijkeKosten String
+	inkoopordernummer String
+	melder String
+	urenGemeente String
+	verhaaldBedrag String
+}
+
+entity AanvraagStadspas {
+}
+
+entity AOMAanvraagWMOJeugd {
+	clientReactie String
+	datumBeschikking String
+	datumEersteAfspraak String
+	datumEinde String
+	datumPlanVastgesteld String
+	datumStartAanvraag String
+	deskundigheid String
+	doorloopmethodiek String
+	maximaleDoorlooptijd String
+	redenAfsluiting String
+}
+
+entity AOMMeldingWMOJeugd {
+	aanmelder String
+	aanmeldingDoor String
+	aanmeldingDoorLandelijk String
+	aanmeldwijze String
+	deskundigheid String
+	isClientOpDeHoogte String
+	onderzoekswijze String
+	redenAfsluiting String
+	vervolg String
+	verwezen String
+}
+
+entity Beperking {
+	categorie String
+	commentaar String
+	duur String
+	wet String
+}
+
+entity Beperkingscategorie {
+	code String
+	wet String
+}
+
+entity Beperkingscore {
+	commentaar String
+	score String
+	wet String
+}
+
+entity Beperkingscoresoort {
+	vraag String
+	wet String
+}
+
+entity Beschikking {
+	code String
+	commentaar String
+	datumAfgifte String
+	grondslagen String
+	wet String
+}
+
+entity Beschikkingsoort {
+}
+
+entity BeschikteVoorziening {
+	code String
+	datumEinde String
+	datumEindeOorspronkelijk String
+	datumStart String
+	eenheid String
+	frequentie String
+	leveringsvorm String
+	omvang String
+	redenEinde String
+	status String
+	wet String
+}
+
+entity Budgetuitputting {
+	datum String
+	uitgenutBedrag String
+}
+
+entity Client {
+	code String
+	gezagsdragerGekend String
+	juridischeStatus String
+	wettelijkeVertegenwoordiging String
+}
+
+entity Clientbegeleider {
+	begeleiderscode String
+}
+
+entity Declaratie {
+	datumDeclaratie String
+	declaratieBedrag String
+	declaratieStatus String
+}
+
+entity Declaratieregel {
+	bedrag String
+	code String
+	datumEinde String
+	datumStart String
+}
+
+entity Huishouden {
+}
+
+entity Leefgebied {
+	naam String
+}
+
+entity Leverancier {
+	AGBCode String
+	leverancierscode String
+	naam String
+	soortLeverancier String
+	soortLeverancierCode String
+}
+
+entity Levering {
+	code String
+	datumStart String
+	datumStop String
+	eenheid String
+	frequentie String
+	omvang String
+	stopreden String
+}
+
+entity Leveringsvorm {
+	leveringsvormCode String
+	naam String
+	wet String
+}
+
+entity MeldingEigenBijdrage {
+	datumStart String
+	datumStop String
+}
+
+entity PGBToekenning {
+	budget String
+	datumEinde String
+	datumToekenning String
+}
+
+entity Relatie {
+	relatiesoort String
+}
+
+entity Relatiesoort {
+}
+
+entity Score {
+	datum String
+}
+
+entity Scoresoort {
+	niveau String
+}
+
+entity Stadspas {
+	datumEinde String
+	datumStart String
+}
+
+entity Tarief {
+	bedrag String
+	datumEinde String
+	datumStart String
+	eenheid String
+	wet String
+}
+
+entity Team {
+	naam String
+	omschrijving String
+}
+
+entity Toewijzing {
+	code String
+	commentaar String
+	datumAanschaf String
+	datumEindeToewijzing String
+	datumStartToewijzing String
+	datumToewijzing String
+	eenheid String
+	frequentie String
+	omvang String
+	redenWijziging String
+	toewijzingnummer String
+	wet String
+}
+
+entity Verplichting WMO Jeugd {
+	Budgetsoort String
+	budgetsoortgroep String
+	Einddatumgepland String
+	Feitelijke Einddatum String
+	Jaar String
+	Periodiciteit String
+	verplichtingsoort String
+}
+
+entity VerzoekOmToewijzing {
+	beschikkingsnummer String
+	commentaar String
+	datumEindeToewijzing String
+	datumIngangBeschikking String
+	datumIngangToewijzing String
+	datumOntvangst String
+	eenheid String
+	frequentie String
+	raamcontract String
+	referentieAanbieder String
+	soortVerwijzer String
+	verwijzer String
+	volume String
+}
+
+entity Voorziening {
+	afhandelwijze String
+	code String
+	naam String
+	omschrijving String
+	productcode String
+	wet String
+}
+
+entity Voorzieningsoort {
+	code String
+	naam String
+	omschrijving String
+	productcategorie String
+	productcategoriecode String
+	productcode String
+	wet String
+}
+
+entity ZelfredzaamheidMatrix {
+	datumEindeGeldigheid String
+	datumStartGeldigheid String
+	naam String
+	omschrijving String
+}
+
+entity Asielstatushouder {
+	DigiD aangevraagd String
+	Emailadres verblijf AZC String
+	Is gekoppeld aan String
+	Land Rijbewijs String
+	Rijbewijs String
+	Telefoonnummer verblijf AZC String
+}
+
+entity B1 {
+}
+
+entity Brede Intake {
+}
+
+entity Examen {
+}
+
+entity Examenonderdeel {
+}
+
+entity Gezinsmigrant en Overige migrant
+ {
+}
+
+entity Inburgeraar {
+	Doelgroep String
+	Gedetailleerde Doelgroep String
+}
+
+entity Inburgeringstraject {
+}
+
+entity KNM? {
+}
+
+entity Leerroute {
+}
+
+entity MAP {
+}
+
+entity Onderwijs {
+}
+
+entity ParticipatieComponent {
+}
+
+entity PIP {
+}
+
+entity PVT {
+}
+
+entity Verblijfplaats {
+}
+
+entity Verblijfplaats AZC {
+}
+
+entity Vreemdeling {
+	Sociaal Referent String
+	v-nummer String
+}
+
+entity Z {
+}
+
+entity FinancieleSituatie {
+	datumVastgesteld String
+	schuld String
+}
+
+entity NotarieleStatus {
+}
+
+entity Project {
+	datumEinde String
+	datumStart String
+	datumToekenning String
+	omschrijving String
+	resultaat String
+	uitstroomreden String
+}
+
+entity Projectsoort {
+	naam String
+	omschrijving String
+}
+
+entity Resultaat {
+	datum String
+	naam String
+	omschrijving String
+}
+
+entity Resultaatsoort {
+	naam String
+	omschrijving String
+}
+
+entity Traject {
+	datumEinde String
+	datumStart String
+	datumToekenning String
+	naam String
+	omschrijving String
+	resultaat String
+}
+
+entity Uitstroomreden {
+	datum String
+	omschrijving String
+}
+
+entity Uitstroomredensoort {
+	naam String
+	omschrijving String
+}
+
+entity Behandeling {
+	datumEinde String
+	datumStart String
+	toelichting String
+}
+
+entity Behandelsoort {
+	naam String
+	omschrijving String
+}
+
+entity Bijzonderheid {
+	omschrijving String
+}
+
+entity Bijzonderheidsoort {
+	naam String
+	omschrijving String
+}
+
+entity Caseaanmelding {
+	datum String
+}
+
+entity Doelstelling {
+	omschrijving String
+}
+
+entity Doelstellingsoort {
+	naam String
+	omschrijving String
+}
+
+entity SociaalteamDossier {
+	datumEinde String
+	datumStart String
+	datumVaststelling String
+	omschrijving String
+	status String
+}
+
+entity SociaalteamDossiersoort {
+	naam String
+	omschrijving String
+}
+
+entity Component {
+	bedrag String
+	datumBeginBetrekkingOp String
+	datumEindeBetrekkingOp String
+	debetCredit String
+	groep String
+	groepCode String
+	grootboekCode String
+	grootboekOmschrijving String
+	kostenplaats String
+	omschrijving String
+	rekeningnummer String
+	toelichting String
+}
+
+entity Componentsoort {
+	component String
+	componentCode String
+	kolom String
+	kolomCode String
+	regeling String
+	regelingCode String
+}
+
+entity Doelgroep {
+	naam String
+	omschrijving String
+}
+
+entity Fraudegegevens {
+	bedragFraude String
+	datumEindeFraude String
+	datumGeconstateerd String
+	datumStartFraude String
+	verrekening String
+	vorderingen String
+}
+
+entity Fraudesoort {
+	naam String
+}
+
+entity InformatieDakloosheid {
+	datumEinde String
+	datumStart String
+	gemeenteOorsprong String
+	toestemmingGemeentelijkBriefadres String
+	toestemmingNachtopvang String
+}
+
+entity Inkomensvoorziening {
+	bedrag String
+	datumEinde String
+	datumStart String
+	datumToekenning String
+	eenmalig String
+	groep String
+}
+
+entity Inkomensvoorzieningsoort {
+	code String
+	naam String
+	omschrijving String
+	regeling String
+	regelingCode String
+	vergoeding String
+	vergoedingscode String
+	wet String
+}
+
+entity Participatiedossier {
+	arbeidsvermogen String
+	begeleiderscode String
+	beschutwerk String
+	clientbegeleiderID String
+	datumEindeBegeleiding String
+	datumStartBegeleiding String
+	indicatieDoelgroepregister String
+}
+
+entity RedenBeeindiging {
+	naam String
+	omschrijving String
+}
+
+entity Regeling {
+	datumEinde String
+	datumStart String
+	datumToekenning String
+	omschrijving String
+}
+
+entity Regelingsoort {
+	naam String
+	omschrijving String
+}
+
+entity Taalniveau {
+	mondeling String
+	schriftelijk String
+}
+
+entity Tegenprestatie {
+	datumEinde String
+	datumStart String
+}
+
+entity TegenprestatieHoogte {
+	code String
+	naam String
+	omschrijving String
+}
+
+entity Traject {
+	datumEinde String
+	datumStart String
+	datumToekenning String
+	status String
+}
+
+entity TrajectActiviteit {
+	contract String
+	crediteur String
+	datumBegin String
+	datumEinde String
+	datumStatus String
+	kinderopvang String
+	status String
+	succesvol String
+}
+
+entity TrajectActiviteitsoort {
+	aanleverenSRG String
+	omschrijving String
+	typeTrajectSRG String
+}
+
+entity Trajectsoort {
+	naam String
+	omschrijving String
+}
+
+entity Uitkeringsrun {
+	datumRun String
+	frequentie String
+	periodeRun String
+	soortRun String
+}
+
+entity Categorie {
+	code String
+	naam String
+	omschrijving String
+}
+
+entity Container {
+	containercode String
+	sensorID String
+}
+
+entity Containertype {
+	naam String
+	omschrijving String
+}
+
+entity Fractie {
+	naam String
+	omschrijving String
+}
+
+entity Locatie {
+	adresaanduiding String
+	locatie String
+	locatiecode String
+}
+
+entity Melding {
+	24uurs String
+	datumtijd String
+	illegaal String
+	meldingnummer String
+	omschrijving String
+}
+
+entity Milieustraat {
+	adresaanduiding String
+	naam String
+	omschrijving String
+}
+
+entity Ophaalmoment {
+	gewichtstoename String
+	tijdstip String
+}
+
+entity Pas {
+	adresaanduiding String
+	pasnummer String
+}
+
+entity Prijsafspraak {
+	datumEinde String
+	datumStart String
+	titel String
+}
+
+entity Prijsregel {
+	bedrag String
+	credit String
+}
+
+entity Rit {
+	eindtijd String
+	ritcode String
+	starttijd String
+}
+
+entity Route {
+	geometrie String
+	routecode String
+	routesoort String
+}
+
+entity Storting {
+	datumtijd String
+	gewicht String
+}
+
+entity Vuilniswagen {
+	code String
+	kenteken String
+	type String
+}
+
+entity Vulgraadmeting {
+	tijdstip String
+	vulgraad String
+	vullingGewicht String
+}
+
+entity Aansluitput {
+	aansluitpunt String
+	risicogebied String
+	type String
+}
+
+entity Afvalbak {
+	type String
+	typePlus String
+}
+
+entity Bak {
+	breedte String
+	diameter String
+	gewichtLeeg String
+	gewichtVol String
+	hoogte String
+	inhoud String
+	jaarOnderhoudUitgevoerd String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	materiaal String
+	verplaatsbaar String
+	vorm String
+}
+
+entity Bank {
+	type String
+	typePlus String
+}
+
+entity Beheerobject {
+	aangemaaktDoor String
+	beginGarantieperiode String
+	beheergebied String
+	beheerobjectBeheervak String
+	beheerobjectGebruiksfunctie String
+	beheerobjectMemo String
+	beschermdeFloraEnFauna String
+	buurt String
+	conversieID String
+	datumMutatie String
+	datumOplevering String
+	datumPublicatieLV String
+	datumVerwijdering String
+	eindeGarantieperiode String
+	gebiedstype String
+	gemeente String
+	geometrie String
+	gewijzigdDoor String
+	grondsoort String
+	grondsoortPlus String
+	identificatieIMBOR String
+	identificatieIMGeo String
+	jaarVanAanleg String
+	objectBeginTijd String
+	objectEindtijd String
+	onderhoudsplichtige String
+	openbareRuimte String
+	postcode String
+	relatieveHoogteligging String
+	stadsdeel String
+	status String
+	theoretischEindejaar String
+	tijdstipRegistratie String
+	typeBeheerder String
+	typeBeheerderPlus String
+	typeEigenaar String
+	typeEigenaarPlus String
+	typeLigging String
+	waterschap String
+	wijk String
+	woonplaats String
+	zettingsgevoeligheid String
+	zettingsgevoeligheidPlus String
+}
+
+entity Bemalingsgebied {
+	rioleringsgebied String
+}
+
+entity Bergingsbassin {
+	bergendVermogen String
+	pompLedigingsVoorziening String
+	pompSpoelVoorziening String
+	spoelleiding String
+	vorm String
+}
+
+entity Boom {
+	beleidsstatus String
+	beoogdeOmlooptijd String
+	boombeeld String
+	boombeschermer String
+	boomgroep String
+	boomhoogteActueel String
+	boomhoogteklasseActueel String
+	boomhoogteklasseEindebeeld String
+	boomspiegel String
+	boomTypeBeschermingsstatusPlus String
+	boomvoorziening String
+	controlefrequentie String
+	feestverlichting String
+	groeifase String
+	groeiplaatsinrichting String
+	herplantplicht String
+	kiemjaar String
+	kroondiameterklasseActueel String
+	kroondiameterklasseEindebeeld String
+	kroonvolume String
+	leeftijd String
+	meerstammig String
+	monetaireBoomwaarde String
+	snoeifase String
+	stamdiameter String
+	stamdiameterklasse String
+	takvrijeRuimteTotGebouw String
+	takvrijeStam String
+	takvrijeZonePrimair String
+	takvrijeZoneSecundair String
+	transponder String
+	type String
+	typeBeschermingsstatus String
+	typeOmgevingsrisicoklasse String
+	typePlus String
+	typeVermeerderingsvorm String
+	veiligheidsklasseBoom String
+	verplant String
+	verplantbaar String
+	vrijeDoorrijhoogte String
+	vrijeDoorrijhoogtePrimair String
+	vrijeDoorrijhoogteSecundair String
+	vrijeTakval String
+}
+
+entity Bord {
+	breedte String
+	diameter String
+	drager String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	materiaal String
+	vorm String
+}
+
+entity Bouwwerk {
+	aanleghoogte String
+	bouwwerkMateriaal String
+	breedte String
+	fabrikant String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	oppervlakte String
+	typeFundering String
+}
+
+entity Brug {
+	aantalOverspanningen String
+	bedienaar String
+	bedieningstijden String
+	belastingklasseNieuw String
+	belastingklasseOud String
+	beweegbaar String
+	doorrijbreedte String
+	draagvermogen String
+	hoofdroute String
+	hoofdvaarroute String
+	maximaalToelaatbaarVoertuiggewicht String
+	maximaleAsbelasting String
+	maximaleOverspanning String
+	statischMoment String
+	type String
+	typePlus String
+	zwaarsteVoertuig String
+}
+
+entity Drainageput {
+	risicogebied String
+	type String
+}
+
+entity Ecoduct {
+	aantalOverspanningen String
+	draagvermogen String
+	maximaalToelaatbaarVoertuiggewicht String
+	maximaleAsbelasting String
+	maximaleOverspanning String
+	overbruggingsobjectDoorrijopening String
+	type String
+	zwaarsteVoertuig String
+}
+
+entity Fietsparkeervoorziening {
+	aantalParkeerplaatsen String
+	type String
+	typePlus String
+}
+
+entity Filterput {
+	drain String
+	risicogebied String
+}
+
+entity Flyover {
+	aantalOverspanningen String
+	belastingklasseNieuw String
+	belastingklasseOud String
+	draagvermogen String
+	maximaalToelaatbaarVoertuiggewicht String
+	maximaleAsbelasting String
+	maximaleOverspanning String
+	overbruggingsobjectDoorrijopening String
+	type String
+	zwaarsteVoertuig String
+}
+
+entity FunctioneelGebied {
+	functioneelGebiedCode String
+	functioneelGebiedNaam String
+	omtrek String
+	oppervlakte String
+}
+
+entity Geluidsscherm {
+	aantalDeuren String
+	aantalPanelen String
+	type String
+}
+
+entity Gemaal {
+	aantalBedrijfsaansluitingen String
+	aantalHuisaansluitingen String
+	aantalPompen String
+	bedienaar String
+	effectieveGemaalcapaciteit String
+	hijsinrichting String
+	lanceerinrichting String
+	pompenInSamenloop String
+	type String
+	veiligheidsrooster String
+}
+
+entity Groenobject {
+	aantalObstakels String
+	aantalZijden String
+	afvoeren String
+	bereikbaarheid String
+	bergendVermogen String
+	bewerkingspercentage String
+	BGTFysiekVoorkomen String
+	bollen String
+	breedte String
+	breedteklasseHaag String
+	BVC String
+	cultuurhistorischWaardevol String
+	draagkrachtig String
+	ecologischBeheer String
+	fysiekVoorkomenIMGeo String
+	gewenstSluitingspercentage String
+	groenobjectBereikbaarheidPlus String
+	groenobjectConstructielaag String
+	groenobjectRand String
+	groenobjectSoortnaam String
+	haagvoetLengte String
+	haagvoetOppervlakte String
+	herplantplicht String
+	hoogte String
+	hoogteklasseHaag String
+	knipfrequentie String
+	knipoppervlakte String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	maaifrequentie String
+	maximaleValhoogte String
+	objectnummer String
+	obstakels String
+	omtrek String
+	ondergroei String
+	oppervlakte String
+	opTalud String
+	taludsteilte String
+	type String
+	typeBewerking String
+	typeOmgevingsrisicoklasse String
+	typePlus String
+	typePlus2 String
+	veiligheidsklasseBoom String
+}
+
+entity Infiltratieput {
+	porositeit String
+	risicogebied String
+}
+
+entity Installatie {
+	breedte String
+	EANCode String
+	fabrikant String
+	hoogte String
+	inbelgegevens String
+	installateur String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	typeCommunicatie String
+}
+
+entity Kademuur {
+	belastingklasseNieuw String
+	belastingklasseOud String
+	grijpstenen String
+	hoogteBovenkantKademuur String
+	materiaalBovenkantKademuur String
+	oppervlakteBovenkantKademuur String
+	reddingslijn String
+	type String
+	typeBovenkantKademuur String
+	typeFundering String
+	typeVerankering String
+}
+
+entity Kast {
+	aantalDeuren String
+	adresTelecom String
+	BAGCode String
+	breedte String
+	EANCode String
+	fabrikant String
+	hoogte String
+	inbelgegevens String
+	installateur String
+	jaarOnderhoudUitgevoerd String
+	kleur String
+	lengte String
+	leverancier String
+	typeCommunicatie String
+	typeFundering String
+	typeSlot String
+	vermogen String
+}
+
+entity Keermuur {
+	belastingklasseNieuw String
+	belastingklasseOud String
+	type String
+}
+
+entity Klimplant {
+	hoogte String
+	knipfrequentie String
+	knipoppervlakte String
+	ondersteuningsvorm String
+	type String
+}
+
+entity Kolk {
+	bereikbaarheidKolk String
+	risicogebied String
+	type String
+}
+
+entity Kunstwerk {
+	aanleghoogte String
+	antiGraffitiVoorziening String
+	bereikbaarheid String
+	breedte String
+	constructietype String
+	gewicht String
+	hoogte String
+	installateur String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	jaarRenovatie String
+	jaarVervanging String
+	kilometreringBegin String
+	kilometreringEinde String
+	kleur String
+	kunstwerkBereikbaarheidPlus String
+	kunstwerkMateriaal String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	looprichel String
+	minimumConditiescore String
+	monument String
+	monumentnummer String
+	objectnaam String
+	objectnummer String
+	onderhoudsregime String
+	oppervlakte String
+	orientatie String
+	technischeLevensduur String
+	typeFundering String
+	typeMonument String
+	vervangingswaarde String
+	wegnummer String
+}
+
+entity Leiding {
+	afwijkendeDieptelegging String
+	breedte String
+	diameter String
+	diepte String
+	eisVoorzorgsmaatregel String
+	geoNauwkeurigheidXY String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	materiaal String
+	themaIMKL String
+	verhoogdRisico String
+}
+
+entity Leidingelement {
+	afwijkendeDieptelegging String
+	diepte String
+	geoNauwkeurigheidXY String
+	jaarOnderhoudUitgevoerd String
+	leverancier String
+	themaIMKL String
+}
+
+entity Mast {
+}
+
+entity Meubilair {
+	aanleghoogte String
+	bouwjaar String
+	breedte String
+	datumAanschaf String
+	diameter String
+	fabrikant String
+	gewicht String
+	hoogte String
+	installateur String
+	jaarOnderhoudUitgevoerd String
+	jaarPraktischEinde String
+	kleur String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	meubilairMateriaal String
+	model String
+	ondergrond String
+	oppervlakte String
+	prijsAanschaf String
+	serienummer String
+	transponder String
+	transponderlocatie String
+	typeFundering String
+	typePlaat String
+}
+
+entity Overbruggingsobject {
+	aanleghoogte String
+	antiGraffitiVoorziening String
+	bereikbaarheid String
+	breedte String
+	hoogte String
+	installateur String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	jaarRenovatie String
+	jaarVervanging String
+	kleur String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	looprichel String
+	minimumConditiescore String
+	onderhoudsregime String
+	oppervlakte String
+	overbruggingsobjectMateriaal String
+	overbruggingsobjectModaliteit String
+	technischeLevensduur String
+	typeFundering String
+	vervangingswaarde String
+}
+
+entity Overstortconstructie {
+	bassin String
+	drempelbreedte String
+	drempelniveau String
+	klep String
+	type String
+	vormDrempel String
+	waking String
+}
+
+entity Paal {
+	breedte String
+	diameter String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	materiaal String
+	vorm String
+}
+
+entity Pomp {
+	aanslagniveau String
+	beginstandDraaiurenteller String
+	besturingskast String
+	laatsteStandDraaiurenteller String
+	laatsteStandkWhTeller String
+	levensduur String
+	model String
+	motorvermogen String
+	onderdeelMetPomp String
+	ontwerpcapaciteit String
+	pompcapaciteit String
+	serienummer String
+	type String
+	typeOnderdeelMetPomp String
+	typePlus String
+	typeWaaier String
+	uitslagpeil String
+}
+
+entity Put {
+	bovengrondsZichtbaar String
+	breedte String
+	diameter String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	maaiveldhoogte String
+	materiaal String
+	toegankelijk String
+	typeAfdekking String
+	vorm String
+	wanddikte String
+}
+
+entity Putdeksel {
+	diameter String
+	put String
+	type String
+	vorm String
+}
+
+entity Rioleringsgebied {
+	rioleringsgebied String
+	zuiveringsgebied String
+}
+
+entity Rioolput {
+	aantalBedrijven String
+	aantalRecreatie String
+	aantalWoningen String
+	afvoerendOppervlak String
+	bergendOppervlak String
+	rioolputConstructieonderdeel String
+	rioolputRioolleiding String
+	risicogebied String
+	toegangBreedte String
+	toegangLengte String
+	type String
+	typePlus String
+}
+
+entity Scheiding {
+	aanleghoogte String
+	breedte String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	objectnaam String
+	objectnummer String
+	oppervlakte String
+	scheidingMateriaal String
+	verplaatsbaar String
+}
+
+entity Sensor {
+	aanleghoogte String
+	elektrakast String
+	frequentieOmvormer String
+	hoogte String
+	jaarOnderhoudUitgevoerd String
+	leverancier String
+	meetpunt String
+	PLC String
+}
+
+entity SolitairePlant {
+	hoogte String
+	type String
+}
+
+entity Speelterrein {
+	jaarHerinrichting String
+	speelterreinLeeftijdDoelgroep String
+	type String
+	typePlus String
+}
+
+entity Speeltoestel {
+	catalogusprijs String
+	certificaat String
+	certificaatnummer String
+	certificeringsinstantie String
+	controlefrequentie String
+	datumCertificaat String
+	gemakkelijkToegankelijk String
+	inspectievolgorde String
+	installatiekosten String
+	speelterrein String
+	speeltoestelToestelonderdeel String
+	technischeLevensduur String
+	toestelcode String
+	toestelgroep String
+	toestelnaam String
+	type String
+	typenummer String
+	typePlus String
+	typePlus2 String
+	valruimteHoogte String
+	valruimteOmvang String
+	vrijeValhoogte String
+}
+
+entity Sportterrein {
+	drainage String
+	gebruiksvorm String
+	sportcomplex String
+	sportterreinTypeSport String
+	type String
+	typePlus String
+	veldnummer String
+	verlicht String
+}
+
+entity Stuwgebied {
+	bemalingsgebied String
+}
+
+entity Terreindeel {
+	breedte String
+	cultuurhistorischWaardevol String
+	herplantplicht String
+	oppervlakte String
+	opTalud String
+	percentageLoofbos String
+	terreindeelSoortnaam String
+	type String
+	typeBewerking String
+	typePlus String
+	typePlus2 String
+}
+
+entity Tunnelobject {
+	aanleghoogte String
+	aantalTunnelbuizen String
+	breedte String
+	doorrijbreedte String
+	doorrijhoogte String
+	hoogte String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	lengte String
+	leverancier String
+	objectnaam String
+	objectnummer String
+	oppervlakte String
+	tunnelobjectMateriaal String
+}
+
+entity Uitlaatconstructie {
+	type String
+	waterobject String
+}
+
+entity Vegetatieobject {
+	afvoeren String
+	bereikbaarheid String
+	ecologischBeheer String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	kweker String
+	leverancier String
+	objectnummer String
+	soortnaam String
+	typeStandplaats String
+	typeStandplaatsPlus String
+	vegetatieobjectBereikbaarheidPlus String
+}
+
+entity Verhardingsobject {
+	aanleghoogte String
+	aanOfVrijliggend String
+	aantalDeklagen String
+	aantalOnderlagen String
+	aantalTussenlagen String
+	afmeting String
+	belasting String
+	bergendVermogen String
+	BGTFysiekVoorkomen String
+	breedte String
+	dikteConstructie String
+	draagkrachtig String
+	formaat String
+	fysiekVoorkomenIMGeo String
+	geluidsreducerend String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	jaarPraktischEinde String
+	kleur String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	lengteKunstgras String
+	lengteVoegen String
+	levensduur String
+	materiaal String
+	maximaleValhoogte String
+	omtrek String
+	ondergrondcode String
+	oppervlakte String
+	opTalud String
+	plaatsorientatie String
+	prijsAanschaf String
+	rijstrook String
+	soortVoeg String
+	toelichtingGemengdeBestrating String
+	type String
+	typeConstructie String
+	typeFundering String
+	typePlus String
+	typePlus2 String
+	typeRijstrook String
+	typeVoeg String
+	typeVoegvulling String
+	vegen String
+	verhardingsobjectConstructielaag String
+	verhardingsobjectModaliteit String
+	verhardingsobjectRand String
+	verhardingsobjectWegfunctie String
+	verhoogdeLigging String
+	vulmateriaalKunstgras String
+	waterdoorlatendheid String
+	wegas String
+	wegcategorieDV String
+	wegcategorieDVPlus String
+	wegnummer String
+	wegtypeBestaand String
+	wegvak String
+	wegvaknummer String
+}
+
+entity Verkeersdrempel {
+	ontwerpsnelheid String
+	type String
+	typePlus String
+}
+
+entity Verlichtingsobject {
+}
+
+entity Viaduct {
+	aantalOverspanningen String
+	belastingklasseNieuw String
+	belastingklasseOud String
+	draagvermogen String
+	maximaalToelaatbaarVoertuiggewicht String
+	maximaleAsbelasting String
+	maximaleOverspanning String
+	overbruggingsobjectDoorrijopening String
+	type String
+	waterobject String
+	zwaarsteVoertuig String
+}
+
+entity Waterinrichtingsobject {
+	aanleghoogte String
+	breedte String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	materiaal String
+	oppervlakte String
+}
+
+entity Waterobject {
+	breedte String
+	folie String
+	hoogte String
+	infiltrerendOppervlak String
+	infiltrerendVermogen String
+	lengte String
+	lozingspunt String
+	oppervlakte String
+	porositeit String
+	streefdiepte String
+	type String
+	typePlus String
+	typePlus2 String
+	typeVaarwater String
+	typeWaterplant String
+	uitstroomniveau String
+	vaarwegtraject String
+	vorm String
+	waternaam String
+	waterpeil String
+	waterpeilWinter String
+	waterpeilZomer String
+	waterplanten String
+}
+
+entity Weginrichtingsobject {
+	aanleghoogte String
+	breedte String
+	hoogte String
+	jaarConserveren String
+	jaarOnderhoudUitgevoerd String
+	kwaliteitsniveauActueel String
+	kwaliteitsniveauGewenst String
+	lengte String
+	leverancier String
+	materiaal String
+	oppervlakte String
+	weginrichtingsobjectWegfunctie String
+}
+
+entity Actie {
+}
+
+entity Areaal {
+	geometrie String
+}
+
+entity CROWMelding {
+	kwaliteitsniveau String
+}
+
+entity Deelplan/Veld {
+}
+
+entity Fase/Oplevering {
+}
+
+entity GEOObject {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	geometrieSoort String
+	identificatie String
+}
+
+entity Grondbeheerder {
+}
+
+entity Inspectie {
+}
+
+entity Kadastralemutatie {
+}
+
+entity KwaliteitscatalogusOpenbareRuimte {
+}
+
+entity Kwaliteitskenmerken {
+}
+
+entity Logboek {
+}
+
+entity Melding {
+	advies String
+	categorie String
+	constatering String
+	datumAdvies String
+	datumMelding String
+	datumUitvoering String
+	foto String
+	locatie String
+	opmerkingen String
+	status String
+	uitgevoerd String
+}
+
+entity MeldingOngeval {
+}
+
+entity MOORMelding {
+	adresaanduiding String
+	datumAanmelding String
+	datumGoedkeuring String
+	eindtijd String
+	goedgekeurd String
+	herstelwerkzaamhedenVereist String
+	omschrijvingHerstelwerkzaamheden String
+	publiceren String
+	starttijd String
+	wegbeheerder String
+}
+
+entity Omgevingsvergunning {
+}
+
+entity Onderhoud {
+}
+
+entity Opbreking {
+}
+
+entity ProcesVerbaalMoorMelding {
+	datum String
+	goedkeuring String
+	opmerkingen String
+}
+
+entity Schouwronde {
+}
+
+entity Storing {
+}
+
+entity Taak {
+}
+
+entity UitvoerderGraafwerkzaamheden {
+}
+
+entity Verkeerslicht {
+}
+
+entity Gebouw {
+	aantal String
+	aantalAdressen String
+	aantalKamers String
+	aardgasloos String
+	duurzaam String
+	energielabel String
+	natuurinclusief String
+	oppervlakte String
+	regenwater String
+}
+
+entity Huurwoningen {
+	huurprijs String
+}
+
+entity Koopwoningen {
+	koopprijs String
+}
+
+entity Plan {
+	70ProcentVerkocht String
+	aardgasloos String
+	bestemmingGoedgekeurd String
+	eersteOplevering String
+	eigendomGemeente String
+	gebiedstransformatie String
+	intentie String
+	laatsteOplevering String
+	naam String
+	nummer String
+	onherroepelijk String
+	percelen String
+	startbouw String
+	startVerkoop String
+}
+
+entity Projectleider {
+	naam String
+}
+
+entity Projectontwikkelaar {
+	adres String
+	naam String
+}
+
+entity Studentenwoningen {
+	huurprijs String
+	zelfstandig String
+}
+
+entity BevoegdGezag {
+	naam String
+}
+
+entity Gemachtigde {
+}
+
+entity Initiatiefnemer {
+}
+
+entity Project {
+	naam String
+	omschrijving String
+	projectID String
+}
+
+entity Projectactiviteit {
+}
+
+entity Projectlocatie {
+	adres String
+	kadastraalPerceel String
+	kadastraleGemeente String
+	kadastraleSectie String
+}
+
+entity Specificatie {
+	antwoord String
+	groepering String
+	publiceerbaar String
+	vraagClassificatie String
+	vraagID String
+	vraagreferentie String
+	vraagtekst String
+}
+
+entity UitvoerendeInstantie {
+	naam String
+}
+
+entity Verzoek {
+	akkoordverklaring String
+	ambtshalve String
+	datumIndiening String
+	doel String
+	naam String
+	referentieAanvrager String
+	toelichtingLaterAanTeLeverenInformatie String
+	toelichtingNietAanTeLeverenInformatie String
+	toelichtingVerzoek String
+	type String
+	verzoeknummer String
+	volgnummer String
+}
+
+entity Omgevingsdocument {
+}
+
+entity Regeltekst {
+	identificatie String
+	omschrijving String
+	tekst String
+}
+
+entity Activiteit {
+	groep String
+	naam String
+	NEN3610ID String
+}
+
+entity Beperkingsgebied {
+	groep String
+	naam String
+}
+
+entity Functie {
+	groep String
+	naam String
+}
+
+entity Gebiedsaanwijzing {
+	groep String
+	naam String
+	NEN3610ID String
+}
+
+entity Idealisatie {
+	naam String
+	omschrijving String
+}
+
+entity Instructieregel {
+	instructieregelInstrument String
+	instructieregelTaakuitoefening String
+}
+
+entity JuridischeRegel {
+	datumBekend String
+	datumEindeGeldigheid String
+	datumInWerking String
+	datumStart String
+	omschrijving String
+	regeltekst String
+	thema String
+}
+
+entity Norm {
+	NEN3610ID String
+}
+
+entity Normwaarde {
+	kwalitatieveWaarde String
+	kwantitatieveWaardeEenheid String
+	kwantitatieveWaardeOmvang String
+}
+
+entity Omgevingsnorm {
+	naam String
+	omgevingsnormGroep String
+}
+
+entity Omgevingswaarde {
+	naam String
+	omgevingswaardeGroep String
+}
+
+entity Omgevingswaarderegel {
+	groep String
+	naam String
+}
+
+entity RegelVoorIedereen {
+	activiteitRegelKwalificatie String
+}
+
+entity Thema {
+	naam String
+	omschrijving String
+}
+
+entity Conclusie {
+}
+
+entity Indieningsvereisten {
+}
+
+entity Maatregelen {
+}
+
+entity ToepasbareRegel {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	domein String
+	naam String
+	omschrijving String
+	soortAansluitpunt String
+	toestemming String
+}
+
+entity ToepasbareRegelBestand {
+	datumEindeGeldigheid String
+	datumStart String
+}
+
+entity Uitvoeringsregel {
+	naam String
+	omschrijving String
+	regel String
+}
+
+entity Aanvraag {
+}
+
+entity Applicatie {
+	applicatieURL String
+	beheerstatus String
+	beleidsdomein String
+	categorie String
+	guid String
+	naam String
+	omschrijving String
+	packagingstatus String
+}
+
+entity Attribuutsoort {
+	authentiek String
+	datumOpname String
+	definitie String
+	domein String
+	ea_guid String
+	herkomst String
+	herkomstDefinitie String
+	id String
+	identificerend String
+	indicatieAfleidbaar String
+	indicatieMaterieleHistorie String
+	kardinaliteit String
+	lengte String
+	mogelijkGeenWaarde String
+	naam String
+	patroon String
+	precisie String
+	stereotype String
+	toelichting String
+}
+
+entity Classificatie {
+	bevatPersoonsgegevens String
+	gerelateerdPersoonsgegevens String
+	id String
+}
+
+entity CMDBItem {
+	beschrijving String
+	naam String
+}
+
+entity Database {
+	architectuur String
+	database String
+	databaseVersie String
+	DBMS String
+	omschrijving String
+	OTAP String
+	vlan String
+}
+
+entity Datatype {
+	datumOpname String
+	definitie String
+	domein String
+	ea_guid String
+	herkomst String
+	id String
+	kardinaliteit String
+	lengte String
+	naam String
+	patroon String
+	toelichting String
+}
+
+entity Dienst {
+}
+
+entity DomeinOfTaakveld {
+}
+
+entity ExterneBron {
+	guid String
+	naam String
+}
+
+entity Gebruikerrol {
+	rol String
+}
+
+entity Gegeven {
+	alias String
+	ea_guid String
+	id String
+	naam String
+	stereotype String
+	toelichting String
+}
+
+entity Generalisatie {
+	datumOpname String
+	definitie String
+	ea_guid String
+	herkomst String
+	herkomstDefinitie String
+	id String
+	indicatieMaterieleHistorie String
+	naam String
+	toelichting String
+}
+
+entity Hardware {
+}
+
+entity Inventaris {
+}
+
+entity Koppeling {
+	beschrijving String
+	direct String
+	toelichting String
+}
+
+entity Licentie {
+}
+
+entity LinkbaarCMDBItem {
+}
+
+entity Log {
+	korteOmschrijving String
+	omschrijving String
+	tijd String
+}
+
+entity Melding {
+}
+
+entity Nertwerkcomponent {
+}
+
+entity Notitie {
+	datum String
+	inhoud String
+}
+
+entity Objecttype {
+	datumOpname String
+	definitie String
+	ea_guid String
+	herkomst String
+	herkomstDefinitie String
+	id String
+	indicatieAbstract String
+	kwaliteit String
+	naam String
+	populatie String
+	stereotype String
+	toelichting String
+	uniekeAanduiding String
+}
+
+entity Onderwerp {
+}
+
+entity Package {
+	naam String
+	proces String
+	project String
+	status String
+	toelichting String
+}
+
+entity Prijzenboek {
+}
+
+entity Product {
+}
+
+entity Relatiesoort {
+	authentiek String
+	datumOpname String
+	definitie String
+	ea_guid String
+	herkomst String
+	herkomstDefinitie String
+	id String
+	indicatieAfleidbaar String
+	indicatieMaterieleHistorie String
+	kardinaliteit String
+	mogelijkGeenWaarde String
+	naam String
+	toelichting String
+	unidirectioneel String
+}
+
+entity Server {
+	actief String
+	IPAdres String
+	locatie String
+	organisatie String
+	serienummer String
+	serverID String
+	servertype String
+	vlan String
+}
+
+entity Software {
+}
+
+entity Storing {
+}
+
+entity Telefoniegegevens {
+}
+
+entity Toegangsmiddel {
+}
+
+entity Versie {
+	aantal String
+	datumEindeSupport String
+	kosten String
+	licentie String
+	status String
+	versienummer String
+}
+
+entity Vervoersmiddel {
+}
+
+entity Wijzigingsverzoek {
+}
+
+entity Betaalmoment {
+	bedrag String
+	datum String
+	voorschot String
+}
+
+entity Rapportagemoment {
+	datum String
+	naam String
+	omschrijving String
+	termijn String
+}
+
+entity Sector {
+	naam String
+	omschrijving String
+}
+
+entity Subsidie {
+	accountantscontrole String
+	coFinanciering String
+	datumBehandeltermijn String
+	datumBewaartermijn String
+	datumEinde String
+	datumStart String
+	datumSubsidievaststelling String
+	datumVerzendingEindeafrekening String
+	deadlineIndiening String
+	doelstelling String
+	gerealiseerdeProjectkosten String
+	hoogteSubsidie String
+	niveau String
+	onderwerp String
+	ontvangenBedrag String
+	opmerkingen String
+	opmerkingenVoorschotten String
+	prestatiesubsidie String
+	socialReturnBedrag String
+	socialReturnNagekomen String
+	socialReturnVerplichting String
+	status String
+	subsidiebedrag String
+	subsidiesoort String
+	subsidievaststellingBedrag String
+	uitgaandeSubsidie String
+	verantwoordenOp String
+}
+
+entity Subsidieaanvraag {
+	aangevraagdBedrag String
+	datumIndiening String
+	kenmerk String
+	ontvangstbevestiging String
+	verwachteBeschikking String
+}
+
+entity Subsidiebeschikking {
+	beschikkingsnummer String
+	beschiktBedrag String
+	besluit String
+	internKenmerk String
+	kenmerk String
+	ontvangen String
+	opmerkingen String
+}
+
+entity Subsidiecomponent {
+	gereserveerdBedrag String
+	toegekendBedrag String
+}
+
+entity Subsidieprogramma {
+	datumEinde String
+	datumStart String
+	naam String
+	omschrijving String
+	programmabegroting String
+}
+
+entity Taak {
+	datumEinde String
+	datumStart String
+	taakomschrijving String
+	termijn String
+}
+
+entity Aanbesteding Vastgoed {
+}
+
+entity Adresaanduiding {
+	adresaanduiding String
+}
+
+entity Bouwdeel {
+	code String
+	omschrijving String
+}
+
+entity Bouwdeelelement {
+	code String
+	omschrijving String
+}
+
+entity CultuurOnbebouwd {
+	cultuurcodeOnbebouwd String
+}
+
+entity Eigenaar {
+}
+
+entity Gebruiksdoel {
+	gebruiksdoelGebouwdObject String
+}
+
+entity Huurder {
+}
+
+entity Inspectie {
+	bevindingen String
+	datum String
+}
+
+entity KpBetrokkenBij {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+}
+
+entity KpOnstaanUit {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+}
+
+entity LocatieaanduidingWOZObject {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	locatieOmschrijving String
+	primair String
+}
+
+entity Locatieonroerendezaak {
+	adrestype String
+	cultuurcodeBebouwd String
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	geometrie String
+	locatieOmschrijving String
+}
+
+entity MJOP {
+	datum String
+	omschrijving String
+}
+
+entity MJOPItem {
+	code String
+	datumEinde String
+	datumOpzeggingAanbieder String
+	datumOpzeggingOntvanger String
+	datumStart String
+	kosten String
+	omschrijving String
+	opzegtermijnAanbieder String
+	opzegtermijnOntvanger String
+}
+
+entity NADAanvullingBRP {
+	opmerkingen String
+}
+
+entity Objectrelatie {
+	rol String
+}
+
+entity Offerte {
+}
+
+entity Pachter {
+}
+
+entity Prijzenboekitem {
+	datumEindeGeldigheid String
+	datumStart String
+	prijs String
+	verrichting String
+}
+
+entity Vastgoedcontract {
+	beschrijving String
+	datumEinde String
+	datumStart String
+	identificatie String
+	maandbedrag String
+	opzegtermijn String
+	status String
+	type String
+}
+
+entity VastgoedcontractRegel {
+	bedrag String
+	datumEinde String
+	datumStart String
+	frequentie String
+	identificatie String
+	omschrijving String
+	status String
+	type String
+}
+
+entity Vastgoedobject {
+	aantalEtages String
+	aantalParkeerplaatsen String
+	aantalRioleringen String
+	adresaanduiding String
+	afgekochteErfpacht String
+	afgesprokenConditiescore String
+	afkoopwaarde String
+	asbestrapportageAanwezig String
+	bedragAankoop String
+	bestemmingsplan String
+	boekwaarde String
+	bouwjaar String
+	bouwwerk String
+	bovenliggendNiveau String
+	bovenliggendNiveaucode String
+	brutoVloeroppervlakte String
+	CO2Uitstoot String
+	conditiescore String
+	datumAfstoten String
+	datumBerekeningOppervlak String
+	datumEigendom String
+	datumVerkoop String
+	deelportefeuille String
+	energiekosten String
+	energielabel String
+	energieverbruik String
+	fiscaleWaarde String
+	foto String
+	gearchiveerd String
+	herbouwwaarde String
+	hoofdstuk String
+	identificatie String
+	jaarLaatsteRenovatie String
+	kostenplaats String
+	locatie String
+	marktwaarde String
+	monument String
+	naam String
+	objectstatus String
+	objectstatuscode String
+	objecttype String
+	objecttypecode String
+	omschrijving String
+	onderhoudscategorie String
+	oppervlakteKantoor String
+	portefeuille String
+	portefeuillecode String
+	provincie String
+	toelichting String
+	verhuurbaarVloeroppervlak String
+	verkoopbaarheid String
+	verkoopbedrag String
+	verzekerdeWaarde String
+	waardeGrond String
+	waardeOpstal String
+	wijk String
+	WOZWaarde String
+}
+
+entity VerhuurbaarEenheid {
+	adres String
+	afmeting String
+	bezetting String
+	datumEinde String
+	datumStart String
+	datumWerkelijkBegin String
+	datumWerkelijkEinde String
+	huurprijs String
+	identificatie String
+	naam String
+	nettoOmtrek String
+	nettoOppervlak String
+	opmerkingen String
+	type String
+}
+
+entity Werkbon {
+}
+
+entity WOZBelang {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	eigenaarGebruiker String
+}
+
+entity ZakelijkRecht {
+	datumEinde String
+	datumStart String
+	kosten String
+	soort String
+}
+
+entity Bedrijf {
+}
+
+entity Activa {
+	naam String
+	omschrijving String
+}
+
+entity Activasoort {
+	naam String
+	omschrijving String
+}
+
+entity Bankafschrift {
+	datum String
+	nummer String
+}
+
+entity Bankafschriftregel {
+	bedrag String
+	bij String
+	datum String
+	rekeningVan String
+}
+
+entity Bankrekening {
+	bank String
+	nummer String
+	tennaamstelling String
+}
+
+entity Batch {
+	datum String
+	nummer String
+	tijd String
+}
+
+entity Batchregel {
+	bedrag String
+	datumBetaling String
+	omschrijving String
+	rekeningNaar String
+	rekeningVan String
+}
+
+entity Begroting {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Begrotingregel {
+	batenLasten String
+	bedrag String
+	soortRegel String
+}
+
+entity Debiteur {
+}
+
+entity Doelstelling {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Factuur {
+	betaalbaarPer String
+	betaaltermijn String
+	code String
+	datumFactuur String
+	factuurbedragBTW String
+	factuurbedragExclusiefBTW String
+	omschrijving String
+}
+
+entity Factuurregel {
+	aantal String
+	bedragBTW String
+	bedragExBTW String
+	BTWPercentage String
+	nummer String
+	omschrijving String
+}
+
+entity Hoofdrekening {
+	naam String
+	nummer String
+	omschrijving String
+	PIAHoofcategorieOmschrijving String
+	PIAHoofdcategorieCode String
+	subcode String
+	subcodeOmschrijving String
+}
+
+entity Hoofdstuk {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Inkooporder {
+	artikelcode String
+	betalingMeerdereJaren String
+	betreft String
+	datumEinde String
+	datumIngediend String
+	datumStart String
+	goederencode String
+	omschrijving String
+	ordernummer String
+	saldo String
+	totaalNettoBedrag String
+	wijzeVanAanbesteden String
+}
+
+entity Kostenplaats {
+	BTWCode String
+	BTWOmschrijving String
+	kostenplaatssoortCode String
+	kostenplaatssoortOmschrijving String
+	kostenplaatstypeCode String
+	kostenplaatstypeOmschrijving String
+	naam String
+	omschrijving String
+}
+
+entity Mutatie {
+	bedrag String
+	datum String
+}
+
+entity Opdrachtgever {
+	clustercode String
+	clusterOmschrijving String
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Opdrachtnemer {
+	clustercode String
+	clustercodeOmschrijving String
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Product {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Subrekening {
+	naam String
+	nummer String
+	omschrijving String
+}
+
+entity Taakveld {
+	functiecodeIV3 String
+	functieomschrijvingIV3 String
+	hoofdfunctie String
+	hoofdfunctieOmschrijving String
+	subtaakveldCode String
+	subtaakveldOmschrijving String
+	taakveldcode String
+	taakveldOmschrijving String
+}
+
+entity Werkorder {
+	code String
+	documentnummer String
+	naam String
+	omschrijving String
+	werkordertype String
+}
+
+entity Beoordeling {
+	datum String
+	omschrijving String
+	oordeel String
+}
+
+entity Declaratie {
+	bedrag String
+	betreft String
+	datumDeclaratie String
+	datumIndiening String
+	omschrijving String
+}
+
+entity Declaratiesoort {
+	naam String
+	omschrijving String
+}
+
+entity Dienstverband {
+	datumEinde String
+	datumStart String
+	periodiek String
+	salaris String
+	schaal String
+	uren per week String
+}
+
+entity DisciplinaireMaatregel {
+	datumGeconstateerd String
+	datumOpgelegd String
+	omschrijving String
+	reden String
+}
+
+entity Formatieplaats {
+	uren per week String
+}
+
+entity Functie {
+	Code String
+	Naam String
+	Omschrijving String
+	Schaal String
+	Taken String
+}
+
+entity Functiehuis {
+	naam String
+	omschrijving String
+}
+
+entity GenotenOpleiding {
+	datumEinde String
+	datumStart String
+	datumToewijzing String
+	prijs String
+	verrekenen String
+}
+
+entity Geweldsincident {
+	datum String
+	omschrijving String
+	type String
+}
+
+entity IndividueelKeuzebudget {
+	bedrag String
+	datumEinde String
+	datumStart String
+	datumToekenning String
+}
+
+entity Inzet {
+	datumBegin String
+	datumEinde String
+	percentage String
+	uren String
+}
+
+entity KeuzebudgetBesteding {
+	bedrag String
+	datum String
+}
+
+entity KeuzebudgetBestedingsoort {
+	naam String
+	omschrijving String
+}
+
+entity NormProfiel {
+	code String
+	omschrijving String
+	schaal String
+}
+
+entity Onderwijsinstituut {
+}
+
+entity Opleiding {
+	instituut String
+	naam String
+	omschrijving String
+	prijs String
+}
+
+entity OrganisatorischeEenheidHR {
+	naam String
+	type String
+}
+
+entity Relatie {
+}
+
+entity Rol {
+	datumBegin String
+	datumEinde String
+	rol String
+}
+
+entity Sollicitant {
+}
+
+entity Sollicitatie {
+	datum String
+}
+
+entity Sollicitatiegesprek {
+	aangenomen String
+	datum String
+	opmerkingen String
+	volgendGesprek String
+}
+
+entity SoortDisciplinaireMaatregel {
+	naam String
+	omschrijving String
+}
+
+entity Uren {
+	aantal String
+}
+
+entity Vacature {
+	datumGesloten String
+	datumOpengesteld String
+	deeltijd String
+	extern String
+	intern String
+	vastedienst String
+}
+
+entity Verlof {
+	datumAanvraag String
+	datumtijdEinde String
+	datumtijdStart String
+	datumToekenning String
+	goedgekeurd String
+}
+
+entity Verlofsoort {
+	naam String
+	omschrijving String
+}
+
+entity Verzuim {
+	datumtijdEinde String
+	datumtijdStart String
+}
+
+entity Verzuimsoort {
+	naam String
+	omschrijving String
+}
+
+entity Werknemer {
+	geboortedatum String
+	naam String
+	voornaam String
+	woonplaats String
+}
+
+entity Aanbesteding {
+	datumPublicatie String
+	datumStart String
+	digitaal String
+	naam String
+	procedure String
+	referentienummer String
+	scoreMaximaal String
+	status String
+	tendernedKenmerk String
+	type String
+	volgendeSluiting String
+}
+
+entity AanbestedingInhuur {
+	aanvraagGesloten String
+	aanvraagnummer String
+	datumCreatie String
+	datumOpeningKluis String
+	datumSluiting String
+	datumSluiting String
+	datumVerzending String
+	fase String
+	hoogsteTarief String
+	laagsteTarief String
+	omschrijving String
+	perceel String
+	procedure String
+	projectnaam String
+	projectreferentie String
+	publicatie String
+	referentie String
+	status String
+	titel String
+	type String
+}
+
+entity Aankondiging {
+	beschrijving String
+	categorie String
+	datum String
+	naam String
+	type String
+}
+
+entity AanvraagInkooporder {
+	betalingOverMeerJaren String
+	correspondentienummer String
+	inhuurAnders String
+	leveringOfDienst String
+	nettoTotaalBedrag String
+	omschrijving String
+	onderwerp String
+	reactie String
+	status String
+	wijzeVanInhuur String
+}
+
+entity Categorie {
+	code String
+	omschrijving String
+}
+
+entity Contract {
+	autorisatiegroep String
+	beschrijving String
+	categorie String
+	classificatie String
+	contractRevisie String
+	datumCreatie String
+	datumEinde String
+	datumStart String
+	groep String
+	internContractID String
+	internContractRevisie String
+	opmerkingen String
+	status String
+	type String
+	voorwaarde String
+	zoekwoorden String
+}
+
+entity CPVCode {
+	code String
+	omschrijving String
+}
+
+entity FormulierInhuur {
+	akkoordFinancieelAdviseur String
+	akkoordHRAdviseur String
+	datumIngangInhuur String
+	functienaamInhuur String
+}
+
+entity FormulierVerlengingInhuur {
+	datumEindeNieuw String
+	indicatieRedenInhuurGewijzigd String
+	indicatieVerhogenInkooporder String
+	toelichting String
+}
+
+entity Gunning {
+	bericht String
+	datumGunning String
+	datumPublicatie String
+	datumVoorlopigeGunning String
+	gegundePrijs String
+}
+
+entity Inkooppakket {
+	code String
+	naam String
+	type String
+}
+
+entity Inschrijving {
+	datum String
+	prijs String
+	score String
+}
+
+entity Kandidaat {
+	datumIngestuurd String
+}
+
+entity Kwalificatie {
+	eindeGeldigheid String
+	startGeldigheid String
+}
+
+entity Leverancier {
+	naam String
+	nummer String
+}
+
+entity Offerte {
+	datumOfferte String
+	naam String
+	omschrijving String
+	prijs String
+}
+
+entity Offerteaanvraag {
+	datumAanvraag String
+	datumSluiting String
+	naam String
+	omschrijving String
+}
+
+entity SelectietabelAanbesteding {
+	aanbestedingsoort String
+	drempelbedragTot String
+	drempelbedragVanaf String
+	opdrachtcategorie String
+	openbaar String
+}
+
+entity StartformulierAanbesteden {
+	beoogdeLooptijd String
+	beoogdeTotaleOpdrachtwaarde String
+	indicatieAanvullendeOpdrachtLeverancier String
+	indicatieBeoogdeAanbestedingOnderhands String
+	indicatieBeoogdeProcKomtOvereen String
+	indicatieEenmaligeLos String
+	indicatieMeerjarigeRaamovereenkomst String
+	indicatieMeerjarigRepeterend String
+	indicatorOverkoepelendProject String
+	omschrijving String
+	opdrachtcategorie String
+	opdrachtsoort String
+	toelichtingAanvullendeOpdracht String
+	toelichtingEenmaligOfRepeterend String
+}
+
+entity Uitnodiging {
+	afgewezen String
+	datum String
+	geaccepteerd String
+}
+
+entity Programma {
+	naam String
+}
+
+entity Project {
+}
+
+entity Aanvraagdata {
+	data String
+	veld String
+}
+
+entity AanvraagOfMelding {
+	afgehandeld String
+	categorie String
+	categoriecode String
+	datumAanmaak String
+	datumAfhandeling String
+	datumBeginStatus String
+	datumEindeStatus String
+	hoofdcategorie String
+	hoofdcategoriecode String
+	identificatie String
+	kanaal String
+	onderwerp String
+	onderwerpcode String
+	soort String
+	status String
+	statuscode String
+	statusVolgorde String
+	subcategorie String
+	subcategoriecode String
+}
+
+entity Afspraakstatus {
+	status String
+}
+
+entity Artikel {
+}
+
+entity Balieafspraak {
+	eindtijdGepland String
+	notitie String
+	starttijdGepland String
+	tijdAangemaakt String
+	tijdsduurGepland String
+	toelichting String
+	wachttijdNaStartAfspraak String
+	wachttijdTotaal String
+	wachttijdVoorStartAfspraak String
+	werkelijkeTijdsduur String
+}
+
+entity ExterneBron {
+}
+
+entity Formuliersoort {
+	ingebruik String
+	naam String
+	onderwerp String
+}
+
+entity Formuliersoortveld {
+	helptekst String
+	isVerplicht String
+	label String
+	maxLengte String
+	veldnaam String
+	veldtype String
+}
+
+entity Klantbeoordeling {
+	beoordeling String
+	categorie String
+	contactOpnemen String
+	ddBeoordeling String
+	kanaal String
+	onderwerp String
+	subCategorie String
+}
+
+entity Klantbeoordelingreden {
+	reden String
+}
+
+entity MORAanvraagOfMelding {
+	locatie String
+	locatieOmschrijving String
+	meldingOmschrijving String
+	meldingTekst String
+}
+
+entity Onderwerp {
+	isActief String
+	naam String
+	toelichting String
+}
+
+entity ProductOfDienst {
+	afhandeltijd String
+	ingebruik String
+	naam String
+}
+
+entity Telefoononderwerp {
+	onderwerp String
+}
+
+entity Telefoonstatus {
+	contactConnectionState String
+	status String
+}
+
+entity Telefoontje {
+	afhandeltijdNaGesprek String
+	deltaISDNConnectie String
+	eindtijd String
+	starttijd String
+	totaleOnHoldTijd String
+	totaleSpreektijd String
+	totaleWachttijd String
+	totLateTijdsduur String
+	trackID String
+}
+
+entity NUMMERAANDUIDING {
+	Datum begin geldigheid String
+	Datum Einde String
+	Datum einde geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Geometrie String
+	Huisletter String
+	Huisnummer String
+	Huisnummertoevoeging String
+	Identificatie String
+	InOnderzoek String
+	Postcode String
+	Status String
+	TypeAdresseerbaarObject String
+	Versie String
+}
+
+entity BUURT {
+	Buurtcode String
+	Buurtgeometrie String
+	Buurtnaam String
+	Datum begin geldigheid buurt String
+	Datum Einde String
+	Datum einde geldigheid buurt String
+	Datum Ingang String
+	Geconstateerd String
+	Identificatie String
+	InOnderzoek String
+	Status String
+	Versie String
+}
+
+entity GEMEENTE {
+	Datum begin geldigheid String
+	Datum Einde String
+	Datum einde geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Gemeentecode String
+	Gemeentenaam String
+	Gemeentenaam NEN String
+	Geometrie String
+	Identificatie String
+	InOnderzoek String
+	Versie String
+}
+
+entity LIGPLAATS {
+	Datum Begin Geldigheid String
+	Datum Einde String
+	Datum Einde Geldigheid String
+	Datum Ingang String
+	Documentdatum String
+	Documentnummer String
+	Geconstateerd String
+	Geometrie String
+	Identificatie String
+	inOnderzoek String
+	Status String
+	Versie String
+}
+
+entity ADRESSEERBAAR OBJECT {
+	Identificatie String
+	Type AdresseerbaarObject String
+	Versie String
+}
+
+entity OPENBARE RUIMTE {
+	Datum begin geldigheid String
+	Datum Einde String
+	Datum einde geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Geometrie String
+	Huisnummerrange even en oneven nummers String
+	Huisnummerrange even nummers String
+	Huisnummerrange oneven nummers String
+	Identificatie String
+	inOnderzoek String
+	Label naam String
+	Naam openbare ruimte String
+	Status String
+	Straatcode String
+	Straatnaam String
+	Type openbare ruimte String
+	Versie String
+	Wegsegment String
+}
+
+entity PAND {
+	Bruto inhoud pand String
+	Datum Begin Geldigheid String
+	Datum Einde String
+	Datum Einde Geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Geometrie bovenaanzicht String
+	Geometrie maaiveld String
+	GeometriePunt String
+	Hoogste bouwlaag pand String
+	Identificatie String
+	InOnderzoek String
+	Laagste bouwlaag pand String
+	Oorspronkelijk bouwjaar String
+	Oppervlakte String
+	Relatieve hoogteligging pand String
+	Status String
+	Status voortgang bouw String
+	versie String
+}
+
+entity STANDPLAATS {
+	Datum Begin Geldigheid String
+	Datum Einde String
+	Datum Einde Geldigheid String
+	Datum Ingang String
+	DocumentDatum String
+	DocumentNummer String
+	Geconstateerd String
+	Geometrie String
+	Identificatie String
+	InOnderzoek String
+	Status String
+	Versie String
+}
+
+entity VERBLIJFSOBJECT {
+	Aantal kamers String
+	Datum Begin Geldigheid String
+	Datum Einde String
+	Datum Einde Geldigheid String
+	Datum Ingang String
+	DocumentDatum String
+	DocumentNr String
+	Gebruiksdoel String
+	Geconstateerd String
+	Geometrie String
+	Hoogste bouwlaag verblijfsobject String
+	Identificatie String
+	InOnderzoek String
+	Laagste bouwlaag verblijfsobject String
+	Ontsluiting verdieping String
+	Soort woonobject String
+	Status String
+	Toegang bouwlaag verblijfsobject String
+	Versie String
+}
+
+entity WIJK {
+	Datum begin geldigheid String
+	Datum Einde String
+	Datum einde geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Geometrie String
+	Identificatie String
+	InOnderzoek String
+	Status String
+	Versie String
+	Wijkcode String
+	Wijknaam String
+}
+
+entity WOONPLAATS {
+	Datum begin geldigheid String
+	Datum Einde String
+	Datum einde geldigheid String
+	Datum Ingang String
+	Geconstateerd String
+	Geometrie String
+	Identificatie String
+	inOnderzoek String
+	Status String
+	Versie String
+	Woonplaatsnaam String
+	Woonplaatsnaam NEN String
+}
+
+entity Periode {
+	datumEinde String
+	datumStart String
+	omschrijving String
+}
+
+entity Foto {
+	bestandsgrootte String
+	bestandsnaam String
+	bestandstype String
+	datumtijd String
+	locatie String
+	pixelsX String
+	pixelsY String
+}
+
+entity Gebied {
+	gebied String
+}
+
+entity Gebiedengroep {
+}
+
+entity Lijn {
+	lijn String
+}
+
+entity Lijnengroep {
+}
+
+entity Locatie {
+	hoogte String
+	naam String
+	NEN3610ID String
+}
+
+entity Punt {
+	punt String
+}
+
+entity Puntengroep {
+}
+
+entity VideoOpname {
+	bestandsgrootte String
+	datumtijd String
+	lengte String
+	videoformaat String
+}
+
+entity Bedrijfsproces {
+	Afgerond String
+	Datum_eind String
+	Datum_start String
+	Naam String
+	Omschrijving String
+}
+
+entity Bedrijfsprocestype {
+	Omschrijving String
+}
+
+entity Besluit {
+	besluit String
+	besluitidentificatie String
+	besluittoelichting String
+	datumBesluit String
+	datumPublicatie String
+	datumStart String
+	datumUiterlijkeReactie String
+	datumVerval String
+	datumVerzending String
+	redenVerval String
+}
+
+entity Besluittype {
+	besluitcategorie String
+	besluittypeOmschrijving String
+	besluittypeOmschrijvingGeneriek String
+	datumBeginGeldigheidBesluittype String
+	datumEindeGeldigheidBesluittype String
+	indicatiePublicatie String
+	publicatietekst String
+	publicatietermijn String
+	reactietermijn String
+}
+
+entity Betaling {
+	bedrag String
+	datumtijd String
+	omschrijving String
+	valuta String
+}
+
+entity Betrokkene {
+	adresBinnenland String
+	adresBuitenland String
+	identificatie String
+	naam String
+	rol String
+}
+
+entity Deelproces {
+	Datum_afgehandeld String
+	Datum_gepland String
+}
+
+entity Deelprocestype {
+	Omschrijving String
+}
+
+entity Document {
+	cocumentBeschrijving String
+	datumCreatieDocument String
+	datumOntvangstdocument String
+	datumVerzendingDocument String
+	documentAuteur String
+	documentIdentificatie String
+	documentTitel String
+	vertrouwelijkAanduiding String
+}
+
+entity Documenttype {
+	datumBeginGeldigheidDocumenttype String
+	datumEindeGeldigheidDocumenttype String
+	documentCategorie String
+	documenttypeOmschrijving String
+	documenttypeOmschrijvingGeneriek String
+	documenttypeTrefwoord String
+}
+
+entity EnkelvoudigDocument {
+	bestandsnaam String
+	documentFormaat String
+	documentInhoud String
+	documentLink String
+	documentStatus String
+	documentTaal String
+	documentVersie String
+}
+
+entity Heffing {
+	bedrag String
+	code String
+	datumIndiening String
+	gefactureerd String
+	inrekening String
+	nummer String
+	runnummer String
+}
+
+entity Identificatiekenmerk {
+	kenmerk String
+}
+
+entity Klantcontact {
+	eindtijd String
+	kanaal String
+	notitie String
+	starttijd String
+	tijdsduur String
+	toelichting String
+	wachttijdTotaal String
+}
+
+entity Medewerker {
+	achternaam String
+	datumInDienst String
+	datumUitDienst String
+	emailadres String
+	extern String
+	functie String
+	geslachtsaanduiding String
+	medewerkerIdentificatie String
+	medewerkerToelichting String
+	roepnaam String
+	telefoonnummer String
+	voorletters String
+	voorvoegselAchternaam String
+}
+
+entity Object {
+	adresBinnenland String
+	adresBuitenland String
+	domein String
+	geometrie String
+	identificatie String
+	indicatieRisico String
+	kadastraleAanduiding String
+	naam String
+	objecttype String
+	toelichting String
+}
+
+entity Offerte {
+}
+
+entity OrganisatorischeEenheid {
+	datumOntstaan String
+	datumOpheffing String
+	emailadres String
+	faxnummer String
+	Formatie String
+	naam String
+	naamVerkort String
+	omschrijving String
+	organisatieIdentificatie String
+	telefoonnummer String
+	toelichting String
+}
+
+entity SamengesteldDocument {
+}
+
+entity Status {
+	datumStatusGezet String
+	indicatieIaatstGezetteStatus String
+	statustoelichting String
+}
+
+entity Statustype {
+	datumBeginGeldigheidStatustype String
+	datumEindeGeldigheidStatustype String
+	doorlooptijdStatus String
+	statustypeOmschrijving String
+	statustypeOmschrijvingGeneriek String
+	statustypeVolgnummer String
+}
+
+entity VestigingVanZaakbehandelendeOrganisatie {
+}
+
+entity Zaak {
+	 String
+	archiefnominatie String
+	datumEinde String
+	datumEindeGepland String
+	datumEindeUiterlijkeAfdoening String
+	datumLaatsteBetaling String
+	datumPublicatie String
+	datumRegistratie String
+	datumStart String
+	datumVernietigingDossier String
+	document String
+	duurVerlenging String
+	indicatieBetaling String
+	indicatieDeelzaken String
+	indicatieOpschorting String
+	leges String
+	omschrijving String
+	omschrijvingResultaat String
+	redenOpschorting String
+	redenVerlenging String
+	toelichting String
+	toelichtingResultaat String
+	vertrouwelijkheid String
+	zaakidentificatie String
+	zaakniveau String
+}
+
+entity ZaakOrigineel {
+	anderZaakobject String
+	archiefnominatie String
+	datumEinde String
+	datumEindeGepland String
+	datumEindeUiterlijkeAfdoening String
+	datumLaatsteBetaling String
+	datumPublicatie String
+	datumRegistratie String
+	datumStart String
+	datumVernietigingDossier String
+	indicatieBetaling String
+	indicatieDeelzaken String
+	kenmerk String
+	omschrijving String
+	omschrijvingResultaat String
+	opschorting String
+	toelichting String
+	toelichtingResultaat String
+	verlenging String
+	zaakidentificatie String
+	zaakniveau String
+}
+
+entity Zaaktype {
+	archiefcode String
+	datumBeginGeldigheidZaaktype String
+	datumEindeGeldigheidZaaktype String
+	doorlooptijdBehandeling String
+	indicatiePublicatie String
+	publicatietekst String
+	servicenormBehandeling String
+	trefwoord String
+	vertrouwelijkAanduiding String
+	zaakcategorie String
+	zaaktypeOmschrijving String
+	zaaktypeOmschrijvingGeneriek String
+}
+
+entity AfwijkendBuitenlandsCorrespondentieadresRol {
+	adresBuitenland1 String
+	adresBuitenland2 String
+	adresBuitenland3 String
+	landPostadres String
+}
+
+entity AfwijkendCorrespondentiePostadresRol {
+	postadresType String
+	postbusOfAntwoordnummer String
+	postcodePostadres String
+}
+
+entity AnderZaakobjectZaak {
+	anderZaakobjectAanduiding String
+	anderZaakobjectLocatie String
+	anderZaakobjectOmschrijving String
+	anderZaakobjectRegistratie String
+}
+
+entity ContactpersoonRol {
+	contactpersoonEmailadres String
+	contactpersoonFunctie String
+	Contactpersoonnaam String
+	contactpersoonTelefoonnummer String
+}
+
+entity KenmerkenZaak {
+	kenmerk String
+	kenmerkBron String
+}
+
+entity OpschortingZaak {
+	indicatieOpschorting String
+	redenOpschorting String
+}
+
+entity VerlengingZaak {
+	duurVerlenging String
+	redenVerlenging String
+}
+
+entity Brondocumenten {
+	akteGemeente String
+	datumDocument String
+	documentGemeente String
+	documentIdentificatie String
+	documentOmschrijving String
+}
+
+entity FormeleHistorie {
+	tijdstipRegistratieGegevens String
+}
+
+entity InOnderzoek {
+	aanduidingGegevensInOnderzoek String
+}
+
+entity MaterieleHistorie {
+	datumBeginGeldigheidGegevens String
+	datumEindeGeldigheidGegevens String
+}
+
+entity StrijdigheidOfNietigheid {
+	aanduidingStrijdigheidNietigheid String
+}
+
+entity Aantekening {
+	aard String
+	begrenzing String
+	betreftGedeelteVanPerceel String
+	datumEinde String
+	datumEindeRecht String
+	identificatie String
+	omschrijving String
+}
+
+entity AdresBuitenland {
+	adresregelBuitenland1 String
+	adresregelBuitenland2 String
+	adresregelBuitenland3 String
+	datumAanvangAdresBuitenland String
+	datumInschrijvingGemeente String
+	datumVestigingNederland String
+	gemeenteVanInschrijving String
+	landAdresBuitenland String
+	landWaarvandaanIngeschreven String
+	omschrijvingVanDeAangifteAdreshouding String
+}
+
+entity Briefadres {
+	adresFunctie String
+	datumAanvang String
+	datumEinde String
+	omschrijvingAangifte String
+}
+
+entity Nationaliteit {
+	Buitenlandse nationaliteit String
+	Datum einde geldigheid String
+	Datum ingang geldigheid String
+	Datum opnamen String
+	Datum verlies nationaliteit String
+	Nationaliteit String
+	Nationaliteitcode String
+	Reden verkrijging Nederlandse nationaliteit String
+	Reden verlies Nederlandse nationaliteit String
+}
+
+entity OnbestemdAdres {
+	huisletter String
+	huisnummer String
+	huisnummertoevoeging String
+	postcode String
+	straatnaam String
+}
+
+entity Nummeraanduiding {
+	datumBeginGeldigheidNummeraanduiding String
+	DatumEindeGeldigheidNummeraanduiding String
+	geconstateerd String
+	huisletter String
+	huisnummer String
+	huisnummertoevoeging String
+	identificatie String
+	inOnderzoek String
+	postcode String
+	status String
+	typeAdresseerbaarObject String
+}
+
+entity Appartementsrecht {
+}
+
+entity Appartementsrechtsplitsing {
+	ddentificatieAppartementsrechtsplitsing String
+	typeSplitsing String
+}
+
+entity BegroeidTerreindeel {
+	begroeidTerreindeelOpTalud String
+	datumBeginGeldigheidBegroeidTerreindeel String
+	datumEindeGeldigheidBegroeidTerreindeel String
+	fysiekVoorkomenBegroeidTerreindeel String
+	geometrieBegroeidTerreindeel String
+	identificatieBegroeidTerreindeel String
+	kruinlijngeometrieBegroeidTerreindeel String
+	LOD0GeometrieBegroeidTerreindeel String
+	plusFysiekVoorkomenBegroeidTerreindeel String
+	relatieveHoogteliggingBegroeidTerreindeel String
+	statusBegroeidTerreindeel String
+}
+
+entity BenoemdObject {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	geometriePunt String
+	geometrieVlak String
+	identificatie String
+}
+
+entity BenoemdTerrein {
+	identificatie String
+}
+
+entity Buurt {
+	buurtcode String
+	buurtgeometrie String
+	buurtnaam String
+	datumBeginGeldigheidBuurt String
+	datumEindeGeldigheidBuurt String
+	identificatie String
+	identificatieIMGeoBRT String
+}
+
+entity Gebied {
+	datumBeginGeldigheidBuurt String
+	datumEindeGeldigheidGebied String
+	gebiedcode String
+	gebiedsoort String
+	geometrie String
+	identificatieIMGeoBRT String
+	naam String
+}
+
+entity FunctioneelGebied {
+	datumBeginGeldigheidFunctioneelGebied String
+	datumEindeGeldigheidFunctioneelGebied String
+	geometrieFunctioneelGebied String
+	identificatieFunctioneelGebied String
+	naamFunctioneelGebied String
+	statusFunctioneelGebied String
+}
+
+entity GebouwdObject {
+	bouwkundigeBestemmingActueel String
+	brutoInhoud String
+	identificatie String
+	inwinningOppervlakte String
+	oppervlakteObject String
+	statusVoortgangBouw String
+}
+
+entity Gebouwinstallatie {
+	datumBeginGeldigheidGebouwinstallatie String
+	datumEindeGeldigheidGebouwinstallatie String
+	geometrieGebouwinstallatie String
+	identificatieGebouwinstallatie String
+	LOD0GeometrieGebouwinstallatie String
+	relatieveHoogteliggingGebouwinstallatie String
+	statusGebouwinstallatie String
+	typeGebouwinstallatie String
+}
+
+entity Gemeente {
+	datumBeginGeldigheidGemeente String
+	datumEindeGeldigheidGemeente String
+	gemeentecode String
+	gemeenteGeometrie String
+	gemeentenaam String
+	gemeentenaamNEN String
+	identificatie String
+}
+
+entity Huishouden {
+	datumBeginGeldigheidHuishouden String
+	datumEindeGeldigheidHuishouden String
+	huishoudengrootte String
+	huishoudennummer String
+	huishoudensoort String
+	relatie String
+}
+
+entity Inrichtingselement {
+	datumBeginGeldigheidInrichtingselement String
+	datumEindeGeldigheidInrichtingselement String
+	geometrieInrichtingselement String
+	identificatieInrichtingselement String
+	LOD0GeometrieInrichtingselement String
+	plusTypeInrichtingselement String
+	relatieveHoogteliggingInrichtingselement String
+	statusInrichtingselement String
+	typeInrichtingselement String
+}
+
+entity KadastraalPerceel {
+	aanduidingSoortGrootte String
+	begrenzingPerceel String
+	groottePerceel String
+	indicatieDeelperceel String
+	omschrijvingDeelperceel String
+	plaatscoordinatenPerceel String
+}
+
+entity KadastraleOnroerendeZaak {
+	 String
+	appartementsrechtvolgnummer String
+	begrenzing String
+	cultuurcodeOnbebouwd String
+	datumBeginGeldigheidKadastraleOnroerendeZaak String
+	datumEindeGeldigheidKadastraleOnroerendeZaak String
+	identificatie String
+	kadastraleGemeente String
+	kadastraleGemeentecode String
+	koopjaar String
+	koopsom String
+	landInrichtingRenteBedrag String
+	landInrichtingRenteEindejaar String
+	ligging String
+	locatieOmschrijving String
+	oppervlakte String
+	oud String
+	perceelnummer String
+	sectie String
+	valutacode String
+}
+
+entity IngeschrevenPersoon {
+	adresHerkomst String
+	anummer String
+	beschrijvingLocatie String
+	buitenlandsReisdocument String
+	burgerlijkeStaat String
+	datumBeginGeldigheidVerblijfplaats String
+	datumEindeGeldigheidVerblijfsplaats String
+	datumInschrijvingGemeente String
+	datumOpschortingBijhouding String
+	datumVertrekUitNederland String
+	datumVestigingNederland String
+	gemeenteVanInschrijving String
+	gezinsrelatie String
+	indicatieGeheim String
+	ingezetene String
+	landWaarnaarVertrokken String
+	landWaarvandaanIngeschreven String
+	ouder1 String
+	ouder2 String
+	partnerID String
+	redenEindeBewoning String
+	redenOpschortingBijhouding String
+	signaleringReisdocument String
+	verblijfstitel String
+}
+
+entity KadastraleOnroerendeZaakAantekening {
+	aardAantekeningKadastraalObject String
+	beschrijvingAantekeningKadastraalObject String
+	datumBeginAantekeningKadastraalObject String
+	datumEindeAantekeningKadastraalObject String
+	kadasterIdentificatieAantekening String
+}
+
+entity Ingezetene {
+	aanduidingEuropeesKiesrecht String
+	aanduidingUitgeslotenKiesrecht String
+	datumVerkrijgingVerblijfstitel String
+	datumVerliesVerblijfstitel String
+	indicatieBlokkering String
+	indicatieCurateleregister String
+	indicatieGezagMinderjarige String
+}
+
+entity Kunstwerkdeel {
+	datumBeginGeldigheidKunstwerkdeel String
+	datumEindeGeldigheidKunstwerkdeel String
+	geometrieKunstwerkdeel String
+	identificatieKunstwerkdeel String
+	LOD0GeometrieKunstwerkdeel String
+	LOD1GeometrieKunstwerkdeel String
+	LOD2GeometrieKunstwerkdeel String
+	lod3GeometrieKunstwerkdeel String
+	relatieveHoogteliggingKunstwerkdeel String
+	statusKunstwerkdeel String
+}
+
+entity Ligplaats {
+	datumDocument String
+	documentNummer String
+	indicatieGeconstateerdeLigplaats String
+	inOnderzoek String
+	ligplaatsidentificatie String
+	ligplaatsstatus String
+}
+
+entity MaatschappelijkeActiviteit {
+	adresBinnenland String
+	adresCorrespondentie String
+	datumAanvang String
+	datumEindeGeldig String
+	datumFaillisement String
+	indicatieEconomischActief String
+	KVKnummer String
+	rechtsvorm String
+	RSIN String
+	statutaireNaam String
+	telefoonnummer String
+	URL String
+}
+
+entity AdresseerbaarObjectAanduiding {
+	identificatie String
+}
+
+entity OnbegroeidTerreindeel {
+	datumBeginGeldigheidOnbegroeidTerreindeel String
+	datumEindeGeldigheidOnbegroeidTerreindeel String
+	fysiekVoorkomenOnbegroeidTerreindeel String
+	geometrieOnbegroeidTerreindeel String
+	identificatieOnbegroeidTerreindeel String
+	kruinlijngeometrieOnbegroeidTerreindeel String
+	onbegroeidTerreindeelOpTalud String
+	plusFysiekVoorkomenOnbegroeidTerreindeel String
+	relatieveHoogteliggingOnbegroeidTerreindeel String
+	statusOnbegroeidTerreindeel String
+}
+
+entity OndersteunendWaterdeel {
+	datumBeginGeldigheidOndersteunendWaterdeel String
+	datumEindeGeldigheidOndersteunendWaterdeel String
+	geometrieOndersteunendWaterdeel String
+	identificatieOndersteunendWaterdeel String
+	plusTypeOndersteunendWaterdeel String
+	relatieveHoogteliggingOndersteunendWaterdeel String
+	statusOndersteunendWaterdeel String
+	typeOndersteunendWaterdeel String
+}
+
+entity OndersteunendWegdeel {
+	datumBeginGeldigheidOndersteunendWegdeel String
+	datumEindeGeldigheidOndersteunendWegdeel String
+	functieOndersteunendWegdeel String
+	fysiekVoorkomenOndersteunendWegdeel  String
+	geometrieOndersteunendWegdeel String
+	identificatieOndersteunendWegdeel String
+	kruinlijngeometrieOndersteunendWegdeel String
+	LOD0GeometrieOndersteunendWegdeel String
+	ondersteunendWegdeelOpTalud String
+	plusFunctieOndersteunendWegdeel String
+	plusFysiekVoorkomenOndersteunendWegdeel String
+	relatieveHoogteliggingOndersteunendWegdeel String
+	statusOndersteunendWegdeel String
+}
+
+entity OpenbareRuimte {
+	datumBeginGeldigheidOpenbareRuimte String
+	datumEindeGeldigheidOpenbareRuimte String
+	huisnummerrangeEvenEnOnevenNummers String
+	huisnummerrangeEvenNummers String
+	HuisnummerrangeOnevenNummers String
+	IdentificatiecodeOpenbareRuimte String
+	identificatieIMGeoOPR String
+	indicatieGeconstateerdeOpenbareRuimte String
+	inOnderzoek String
+	labelNaamOpenbareRuimte String
+	naamOpenbareRuimte String
+	openbareRuimteGeometrie String
+	statusOpenbareRuimte String
+	straatnaam String
+	typeOpenbareRuimte String
+	wegsegment String
+}
+
+entity Overbruggingsdeel {
+	datumBeginGeldigheidOverbruggingsdeel String
+	datumEindeGeldigheidOverbruggingsdeel String
+	geometrieOverbruggingsdeel String
+	hoortBijTypeOverbrugging String
+	identificatieOverbruggingsdeel String
+	LOD0GeometrieOverbruggingsdeel String
+	overbruggingIsBeweegbaar String
+	relatieveHoogteliggingOverbruggingsdeel String
+	statusOverbruggingsdeel String
+	typeOverbruggingsdeel String
+}
+
+entity OverigBenoemdTerrein {
+	gebruiksdoelOverigBenoemdTerrein String
+	overigBenoemdTerreinIdentificatie String
+}
+
+entity NatuurlijkPersoon {
+	 String
+	aanduidingBijzonderNederlanderschapPersoon String
+	aanduidingNaamgebruik String
+	aanhefAanschrijving String
+	academischeTitel String
+	achternaam String
+	adellijkeTitelOfPredikaat String
+	anummer String
+	burgerservicenummer String
+	datumGeboorte String
+	datumOverlijden String
+	geboorteland String
+	geboorteplaats String
+	geslachtsaanduiding String
+	geslachtsnaam String
+	geslachtsnaamAanschrijving String
+	handlichting String
+	IndicatieAfschermingPersoonsgegevens String
+	indicatieOverleden String
+	landOverlijden String
+	nationaliteit String
+	overlijdensplaats String
+	voorlettersAanschrijving String
+	voornamen String
+	voornamenAanschrijving String
+	voorvoegselGeslachtsnaam String
+}
+
+entity OverigBouwwerk {
+	datumBeginGeldigheidOverigBouwwerk String
+	datumEindeGeldigheidOverigBouwwerk String
+	geometrieOverigBouwwerk String
+	identificatieOverigBouwwerk String
+	LOD0GeometrieOverigBouwwerk String
+	LOD1GeometrieOverigBouwwerk String
+	LOD2GeometrieOverigBouwwerk String
+	lod3GeometrieOverigBouwwerk String
+	relatieveHoogteliggingOverigBouwwerk String
+	statusOverigBouwwerk String
+}
+
+entity OverigGebouwdObject {
+	bouwjaar String
+	indicatiePlanobject String
+	overigGebouwdObjectIdentificatie String
+}
+
+entity NietNatuurlijkPersoon {
+	datumAanvang String
+	datumEinde String
+	datumUitschrijving String
+	datumVoortzetting String
+	faxnummer String
+	ingeschreven String
+	inOprichting String
+	KVKnummer String
+	NNPID String
+	rechtsvorm String
+	RSINNummer String
+	statutaireNaam String
+	statutaireZetel String
+	websiteURL String
+}
+
+entity OverigeAdresseerbaarObjectAanduiding {
+	IdentificatiecodeOverigAdresseerbaarObjectAanduiding String
+}
+
+entity OverigeScheiding {
+	datumBeginGeldigheidOverigeScheiding String
+	datumEindeGeldigheidOverigeScheiding String
+	geometrieOverigeScheiding String
+	identificatieOverigeScheiding String
+	LOD0GeometrieOverigeScheiding String
+	LOD1GeometrieOverigeScheiding String
+	LOD2GeometrieOverigeScheiding String
+	lod3GeometrieOverigeScheiding String
+	relatieveHoogteliggingOverigeScheiding String
+	statusOverigeScheiding String
+	typeOverigeScheiding String
+}
+
+entity Pand {
+	brutoInhoudPand String
+	datumBeginGeldigheidPand String
+	datumEindeGeldigheidPand String
+	geometriePunt String
+	hoogsteBouwlaagPand String
+	identificatieBGTPND String
+	indicatieGeconstateerdPand String
+	indicatiePlanobject String
+	inwinningGeometrieBovenaanzicht String
+	inwinningGeometrieMaaiveld String
+	laagsteBouwlaagPand String
+	labelNummeraanduidingreeks String
+	LOD1GeometriePand String
+	LOD2GeometriePand String
+	lod3GeometriePand String
+	oorspronkelijkBouwjaarPand String
+	oppervlaktePand String
+	pandgeometrieBovenaanzicht String
+	pandgeometrieMaaiveld String
+	pandidentificatie String
+	pandstatus String
+	relatieveHoogteliggingPand String
+	statusVoortgangBouw String
+}
+
+entity Reisdocument {
+	aanduidingInhoudingVermissing String
+	autoriteitVanAfgifte String
+	datumEindeGeldigheidDocument String
+	datumIngangDocument String
+	datumInhoudingOfVermissing String
+	datumUitgifte String
+	reisdocumentnummer String
+	soort String
+}
+
+entity Scheiding {
+	datumBeginGeldigheidScheiding String
+	datumEindeGeldigheidScheiding String
+	geometrieScheiding String
+	identificatieScheiding String
+	LOD0GeometrieScheiding String
+	LOD1GeometrieScheiding String
+	LOD2GeometrieScheiding String
+	lod3GeometrieScheiding String
+	relatieveHoogteliggingScheiding String
+	statusScheiding String
+}
+
+entity Spoor {
+	datumBeginGeldigheidSpoor String
+	datumEindeGeldigheidSpoor String
+	geometrieSpoor String
+	identificatieSpoor String
+	LOD0GeometrieSpoor String
+	relatieveHoogteliggingSpoor String
+	statusSpoor String
+}
+
+entity Standplaats {
+	indicatieGeconstateerdeStandplaats String
+	standplaatsidentificatie String
+	standplaatsstatus String
+}
+
+entity Rechtspersoon {
+	adresBinnenland String
+	adresBuitenland String
+	adresCorrespondentie String
+	emailadres String
+	faxnummer String
+	identificatie String
+	KVKnummer String
+	naam String
+	rechtsvorm String
+	rekeningnummer String
+	telefoonnummer String
+}
+
+entity Tenaamstelling {
+	aandeelInRecht String
+	burgerlijkeStaatTenTijdeVanVerkrijging String
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	exploitantcode String
+	identificatieTenaamstelling String
+	verklaringInzakeDerdenBescherming String
+	verkregenNamensSamenwerkingsverband String
+}
+
+entity Tunneldeel {
+	datumBeginGeldigheidTunneldeel String
+	datumEindeGeldigheidTunneldeel String
+	geometrieTunneldeel String
+	identificatieTunneldeel String
+	LOD0GeometrieTunneldeel String
+	relatieveHoogteliggingTunneldeel String
+	statusTunneldeel String
+}
+
+entity Vestiging {
+	commercieleVestiging String
+	datumAanvang String
+	datumEinde String
+	datumVoortzetting String
+	fulltimeWerkzameMannen String
+	fulltimeWerkzameVrouwen String
+	handelsnaam String
+	parttimeWerkzameMannen String
+	parttimeWerkzameVrouwen String
+	toevoegingAdres String
+	totaalWerkzamePersonen String
+	verkorteNaam String
+	vestigingsnummer String
+}
+
+entity Vegetatieobject {
+	datumBeginGeldigheidVegetatieobject String
+	datumEindeGeldigheidVegetatieobject String
+	geometrieVegetatieobject String
+	identificatieVegetatieobject String
+	LOD0GeometrieVegetatieobject String
+	relatieveHoogteliggingVegetatieobject String
+	statusVegetatieobject String
+	typeVegetatieobject String
+}
+
+entity Verblijfsobject {
+	aantalKamers String
+	hoogsteBouwlaagVerblijfsobject String
+	indicatieGeconstateerdVerblijfsobject String
+	inOnderzoek String
+	laagsteBouwlaagVerblijfsobject String
+	ontsluitingVerdieping String
+	soortWoonobject String
+	toegangBouwlaagVerblijfsobject String
+	verblijfsobjectidentificatie String
+	verblijfsobjectstatus String
+}
+
+entity Waterdeel {
+	datumBeginGeldigheidWaterdeel String
+	datumEindeGeldigheidWaterdeel String
+	geometrieWaterdeel String
+	identificatieWaterdeel String
+	plusTypeWaterdeel String
+	relatieveHoogteliggingWaterdeel String
+	statusWaterdeel String
+	typeWaterdeel String
+}
+
+entity Wegdeel {
+	datumBeginGeldigheidWegdeel String
+	datumEindeGeldigheidWegdeel String
+	functieWegdeel String
+	fysiekVoorkomenWegdeel String
+	geometrieWegdeel String
+	identificatieWegdeel String
+	kruinlijngeometrieWegdeel String
+	LOD0GeometrieWegdeel String
+	plusFunctieWegdeel String
+	plusFysiekVoorkomenWegdeel String
+	relatieveHoogteliggingWegdeel String
+	statusWegdeel String
+	wegdeelOpTalud String
+}
+
+entity Verblijfstitel {
+	aanduidingVerblijfstitel String
+	Datum begin String
+	Datum einde String
+	Datum Opname String
+	datumBeginGeldigheidVerblijfstitel String
+	Verblijfstitel code String
+}
+
+entity Wijk {
+	datumBeginGeldigheidWijk String
+	datumEindeGeldigheidWijk String
+	geometrieWijk String
+	identificatie String
+	identificatieIMGeoWYK String
+	wijkcode String
+	wijknaam String
+}
+
+entity Woonplaats {
+	datumBeginGeldigheidWoonplaats String
+	datumEindeGeldigheidWoonplaats String
+	geometrieWoonplaats String
+	indicatieGeconstateerdeWoonplaats String
+	inOnderzoek String
+	woonplaatsIdentificatie String
+	woonplaatsNaam String
+	woonplaatsNaamNEN String
+	woonplaatsStatus String
+}
+
+entity WOZDeelobject {
+	codeWOZDeelobject String
+	datumBeginGeldigheidDeelobject String
+	datumEindeGeldigheidDeelobject String
+	statusWOZDeelobject String
+	WOZDeelobjectNummer String
+}
+
+entity WOZObject {
+	 String
+	datumBeginGeldigheidWOZObject String
+	datumEindeGeldigheidWOZObject String
+	datumWaardepeiling String
+	gebruikscode String
+	geometrieWOZObject String
+	grondoppervlakte String
+	soortobjectcode String
+	statusWOZObject String
+	vastgesteldeWaarde String
+	WOZObjectnummer String
+}
+
+entity WOZWaarde {
+	datumPeilingToestand String
+	datumWaardepeiling String
+	statusBeschikking String
+	vastgesteldeWaarde String
+}
+
+entity ZakelijkRecht {
+	aardZakelijkRecht String
+	datumEindeRecht String
+	datumIngangRecht String
+	identificatieZakelijkRecht String
+	toelichtingBewaarder String
+}
+
+entity Zekerheidsrecht {
+	aandeelInBetrokkenRecht String
+	datumEindeRecht String
+	datumIngangRecht String
+	identificatieZekerheidsrecht String
+	omschrijvingBetrokkenRecht String
+	typeZekerheidsrecht String
+}
+
+entity LocatieaanduidingAdresWOZObject {
+	locatieOmschrijving String
+}
+
+entity Adresaanduiding {
+	BAGID String
+	gemeentenaam String
+	huisletter String
+	huisnummer String
+	huisnummertoevoeging String
+	postcode String
+	straatnaam String
+}
+
+entity CorrespondentieadresBuitenland {
+	adresBuitenland1 String
+	adresBuitenland2 String
+	adresBuitenland3 String
+	adresBuitenland4 String
+	adresBuitenland5 String
+	adresBuitenland6 String
+	landCorrespondentieadres String
+}
+
+entity GeboorteIngeschrevenNatuurlijkPersoon {
+	buitenlandsePlaatsGeboorte String
+	buitenlandseRegioGeboorte String
+	datumGeboorte String
+	gemeenteGeboorte String
+	landOfGebiedGeboorte String
+	omschrijvingLocatieGeboorte String
+}
+
+entity GeboorteIngeschrevenPersoon {
+	datumGeboorte String
+	geboorteland String
+	geboorteplaats String
+}
+
+entity HandelsnamenMaatschappelijkeActiviteit {
+	handelsnaam String
+	verkorteNaam String
+	volgorde String
+}
+
+entity HandelsnamenVestiging {
+	handelsnaam String
+	verkorteNaam String
+	volgorde String
+}
+
+entity KoopsomKadastraleOnroerendeZaak {
+	datumTransactie String
+	koopsom String
+}
+
+entity LocatieKadastraleOnroerendeZaak {
+	aardCultuurBebouwd String
+	locatieOmschrijving String
+}
+
+entity MigratieIngeschrevenNatuurlijkPersoon {
+	aangeverMigratie String
+	redenWijzigingMigratie String
+	soortMigratie String
+}
+
+entity NaamAanschrijvingNatuurlijkPersoon {
+	aanhefAanschrijving String
+	geslachtsnaamAanschrijving String
+	voorlettersAanschrijving String
+	voornamenAanschrijving String
+}
+
+entity NaamgebruikNatuurlijkPersoon {
+	aanhefAanschrijving String
+	adellijkeTitelNaamgebruik String
+	geslachtsnaamstamNaamgebruik String
+}
+
+entity NaamNatuurlijkPersoon {
+	adellijkeTitelOfPredikaat String
+	geslachtsnaam String
+	voornamen String
+	voorvoegselGeslachtsnaam String
+}
+
+entity NationaliteitIngeschrevenNatuurlijkPersoon {
+	buitenlandsPersoonsnummer String
+	nationaliteit String
+	redenVerkrijging String
+	redenVerlies String
+}
+
+entity NederlandseNationaliteitIngeschrevenPersoon {
+	aanduidingBijzonderNederlanderschap String
+	nationaliteit String
+	redenVerkrijgingNederlandseNationaliteit String
+	redenVerliesNederlandseNationaliteit String
+}
+
+entity OntbindingHuwelijk/geregistreerdPartnerschap {
+	buitenlandsePlaatsEinde String
+	buitenlandseRegioEinde String
+	datumEinde String
+	gemeenteEinde String
+	landOfGebiedEinde String
+	omschrijvingLocatieEinde String
+	redenEinde String
+}
+
+entity OverlijdenIngeschrevenNatuurlijkPersoon {
+	buitenlandsePlaatsOverlijden String
+	buitenlandseRegioOverlijden String
+	datumOverlijden String
+	gemeenteOverlijden String
+	landOfGebiedOverlijden String
+	omschrijvingLocatieOverlijden String
+}
+
+entity OverlijdenIngeschrevenPersoon {
+	datumOverlijden String
+	landOverlijden String
+	overlijdensplaats String
+}
+
+entity Postadres {
+	postadresType String
+	postbusOfAntwoordnummer String
+	postcodePostadres String
+}
+
+entity Rekeningnummer {
+	BIC String
+	IBAN String
+}
+
+entity SamengesteldeNaamNatuurlijkPersoon {
+	adellijkeTitel String
+	geslachtsnaamstam String
+	namenreeks String
+	predicaat String
+	scheidingsteken String
+	voornamen String
+	voorvoegsel String
+}
+
+entity SBIActiviteitVestiging {
+	indicatieHoofdactiviteit String
+	SBICode String
+}
+
+entity SluitingOfAangaanHuwelijkOfGeregistreerdPartnerschap {
+	buitenlandsePlaatsAanvang String
+	buitenlandseRegioAanvang String
+	datumAanvang String
+	gemeenteAanvang String
+	landOfGebiedAanvang String
+	omschrijvingLocatieAanvang String
+}
+
+entity SoortFunctioneelGebied {
+	indicatiePlusBRPopulatie String
+	typeFunctioneelGebied String
+}
+
+entity SoortKunstwerk {
+	indicatiePlusBRPopulatie String
+	typeKunstwerk String
+}
+
+entity SoortOverigBouwwerk {
+	indicatiePlusBRPopulatie String
+	typeOverigBouwwerk String
+}
+
+entity SoortScheiding {
+	indicatiePlusBRPopulatie String
+	typeScheiding String
+}
+
+entity SoortSpoor {
+	functieSpoor String
+	indicatiePlusBRPopulatie String
+}
+
+entity SplitsingstekeningReferentie {
+	bronorganisatie String
+	datumCreatie String
+	identificatieTekening String
+	titel String
+}
+
+entity VerblijfadresIngeschrevenNatuurlijkPersoon {
+	adresHerkomst String
+	beschrijvingLocatie String
+}
+
+entity VerblijfadresIngeschrevenPersoon {
+	adresHerkomst String
+	beschrijvingLocatie String
+}
+
+entity VerblijfBuitenland {
+	adresregelBuitenland1 String
+	adresregelBuitenland2 String
+	adresregelBuitenland3 String
+	adresregelBuitenland4 String
+	adresregelBuitenland5 String
+	adresregelBuitenland6 String
+	landOfGebiedVerblijfadres String
+}
+
+entity VerblijfBuitenlandSubject {
+	adresBuitenland1 String
+	adresBuitenland2 String
+	adresBuitenland3 String
+	landVerblijfadres String
+}
+
+entity VerblijfsrechtIngeschrevenNatuurlijkPersoon {
+	aanduidingVerblijfsrecht String
+	datumAanvangVerblijfsrecht String
+	datumMededelingVerblijfsrecht String
+	datumVoorzienEindeVerblijfsrecht String
+}
+
+entity VerstrekkingsbeperkingPartieelIngeschrevenNatuurlijkPersoon {
+	gemeenteVerordening String
+	omschrijvingDerde String
+	partij String
+}
+
+entity AanduidingVerblijfsrecht {
+	datumAanvangGeldigheidVerblijfsrecht String
+	datumEindeGeldigheidVerblijfsrecht String
+	verblijfsrechtnummer String
+	verblijfsrechtomschrijving String
+}
+
+entity AutoriteitAfgifteNederlandsReisdocument {
+	code String
+	datumBeginGeldigheidAutoriteitVanAfgifte String
+	datumEindeGeldigheidAutoriteitVanAfgifte String
+	omschrijving String
+}
+
+entity Verblijfstitel {
+	datumAanvangGeldigheidVerblijfstitel String
+	datumEindeGeldigheidVerblijfstitel String
+	verblijfstitelNumeriek String
+	verblijfstitelOmschrijving String
+}
+
+entity AardAantekening {
+	codeAardAantekening String
+	datumBeginGeldigheidAardAantekening String
+	datumEindeGeldigheidAardAantekening String
+	naamAardAantekening String
+}
+
+entity AardZakelijkRecht {
+	codeAardZakelijkRecht String
+	datumBeginGeldigheidAardZakelijkRecht String
+	datumEindeGeldigheidAardZakelijkRecht String
+	naamAardZakelijkRecht String
+}
+
+entity AardFiliatie {
+	codeAardFiliatie String
+	datumBeginGeldigheidAardFiliatie String
+	datumEindeGeldigheidAardFiliatie String
+	naamAardFiliatie String
+}
+
+entity AcademischeTitel {
+	codeAcademischeTitel String
+	datumBeginGeldigheidTitel String
+	datumEindeGeldigheidTitel String
+	omschrijvingAcademischeTitel String
+	positieAcademischeTitelTOVNaam String
+}
+
+entity AKRKadastraleGemeentecode {
+	AKRCode String
+	codeAKRKadadastraleGemeentecode String
+	datumBeginGeldigheidAKRCode String
+	datumEindeGeldigheidAKRCode String
+}
+
+entity CultuurcodeBebouwd {
+	cultuurcodeBebouwd String
+	datumBeginGeldigheidCultuurcodeBebouwd String
+	datumEindeGeldigheidCultuurcodeBebouwd String
+	naamCultuurcodeBebouwd String
+}
+
+entity CultuurcodeOnbebouwd {
+	cultuurcodeOnbebouwd String
+	datumBeginGeldigheidCultuurcodeOnbebouwd String
+	datumEindeGeldigheidCultuurcodeOnbebouwd String
+	naamCultuurcodeOnbebouwd String
+}
+
+entity WOZDeelobjectcode {
+	datumBeginGeldigheidDeelojectcode String
+	datumEindeGeldigheidDeelobjectcode String
+	deelobjectcode String
+	naamDeelobjectcode String
+}
+
+entity KadastraleGemeente {
+	datumBeginGeldigheidKadastraleGemeente String
+	datumEindeGeldigheidKadastraleGemeente String
+	kadastraleGemeentecode String
+	naam String
+}
+
+entity LandOfGebied {
+	datumEindeLand String
+	datumIngangLand String
+	landcode String
+	landcodeISO String
+	landnaam String
+}
+
+entity Provincie {
+	datumEindeProvincie String
+	datumIngangProvincie String
+	hoofdstad String
+	oppervlakte String
+	oppervlakteLand String
+	provinciecode String
+	provincienaam String
+}
+
+entity Partij {
+	code String
+	datumAanvangGeldigheidPartij String
+	datumEindeGeldigheidPartij String
+	naam String
+	soort String
+	verstrekkingsbeperkingMogelijk String
+}
+
+entity RedenVerkrijgingNationaliteit {
+	datumAanvangGeldigheidVerkrijging String
+	datumEindeGeldigheidVerkrijging String
+	omschrijvingVerkrijging String
+	redennummerVerkrijging String
+}
+
+entity RedenVerliesNationaliteit {
+	datumAanvangGeldigheidVerlies String
+	datumEindeGeldigheidVerlies String
+	omschrijvingVerlies String
+	redennummerVerlies String
+}
+
+entity Reisdocumentsoort {
+	datumBeginGeldigheidReisdocumentsoort String
+	datumEindeGeldigheidReisdocumentsoort String
+	reisdocumentcode String
+	reisdocumentOmschrijving String
+}
+
+entity SBIActiviteit {
+	datumEindeSBIActiviteit String
+	datumIngangSBIActiviteit String
+	hoofdniveau String
+	hoofdniveauOmschrijving String
+	naamActiviteit String
+	SBICode String
+	SBIGroep String
+	SBIGroepOmschrijving String
+}
+
+entity SoortGrootte {
+	codeSoortGrootte String
+	datumBeginGeldigheidSoortGrootte String
+	datumEindeGeldigheidSoortGrootte String
+	naamSoortGrootte String
+}
+
+entity SoortWOZObject {
+	datumBeginGeldigheidSoortObjectcode String
+	datumEindeGeldigheidSoortObjectcode String
+	naamSoortObjectcode String
+	opmerkingenSoortObjectcode String
+	soortobjectcode String
+}
+
+entity Valutasoort {
+	datumBeginGeldigheidValutasoort String
+	datumEindeGeldigheidValutasoort String
+	naamValuta String
+	valutacode String
+}
+
+entity Land {
+	datumEindeFictief String
+	datumEindeLand String
+	datumIngangLand String
+	landcode String
+	landcodeISODrieletterig String
+	landcodeISOTweeletterig String
+	landnaam String
+}
+
+entity Nationaliteit {
+	codeNationaliteit String
+	datumBeginGeldigheidNationaliteit String
+	datumEindeGeldigheidNationaliteit String
+	nationaliteitOmschrijving String
+}
+
+entity Valuta {
+	datumBeginGeldigheid String
+	datumEindeGeldigheid String
+	naam String
+	valutacode String
+}
+
+entity ObjecttypeA {
+}
+
+entity ObjecttypeB {
+}
+
+entity ObjecttypeC {
+}
+
+entity ObjecttypeD {
+}
+
+entity ObjecttypeE {
+}
+
+entity ObjecttypeF {
+}
+
+entity ObjecttypeG {
+}
+
+entity Child Class A {
+	kleur String
+}
+
+entity Class A {
+	naam String
+}
+
+entity Class B {
+	naam String
+	omschrijving String
+}
+
+entity Class C {
+	bedrag String
+	naam String
+}
+
+entity Class A {
+	attribuut A String
+	attrubuut B String
+}
+
+entity Class1 {
+	waarde String
+}
+
+entity Class A {
+}
+
+entity Class B {
+}
+
+entity Class C {
+}
+
+entity Class D {
+}
+
+entity Class E {
+}
+
+entity Class F {
+}
+
+entity Class G {
+}
+
+entity Class H {
+}
+
+entity Class I {
+}
+
+entity Class J {
+}
+
+entity Class A {
+}
+
+entity Class B {
+}
+
+entity Class C {
+}
+
+entity ChildClassA {
+	Kleur String
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ChildClassAID String
+}
+
+entity ClassA {
+	Naam String
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassAID String
+}
+
+entity ClassB {
+	Naam String
+	Omschrijving String
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassBID String
+	ClassAID String
+}
+
+entity ClassC {
+	Bedrag String
+	Naam String
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassCID String
+}
+
+entity Kp_classA_classC {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassCID String
+	ClassAID String
+}
+
+entity ClassA {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassAID String
+}
+
+entity ClassB {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassBID String
+	ClassAID String
+}
+
+entity ClassC {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassCID String
+}
+
+entity ClassD {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassDID String
+	ClassCID String
+}
+
+entity ClassE {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassEID String
+}
+
+entity ClassF {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassFID String
+	AliassourceID String
+}
+
+entity ClassG {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassGID String
+}
+
+entity ClassH {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassHID String
+	ClassGID String
+}
+
+entity ClassI {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassIID String
+	ClassJID String
+}
+
+entity ClassJ {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassJID String
+}
+
+entity ClassA {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassAID String
+	AliassourceID String
+}
+
+entity ClassB {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassBID String
+}
+
+entity ClassC {
+	M_Bronsysteem String
+	M_DatumTijdGeladen String
+	ClassCID String
+	AliasrelasrcID String
+	AliasrelbsrcID String
+}
+
+entity ClassA {
+	AttribuutA String
+	AttrubuutB_EnumID String
+	DWH_RECORD_ID String
+	DWH_ODS_RECORD_ID String
+	DWH_START_DT String
+	DWH_EIND_DT String
+	DWH_RUN_ID String
+	DWH_BRON String
+	DWH_LAAD_DT String
+	DWH_ACTUEEL String
+	ClassAID String
+}
+
+entity Enum_enumerationA {
+	Optie 1 String
+	Optie 2 String
+	ID String
+}
+
+entity Lst_class1 {
+	Waarde String
+	DWH_RECORD_ID String
+	DWH_ODS_RECORD_ID String
+	DWH_START_DT String
+	DWH_EIND_DT String
+	DWH_RUN_ID String
+	DWH_BRON String
+	DWH_LAAD_DT String
+	DWH_ACTUEEL String
+	Lst_class1ID String
+}
+
+relationship One to Many {
+	AanwezigeDeelnemer to Collegelid
+}
+
+relationship One to Many {
+	AanwezigeDeelnemer to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	Vergadering to AanwezigeDeelnemer
+}
+
+relationship One to Many {
+	Raadslid to AanwezigeDeelnemer
+}
+
+relationship One to Many {
+	Stemming to Agendapunt
+}
+
+relationship One to Many {
+	Vergadering to Agendapunt
+}
+
+relationship One to Many {
+	Raadsstuk to Agendapunt
+}
+
+relationship One to Many {
+	VideoOpname to Agendapunt
+}
+
+relationship One to Many {
+	Categorie to Raadsstuk
+}
+
+relationship One to Many {
+	Collegelid to Ingezetene
+}
+
+relationship One to Many {
+	Indiener to Collegelid
+}
+
+relationship One to Many {
+	Dossier to Raadsstuk
+}
+
+relationship One to Many {
+	Indiener to Raadslid
+}
+
+relationship One to Many {
+	Indiener to Raadsstuk
+}
+
+relationship One to Many {
+	Indiener to Rechtspersoon
+}
+
+relationship One to Many {
+	Raadsstuk to Programma
+}
+
+relationship One to Many {
+	Raadscommissie to Vergadering
+}
+
+relationship One to Many {
+	Raadslid to Raadscommissie
+}
+
+relationship One to Many {
+	Raadslid to Ingezetene
+}
+
+relationship One to Many {
+	Raadsstuk to Document
+}
+
+relationship One to Many {
+	Raadsstuk to Vergadering
+}
+
+relationship One to Many {
+	Raadsstuk to Taakveld
+}
+
+relationship One to Many {
+	Vergadering to Raadsstuk
+}
+
+relationship One to Many {
+	Stemming to Raadsstuk
+}
+
+relationship One to Many {
+	Vergadering to VideoOpname
+}
+
+relationship One to Many {
+	 to Heffingsoort
+}
+
+relationship One to Many {
+	 to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Activiteit to LegesGrondslag
+}
+
+relationship One to Many {
+	Activiteit to VTHZaak
+}
+
+relationship One to Many {
+	AanvraagOfMelding to AOMStatus
+}
+
+relationship One to Many {
+	Bevinding to Inspectie
+}
+
+relationship One to Many {
+	Bevinding to Bevinding
+}
+
+relationship One to Many {
+	BOA to VTHMelding
+}
+
+relationship One to Many {
+	Combibon to VTHMelding
+}
+
+relationship One to Many {
+	Fietsregistratie to VTHMelding
+}
+
+relationship One to Many {
+	Grondslag to LegesGrondslag
+}
+
+relationship One to Many {
+	Grondslag to Zaak
+}
+
+relationship One to Many {
+	Heffingsverordening to Heffinggrondslag
+}
+
+relationship One to Many {
+	Zaaktype to Heffinggrondslag
+}
+
+relationship One to Many {
+	Heffing to Heffinggrondslag
+}
+
+relationship One to Many {
+	Heffingsverordening to Document
+}
+
+relationship One to Many {
+	Indiener to Rechtspersoon
+}
+
+relationship One to Many {
+	AanvraagOfMelding to Indiener
+}
+
+relationship One to Many {
+	Inspectie to VTHZaak
+}
+
+relationship One to Many {
+	Kosten to VTHZaak
+}
+
+relationship One to Many {
+	Vorderingregel to Kosten
+}
+
+relationship One to Many {
+	LegesGrondslag to VTHZaak
+}
+
+relationship One to Many {
+	MORAanvraagOfMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Producttype to VTHZaak
+}
+
+relationship One to Many {
+	Bedrijfsprocestype to Producttype
+}
+
+relationship One to Many {
+	Zaak to Producttype
+}
+
+relationship One to Many {
+	Zaaktype to Producttype
+}
+
+relationship One to Many {
+	SubProducttype to Producttype
+}
+
+relationship One to Many {
+	SubProducttype to VTHZaak
+}
+
+relationship One to Many {
+	Object to Vaartuig
+}
+
+relationship One to Many {
+	VomAanvraagOfMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	WABOAanvraagOfMelding to VomAanvraagOfMelding
+}
+
+relationship One to Many {
+	VTHAanvraagOfMelding to VomAanvraagOfMelding
+}
+
+relationship One to Many {
+	Vordering to Vorderingregel
+}
+
+relationship One to Many {
+	Vordering to VTHZaak
+}
+
+relationship One to Many {
+	VTHMelding to Foto
+}
+
+relationship One to Many {
+	VTHMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	VTHMelding to Object
+}
+
+relationship One to Many {
+	Waarneming to VTHMelding
+}
+
+relationship One to Many {
+	VTHZaak to Zaak
+}
+
+relationship One to Many {
+	WoonfraudeAanvraagOfMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	WoonoverlastAanvraagOfMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Heffing to Heffingsoort
+}
+
+relationship One to Many {
+	Belprovider to Leverancier
+}
+
+relationship One to Many {
+	Parkeerrecht to Belprovider
+}
+
+relationship One to Many {
+	MulderFeit to Voertuig
+}
+
+relationship One to Many {
+	Parkeerscan to Naheffing
+}
+
+relationship One to Many {
+	Parkeergarage to Perkeerzone
+}
+
+relationship One to Many {
+	Parkeerrecht to Voertuig
+}
+
+relationship One to Many {
+	Parkeerrecht to Perkeerzone
+}
+
+relationship One to Many {
+	Parkeervergunning to Parkeerrecht
+}
+
+relationship One to Many {
+	Parkeerscan to Parkeerrecht
+}
+
+relationship One to Many {
+	Parkeerscan to Medewerker
+}
+
+relationship One to Many {
+	Parkeerscan to Voertuig
+}
+
+relationship One to Many {
+	Parkeerscan to Parkeervlak
+}
+
+relationship One to Many {
+	Parkeervergunning to Ingezetene
+}
+
+relationship One to Many {
+	Parkeervergunning to Perkeerzone
+}
+
+relationship One to Many {
+	Parkeervergunning to Rechtspersoon
+}
+
+relationship One to Many {
+	Productgroep to Parkeervergunning
+}
+
+relationship One to Many {
+	Productsoort to Parkeervergunning
+}
+
+relationship One to Many {
+	Perkeerzone to Parkeervlak
+}
+
+relationship One to Many {
+	Straatsectie to Parkeervlak
+}
+
+relationship One to Many {
+	Perkeerzone to Straatsectie
+}
+
+relationship One to Many {
+	Productsoort to Productgroep
+}
+
+relationship One to Many {
+	Object to Voertuig
+}
+
+relationship One to Many {
+	Stremming to Wegdeel
+}
+
+relationship One to Many {
+	Medewerker to Stremming
+}
+
+relationship One to Many {
+	Medewerker to Stremming
+}
+
+relationship One to Many {
+	StrooirouteUitvoering to Strooidag
+}
+
+relationship One to Many {
+	StrooirouteUitvoering to Strooiroute
+}
+
+relationship One to Many {
+	Verkeersbesluit to Document
+}
+
+relationship One to Many {
+	Sensor to Verkeerstelling
+}
+
+relationship One to Many {
+	VLogInfo to Sensor
+}
+
+relationship One to Many {
+	VLogInfo to Paal
+}
+
+relationship One to Many {
+	VLogInfo to Kast
+}
+
+relationship One to Many {
+	ProxyConnector to ProxyConnector
+}
+
+relationship One to Many {
+	Contact to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	Contact to Vestiging
+}
+
+relationship One to Many {
+	Hotel to Vestiging
+}
+
+relationship One to Many {
+	Hotel to Hotelbezoek
+}
+
+relationship One to Many {
+	Verkooppunt to Vestiging
+}
+
+relationship One to Many {
+	Vestiging to Werkgelegenheid
+}
+
+relationship One to Many {
+	GebouwdObject to Winkelvloeroppervlak
+}
+
+relationship One to Many {
+	AanvraagOfMelding to Leerling
+}
+
+relationship One to Many {
+	AanvraagOfMelding to Beslissing
+}
+
+relationship One to Many {
+	AanvraagOfMelding to School
+}
+
+relationship One to Many {
+	AanvraagOfMelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Verlofaanvraag to AanvraagOfMelding
+}
+
+relationship One to Many {
+	AanvraagVrijstelling to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Verzuimmelding to AanvraagOfMelding
+}
+
+relationship One to Many {
+	BeschikkingLeerlingenvervoer to Vervoerder
+}
+
+relationship One to Many {
+	BeschikkingLeerlingenvervoer to Beslissing
+}
+
+relationship One to Many {
+	Beslissing to Leerling
+}
+
+relationship One to Many {
+	Beslissing to Leerplichtambtenaar
+}
+
+relationship One to Many {
+	Beslissing to School
+}
+
+relationship One to Many {
+	HALTVerwijzing to Beslissing
+}
+
+relationship One to Many {
+	ProcesverbaalOnderwijs to Beslissing
+}
+
+relationship One to Many {
+	Vrijstelling to Beslissing
+}
+
+relationship One to Many {
+	DoorgeleidingOM to Beslissing
+}
+
+relationship One to Many {
+	DoorgeleidingOM to OuderOfVerzorger
+}
+
+relationship One to Many {
+	KlachtLeerlingenvervoer to Leerling
+}
+
+relationship One to Many {
+	KlachtLeerlingenvervoer to Vervoerder
+}
+
+relationship One to Many {
+	Leerplichtambtenaar to ProcesverbaalOnderwijs
+}
+
+relationship One to Many {
+	Leerplichtambtenaar to Medewerker
+}
+
+relationship One to Many {
+	ProcesverbaalOnderwijs to OuderOfVerzorger
+}
+
+relationship One to Many {
+	Leerling to ProcesverbaalOnderwijs
+}
+
+relationship One to Many {
+	Vervoerder to Leverancier
+}
+
+relationship One to Many {
+	Verzuimmelding to School
+}
+
+relationship One to Many {
+	Leerling to Verzuimmelding
+}
+
+relationship One to Many {
+	Vrijstelling to School
+}
+
+relationship One to Many {
+	Leerling to Vrijstelling
+}
+
+relationship One to Many {
+	Leerling to ZiekmeldingLeerlingenvervoer
+}
+
+relationship One to Many {
+	Inschrijving to School
+}
+
+relationship One to Many {
+	Leerling to Inschrijving
+}
+
+relationship One to Many {
+	Leerling to Startkwalificatie
+}
+
+relationship One to Many {
+	Leerling to Onderwijsloopbaan
+}
+
+relationship One to Many {
+	Leerling to Uitschrijving
+}
+
+relationship One to Many {
+	Leerling to IngeschrevenPersoon
+}
+
+relationship One to Many {
+	Locatie to Vastgoedobject
+}
+
+relationship One to Many {
+	School to Locatie
+}
+
+relationship One to Many {
+	Onderwijsloopbaan to Loopbaanstap
+}
+
+relationship One to Many {
+	School to Onderwijsloopbaan
+}
+
+relationship One to Many {
+	School to Onderwijssoort
+}
+
+relationship One to Many {
+	OuderOfVerzorger to IngeschrevenPersoon
+}
+
+relationship One to Many {
+	School to NietNatuurlijkPersoon
+}
+
+relationship One to Many {
+	School to Uitschrijving
+}
+
+relationship One to Many {
+	School to Sportlocatie
+}
+
+relationship One to Many {
+	School to NietNatuurlijkPersoon
+}
+
+relationship One to Many {
+	Project to Archeologiebesluit
+}
+
+relationship One to Many {
+	Artefact to MagazijnPlaatsing
+}
+
+relationship One to Many {
+	Artefact to Doos
+}
+
+relationship One to Many {
+	Artefact to Artefactsoort
+}
+
+relationship One to Many {
+	Vondst to Artefact
+}
+
+relationship One to Many {
+	Project to Boring
+}
+
+relationship One to Many {
+	Doos to Magazijnlocatie
+}
+
+relationship One to Many {
+	MagazijnPlaatsing to Doos
+}
+
+relationship One to Many {
+	Put to Locatie
+}
+
+relationship One to Many {
+	Project to Locatie
+}
+
+relationship One to Many {
+	MagazijnPlaatsing to Magazijnlocatie
+}
+
+relationship One to Many {
+	Stelling to Magazijnlocatie
+}
+
+relationship One to Many {
+	MagazijnPlaatsing to Project
+}
+
+relationship One to Many {
+	Project to Document
+}
+
+relationship One to Many {
+	Project to Put
+}
+
+relationship One to Many {
+	Vindplaats to Project
+}
+
+relationship One to Many {
+	Put to Vlak
+}
+
+relationship One to Many {
+	Spoor to Vulling
+}
+
+relationship One to Many {
+	Vlak to Spoor
+}
+
+relationship One to Many {
+	Vulling to Vondst
+}
+
+relationship One to Many {
+	 to Archiefcategorie
+}
+
+relationship One to Many {
+	Indeling to 
+}
+
+relationship One to Many {
+	Identificatiekenmerk to 
+}
+
+relationship One to Many {
+	 to Documenttype
+}
+
+relationship One to Many {
+	Aanvraag to Archiefstuk
+}
+
+relationship One to Many {
+	Bezoeker to Aanvraag
+}
+
+relationship One to Many {
+	Archief to Archiefcategorie
+}
+
+relationship One to Many {
+	Archief to Rechthebbende
+}
+
+relationship One to Many {
+	Archief to Periode
+}
+
+relationship One to Many {
+	Archiefstuk to Archief
+}
+
+relationship One to Many {
+	Indeling to Archief
+}
+
+relationship One to Many {
+	Archiefstuk to DigitaalBestand
+}
+
+relationship One to Many {
+	Archiefstuk to Uitgever
+}
+
+relationship One to Many {
+	Archiefstuk to Vindplaats
+}
+
+relationship One to Many {
+	Archiefstuk to ErfgoedObject
+}
+
+relationship One to Many {
+	Archiefstuk to Document
+}
+
+relationship One to Many {
+	Archiefstuk to Ordeningsschema
+}
+
+relationship One to Many {
+	Archiefstuk to NadereToegang
+}
+
+relationship One to Many {
+	Archiefstuk to Periode
+}
+
+relationship One to Many {
+	Indeling to Archiefstuk
+}
+
+relationship One to Many {
+	Auteur to HistorischPersoon
+}
+
+relationship One to Many {
+	Bezoeker to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	Depot to Stelling
+}
+
+relationship One to Many {
+	Vindplaats to Depot
+}
+
+relationship One to Many {
+	Indeling to Indeling
+}
+
+relationship One to Many {
+	NadereToegang to Index
+}
+
+relationship One to Many {
+	Kast to Plank
+}
+
+relationship One to Many {
+	Vindplaats to Kast
+}
+
+relationship One to Many {
+	Stelling to Kast
+}
+
+relationship One to Many {
+	Vindplaats to Plank
+}
+
+relationship One to Many {
+	Rechthebbende to Rechtspersoon
+}
+
+relationship One to Many {
+	Vindplaats to Stelling
+}
+
+relationship One to Many {
+	Uitgever to Rechtspersoon
+}
+
+relationship One to Many {
+	ErfgoedObject to Objectclassificatie
+}
+
+relationship One to Many {
+	Museumobject to ErfgoedObject
+}
+
+relationship One to Many {
+	HistorischPersoon to ErfgoedObject
+}
+
+relationship One to Many {
+	VideoOpname to ErfgoedObject
+}
+
+relationship One to Many {
+	Foto to ErfgoedObject
+}
+
+relationship One to Many {
+	HistorischPersoon to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	Museumobject to HistorischPersoon
+}
+
+relationship One to Many {
+	Tentoonstelling to HistorischPersoon
+}
+
+relationship One to Many {
+	 to KadastraleOnroerendeZaak
+}
+
+relationship One to Many {
+	 to BeschermdeStatus
+}
+
+relationship One to Many {
+	BeschermdeStatus to Ambacht
+}
+
+relationship One to Many {
+	BeschermdeStatus to Bouwstijl
+}
+
+relationship One to Many {
+	BeschermdeStatus to Document
+}
+
+relationship One to Many {
+	BeschermdeStatus to Foto
+}
+
+relationship One to Many {
+	BeschermdeStatus to OpenbareRuimte
+}
+
+relationship One to Many {
+	BeschermdeStatus to Bouwactiviteit
+}
+
+relationship One to Many {
+	BeschermdeStatus to KadastraleOnroerendeZaak
+}
+
+relationship One to Many {
+	BeschermdeStatus to Bouwtype
+}
+
+relationship One to Many {
+	BeschermdeStatus to Pand
+}
+
+relationship One to Many {
+	BeschermdeStatus to OorspronkelijkeFunctie
+}
+
+relationship One to Many {
+	Proxyconnector to Proxyconnector
+}
+
+relationship One to Many {
+	Activiteit to Rondleiding
+}
+
+relationship One to Many {
+	Activiteit to Activiteit
+}
+
+relationship One to Many {
+	Activiteit to Activiteitsoort
+}
+
+relationship One to Many {
+	Activiteit to Reservering
+}
+
+relationship One to Many {
+	Programma to Activiteit
+}
+
+relationship One to Many {
+	Balieverkoop to Prijs
+}
+
+relationship One to Many {
+	Balieverkoop to Product
+}
+
+relationship One to Many {
+	BalieverkoopEntreekaart to Balieverkoop
+}
+
+relationship One to Many {
+	Belanghebbende to Rechtspersoon
+}
+
+relationship One to Many {
+	Museumobject to Belanghebbende
+}
+
+relationship One to Many {
+	Bruikleen to Tentoonstelling
+}
+
+relationship One to Many {
+	Lener to Bruikleen
+}
+
+relationship One to Many {
+	Museumobject to Bruikleen
+}
+
+relationship One to Many {
+	Collectie to Museumobject
+}
+
+relationship One to Many {
+	Doelgroep to Doelgroep
+}
+
+relationship One to Many {
+	Museumrelatie to Doelgroep
+}
+
+relationship One to Many {
+	Entreekaart to Product
+}
+
+relationship One to Many {
+	Incident to Museumobject
+}
+
+relationship One to Many {
+	Lener to Rechtspersoon
+}
+
+relationship One to Many {
+	Mailing to Museumrelatie
+}
+
+relationship One to Many {
+	Museumobject to Tentoonstelling
+}
+
+relationship One to Many {
+	Museumobject to Standplaats
+}
+
+relationship One to Many {
+	Museumrelatie to Programma
+}
+
+relationship One to Many {
+	Museumrelatie to Rechtspersoon
+}
+
+relationship One to Many {
+	Product to Omzetgroep
+}
+
+relationship One to Many {
+	Product to Prijs
+}
+
+relationship One to Many {
+	Product to Productgroep
+}
+
+relationship One to Many {
+	Product to Leverancier
+}
+
+relationship One to Many {
+	Winkelvoorraaditem to Product
+}
+
+relationship One to Many {
+	ProductieEenheid to Leverancier
+}
+
+relationship One to Many {
+	Reservering to ProductieEenheid
+}
+
+relationship One to Many {
+	Programma to Programmasoort
+}
+
+relationship One to Many {
+	Programma to Kostenplaats
+}
+
+relationship One to Many {
+	Reservering to Voorziening
+}
+
+relationship One to Many {
+	Reservering to Zaal
+}
+
+relationship One to Many {
+	Rondleiding to Tentoonstelling
+}
+
+relationship One to Many {
+	Samensteller to Medewerker
+}
+
+relationship One to Many {
+	Samensteller to Tentoonstelling
+}
+
+relationship One to Many {
+	Tentoonstelling to Zaal
+}
+
+relationship One to Many {
+	Proxyconnector to Proxyconnector
+}
+
+relationship One to Many {
+	Proxyconnector to Proxyconnector
+}
+
+relationship One to Many {
+	Binnenlocatie to Belijning
+}
+
+relationship One to Many {
+	Veld to Belijning
+}
+
+relationship One to Many {
+	Binnenlocatie to Sportlocatie
+}
+
+relationship One to Many {
+	Binnenlocatie to Document
+}
+
+relationship One to Many {
+	Binnenlocatie to Sportmateriaal
+}
+
+relationship One to Many {
+	Binnenlocatie to Verblijfsobject
+}
+
+relationship One to Many {
+	Binnenlocatie to Wijk
+}
+
+relationship One to Many {
+	Sportvereniging to Sport
+}
+
+relationship One to Many {
+	Sportvereniging to Sportlocatie
+}
+
+relationship One to Many {
+	Sportpark to Sportlocatie
+}
+
+relationship One to Many {
+	Sportpark to Veld
+}
+
+relationship One to Many {
+	Sportpark to OverigBenoemdTerrein
+}
+
+relationship One to Many {
+	Sportvereniging to NietNatuurlijkPersoon
+}
+
+relationship One to Many {
+	Veld to OverigBenoemdTerrein
+}
+
+relationship One to Many {
+	Gemeentebegrafenis to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	AOMAanvraagWMOJeugd to Client
+}
+
+relationship One to Many {
+	AOMAanvraagWMOJeugd to Beschikking
+}
+
+relationship One to Many {
+	AOMAanvraagWMOJeugd to AanvraagOfMelding
+}
+
+relationship One to Many {
+	Verplichting WMO Jeugd to AOMAanvraagWMOJeugd
+}
+
+relationship One to Many {
+	AOMMeldingWMOJeugd to AanvraagOfMelding
+}
+
+relationship One to Many {
+	AOMMeldingWMOJeugd to Client
+}
+
+relationship One to Many {
+	Beschikking to AOMMeldingWMOJeugd
+}
+
+relationship One to Many {
+	Beperking to Beperkingscategorie
+}
+
+relationship One to Many {
+	Beperking to Beschikking
+}
+
+relationship One to Many {
+	Beperking to Beperkingscore
+}
+
+relationship One to Many {
+	Beperkingscore to Beperkingscoresoort
+}
+
+relationship One to Many {
+	Beschikking to Client
+}
+
+relationship One to Many {
+	Beschikking to BeschikteVoorziening
+}
+
+relationship One to Many {
+	Beschikking to Toewijzing
+}
+
+relationship One to Many {
+	MeldingEigenBijdrage to Beschikking
+}
+
+relationship One to Many {
+	Levering to Beschikking
+}
+
+relationship One to Many {
+	Clientbegeleider to Beschikking
+}
+
+relationship One to Many {
+	Declaratieregel to Beschikking
+}
+
+relationship One to Many {
+	VerzoekOmToewijzing to Beschikking
+}
+
+relationship One to Many {
+	BeschikteVoorziening to Voorziening
+}
+
+relationship One to Many {
+	BeschikteVoorziening to Toewijzing
+}
+
+relationship One to Many {
+	BeschikteVoorziening to Leveringsvorm
+}
+
+relationship One to Many {
+	PGBToekenning to BeschikteVoorziening
+}
+
+relationship One to Many {
+	Verplichting WMO Jeugd to BeschikteVoorziening
+}
+
+relationship One to Many {
+	PGBToekenning to Budgetuitputting
+}
+
+relationship One to Many {
+	Client to Score
+}
+
+relationship One to Many {
+	Client to Tegenprestatie
+}
+
+relationship One to Many {
+	Client to Inkomensvoorziening
+}
+
+relationship One to Many {
+	Client to IngeschrevenPersoon
+}
+
+relationship One to Many {
+	Client to Traject
+}
+
+relationship One to Many {
+	Client to Relatie
+}
+
+relationship One to Many {
+	Client to Fraudegegevens
+}
+
+relationship One to Many {
+	Client to Inkomensvoorziening
+}
+
+relationship One to Many {
+	Client to InformatieDakloosheid
+}
+
+relationship One to Many {
+	Client to Regeling
+}
+
+relationship One to Many {
+	Client to Huishouden
+}
+
+relationship One to Many {
+	Client to Taalniveau
+}
+
+relationship One to Many {
+	Client to Participatiedossier
+}
+
+relationship One to Many {
+	Client to Traject
+}
+
+relationship One to Many {
+	Client to Inkomensvoorziening
+}
+
+relationship One to Many {
+	Client to SociaalteamDossier
+}
+
+relationship One to Many {
+	Client to FinancieleSituatie
+}
+
+relationship One to Many {
+	Client to Doelgroep
+}
+
+relationship One to Many {
+	Levering to Client
+}
+
+relationship One to Many {
+	Verplichting WMO Jeugd to Client
+}
+
+relationship One to Many {
+	Clientbegeleider to Client
+}
+
+relationship One to Many {
+	Declaratieregel to Client
+}
+
+relationship One to Many {
+	VerzoekOmToewijzing to Client
+}
+
+relationship One to Many {
+	Clientbegeleider to Team
+}
+
+relationship One to Many {
+	Clientbegeleider to Medewerker
+}
+
+relationship One to Many {
+	Clientbegeleider to Inkomensvoorziening
+}
+
+relationship One to Many {
+	Clientbegeleider to SociaalteamDossier
+}
+
+relationship One to Many {
+	Clientbegeleider to Traject
+}
+
+relationship One to Many {
+	Participatiedossier to Clientbegeleider
+}
+
+relationship One to Many {
+	Declaratie to Leverancier
+}
+
+relationship One to Many {
+	Declaratieregel to Declaratie
+}
+
+relationship One to Many {
+	Toewijzing to Declaratieregel
+}
+
+relationship One to Many {
+	Relatie to Huishouden
+}
+
+relationship One to Many {
+	Score to Leefgebied
+}
+
+relationship One to Many {
+	ZelfredzaamheidMatrix to Leefgebied
+}
+
+relationship One to Many {
+	Leverancier to Contract
+}
+
+relationship One to Many {
+	Leverancier to Levering
+}
+
+relationship One to Many {
+	Leverancier to Rechtspersoon
+}
+
+relationship One to Many {
+	Toewijzing to Leverancier
+}
+
+relationship One to Many {
+	VerzoekOmToewijzing to Leverancier
+}
+
+relationship One to Many {
+	Verplichting WMO Jeugd to Leverancier
+}
+
+relationship One to Many {
+	Tarief to Leverancier
+}
+
+relationship One to Many {
+	Levering to Toewijzing
+}
+
+relationship One to Many {
+	Levering to Voorziening
+}
+
+relationship One to Many {
+	Relatie to Relatiesoort
+}
+
+relationship One to Many {
+	Relatie to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	SociaalteamDossier to Relatie
+}
+
+relationship One to Many {
+	Score to Scoresoort
+}
+
+relationship One to Many {
+	ZelfredzaamheidMatrix to Scoresoort
+}
+
+relationship One to Many {
+	Contract to Tarief
+}
+
+relationship One to Many {
+	Voorziening to Tarief
+}
+
+relationship One to Many {
+	Verplichting WMO Jeugd to Inkooporder
+}
+
+relationship One to Many {
+	VerzoekOmToewijzing to Voorziening
+}
+
+relationship One to Many {
+	Voorziening to Voorzieningsoort
+}
+
+relationship One to Many {
+	Asielstatushouder to Gemeente
+}
+
+relationship One to Many {
+	Asielstatushouder to Verblijfplaats AZC
+}
+
+relationship One to Many {
+	Asielstatushouder to Inburgeraar
+}
+
+relationship One to Many {
+	B1 to Leerroute
+}
+
+relationship One to Many {
+	Brede Intake to Inburgeringstraject
+}
+
+relationship One to Many {
+	PIP to Brede Intake
+}
+
+relationship One to Many {
+	Examen to Inburgeringstraject
+}
+
+relationship One to Many {
+	Examenonderdeel to Examen
+}
+
+relationship One to Many {
+	Gezinsmigrant en Overige migrant
+ to Inburgeraar
+}
+
+relationship One to Many {
+	Inburgeraar to Vreemdeling
+}
+
+relationship One to Many {
+	Inburgeringstraject to Inburgeraar
+}
+
+relationship One to Many {
+	PVT to Inburgeringstraject
+}
+
+relationship One to Many {
+	MAP to Inburgeringstraject
+}
+
+relationship One to Many {
+	KNM? to Leerroute
+}
+
+relationship One to Many {
+	Leerroute to PIP
+}
+
+relationship One to Many {
+	Z to Leerroute
+}
+
+relationship One to Many {
+	Onderwijs to Leerroute
+}
+
+relationship One to Many {
+	ParticipatieComponent to Z
+}
+
+relationship One to Many {
+	Vreemdeling to NatuurlijkPersoon
+}
+
+relationship One to Many {
+	Traject to NotarieleStatus
+}
+
+relationship One to Many {
+	Project to Projectsoort
+}
+
+relationship One to Many {
+	Project to Uitstroomreden
+}
+
+relationship One to Many {
+	Project to Resultaat
+}
+
+relationship One to Many {
+	Traject to Project
+}
+
+relationship One to Many {
+	Resultaat to Resultaatsoort
+}
+
+relationship One to Many {
+	Traject to Resultaat
+}
+
+relationship One to Many {
+	Traject to Uitstroomreden
+}
+
+relationship One to Many {
+	Uitstroomreden to Uitstroomredensoort
+}
+
+relationship One to Many {
+	Behandeling to Behandelsoort
+}
+
+relationship One to Many {
+	SociaalteamDossier to Behandeling
+}
+
+relationship One to Many {
+	Bijzonderheid to Bijzonderheidsoort
+}
+
+relationship One to Many {
+	SociaalteamDossier to Bijzonderheid
+}
+
+relationship One to Many {
+	SociaalteamDossier to Caseaanmelding
+}
+
+relationship One to Many {
+	Doelstelling to Doelstellingsoort
+}
+
+relationship One to Many {
+	SociaalteamDossier to Doelstelling
+}
+
+relationship One to Many {
+	SociaalteamDossier to SociaalteamDossiersoort
+}
+
