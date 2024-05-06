@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Klantcontact.
+    -->
+    <changeSet id="20240506114409-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftklantcontacten_betrokkene_id"
+                                 baseTableName="klantcontact"
+                                 constraintName="fk_klantcontact__heeftklantcontacten_betrokkene_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="betrokkene"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftbetrekkingop_zaak_id"
+                                 baseTableName="klantcontact"
+                                 constraintName="fk_klantcontact__heeftbetrekkingop_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isgevoerddoor_medewerker_id"
+                                 baseTableName="klantcontact"
+                                 constraintName="fk_klantcontact__isgevoerddoor_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_telefoononderwerp_id"
+                                 baseTableName="klantcontact"
+                                 constraintName="fk_klantcontact__heeft_telefoononderwerp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telefoononderwerp"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="mondtuitin_telefoontje_id"
+                                 baseTableName="klantcontact"
+                                 constraintName="fk_klantcontact__mondtuitin_telefoontje_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telefoontje"
+                                 />
+    </changeSet>
+</databaseChangeLog>

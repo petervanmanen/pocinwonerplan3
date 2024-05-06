@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Container.
+    -->
+    <changeSet id="20240506113907-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="geschiktvoor_fractie_id"
+                                 baseTableName="container"
+                                 constraintName="fk_container__geschiktvoor_fractie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fractie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="soort_containertype_id"
+                                 baseTableName="container"
+                                 constraintName="fk_container__soort_containertype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="containertype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_locatie_id"
+                                 baseTableName="container"
+                                 constraintName="fk_container__heeft_locatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

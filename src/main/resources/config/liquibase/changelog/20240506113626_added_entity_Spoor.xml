@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Spoor.
+    -->
+    <changeSet id="20240506113626-1" author="jhipster">
+        <createTable tableName="spoor">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aard" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datering" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datum" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="hoogteboven" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hoogteonder" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="keyvlak" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectcd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="putnummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="spoornummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vlaknummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vorm" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_vlak_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113626-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/spoor.csv"
+                  separator=";"
+                  tableName="spoor"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aard" type="string"/>
+            <column name="beschrijving" type="string"/>
+            <column name="datering" type="string"/>
+            <column name="datum" type="date"/>
+            <column name="hoogteboven" type="string"/>
+            <column name="hoogteonder" type="string"/>
+            <column name="key" type="string"/>
+            <column name="keyvlak" type="string"/>
+            <column name="projectcd" type="string"/>
+            <column name="putnummer" type="string"/>
+            <column name="spoornummer" type="string"/>
+            <column name="vlaknummer" type="string"/>
+            <column name="vorm" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

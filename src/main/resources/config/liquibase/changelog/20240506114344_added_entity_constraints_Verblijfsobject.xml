@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Verblijfsobject.
+    -->
+    <changeSet id="20240506114344-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_vastgoedobject_id"
+                                 baseTableName="verblijfsobject"
+                                 constraintName="fk_verblijfsobject__heeft_vastgoedobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vastgoedobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verblijfsobject_id"
+                                 baseTableName="rel_verblijfsobject__maaktdeeluitvan_pand"
+                                 constraintName="fk_rel_verblijfsobject__maaktde__verblijfsobject_58_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verblijfsobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="maaktdeeluitvan_pand_id"
+                                 baseTableName="rel_verblijfsobject__maaktdeeluitvan_pand"
+                                 constraintName="fk_rel_verblijfsobject__maaktde__maaktdeeluitvan_pand_85_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pand"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Client.
+    -->
+    <changeSet id="20240506113750-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_participatiedossier_id"
+                                 baseTableName="client"
+                                 constraintName="fk_client__heeft_participatiedossier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="participatiedossier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftvoorziening_inkomensvoorziening_id"
+                                 baseTableName="client"
+                                 constraintName="fk_client__heeftvoorziening_inkomensvoorziening_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkomensvoorziening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnendoelgroep_doelgroep_id"
+                                 baseTableName="client"
+                                 constraintName="fk_client__valtbinnendoelgroep_doelgroep_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doelgroep"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="rel_client__heeftrelatie_relatie"
+                                 constraintName="fk_rel_client__heeftrelatie_relatie__client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftrelatie_relatie_id"
+                                 baseTableName="rel_client__heeftrelatie_relatie"
+                                 constraintName="fk_rel_client__heeftrelatie_relatie__heeftrelatie_relatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="relatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="rel_client__voorzieningbijstandspartij_inkomensvoorziening"
+                                 constraintName="fk_rel_client__voorzieningbijst__client_e0_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voorzieningbijstandspartij_inkomensvoorziening_id"
+                                 baseTableName="rel_client__voorzieningbijstandspartij_inkomensvoorziening"
+                                 constraintName="fk_rel_client__voorzieningbijst__voorzieningbijstandspart_28_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkomensvoorziening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="rel_client__maaktonderdeeluitvan_huishouden"
+                                 constraintName="fk_rel_client__maaktonderdeeluitvan_huishouden__client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="maaktonderdeeluitvan_huishouden_id"
+                                 baseTableName="rel_client__maaktonderdeeluitvan_huishouden"
+                                 constraintName="fk_rel_client__maaktonderdeelui__maaktonderdeeluitvan_hui_e1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="huishouden"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="rel_client__heefttaalniveau_taalniveau"
+                                 constraintName="fk_rel_client__heefttaalniveau_taalniveau__client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heefttaalniveau_taalniveau_id"
+                                 baseTableName="rel_client__heefttaalniveau_taalniveau"
+                                 constraintName="fk_rel_client__heefttaalniveau___heefttaalniveau_taalnive_08_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="taalniveau"
+                                 />
+    </changeSet>
+</databaseChangeLog>

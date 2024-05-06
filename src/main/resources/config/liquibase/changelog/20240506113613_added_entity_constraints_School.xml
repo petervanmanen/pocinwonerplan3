@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity School.
+    -->
+    <changeSet id="20240506113613-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="school_id"
+                                 baseTableName="rel_school__kent_onderwijsloopbaan"
+                                 constraintName="fk_rel_school__kent_onderwijsloopbaan__school_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="school"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="kent_onderwijsloopbaan_id"
+                                 baseTableName="rel_school__kent_onderwijsloopbaan"
+                                 constraintName="fk_rel_school__kent_onderwijslo__kent_onderwijsloopbaan_e4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="onderwijsloopbaan"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="school_id"
+                                 baseTableName="rel_school__heeft_onderwijssoort"
+                                 constraintName="fk_rel_school__heeft_onderwijssoort__school_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="school"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_onderwijssoort_id"
+                                 baseTableName="rel_school__heeft_onderwijssoort"
+                                 constraintName="fk_rel_school__heeft_onderwijssoort__heeft_onderwijssoort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="onderwijssoort"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="school_id"
+                                 baseTableName="rel_school__gebruikt_sportlocatie"
+                                 constraintName="fk_rel_school__gebruikt_sportlocatie__school_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="school"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gebruikt_sportlocatie_id"
+                                 baseTableName="rel_school__gebruikt_sportlocatie"
+                                 constraintName="fk_rel_school__gebruikt_sportlocatie__gebruikt_sportlocatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportlocatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

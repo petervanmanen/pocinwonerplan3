@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Archiefstuk.
+    -->
+    <changeSet id="20240506113635-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="isonderdeelvan_archief_id"
+                                 baseTableName="archiefstuk"
+                                 constraintName="fk_archiefstuk__isonderdeelvan_archief_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archief"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_uitgever_id"
+                                 baseTableName="archiefstuk"
+                                 constraintName="fk_archiefstuk__heeft_uitgever_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uitgever"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_vindplaats_id"
+                                 baseTableName="archiefstuk"
+                                 constraintName="fk_archiefstuk__heeft_vindplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vindplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="archiefstuk_id"
+                                 baseTableName="rel_archiefstuk__heeft_ordeningsschema"
+                                 constraintName="fk_rel_archiefstuk__heeft_ordeningsschema__archiefstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archiefstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_ordeningsschema_id"
+                                 baseTableName="rel_archiefstuk__heeft_ordeningsschema"
+                                 constraintName="fk_rel_archiefstuk__heeft_orden__heeft_ordeningsschema_6e_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ordeningsschema"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="archiefstuk_id"
+                                 baseTableName="rel_archiefstuk__stamtuit_periode"
+                                 constraintName="fk_rel_archiefstuk__stamtuit_periode__archiefstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archiefstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="stamtuit_periode_id"
+                                 baseTableName="rel_archiefstuk__stamtuit_periode"
+                                 constraintName="fk_rel_archiefstuk__stamtuit_periode__stamtuit_periode_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="periode"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_indeling_id"
+                                 baseTableName="archiefstuk"
+                                 constraintName="fk_archiefstuk__valtbinnen_indeling_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="indeling"
+                                 />
+    </changeSet>
+</databaseChangeLog>

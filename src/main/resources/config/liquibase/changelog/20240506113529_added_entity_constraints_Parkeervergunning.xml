@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Parkeervergunning.
+    -->
+    <changeSet id="20240506113529-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="resulteert_parkeerrecht_id"
+                                 baseTableName="parkeervergunning"
+                                 constraintName="fk_parkeervergunning__resulteert_parkeerrecht_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="parkeerrecht"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="houder_rechtspersoon_id"
+                                 baseTableName="parkeervergunning"
+                                 constraintName="fk_parkeervergunning__houder_rechtspersoon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechtspersoon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="soort_productgroep_id"
+                                 baseTableName="parkeervergunning"
+                                 constraintName="fk_parkeervergunning__soort_productgroep_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productgroep"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="soort_productsoort_id"
+                                 baseTableName="parkeervergunning"
+                                 constraintName="fk_parkeervergunning__soort_productsoort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productsoort"
+                                 />
+    </changeSet>
+</databaseChangeLog>

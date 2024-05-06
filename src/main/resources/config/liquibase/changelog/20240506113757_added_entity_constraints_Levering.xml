@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Levering.
+    -->
+    <changeSet id="20240506113757-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="geleverdeprestatie_beschikking_id"
+                                 baseTableName="levering"
+                                 constraintName="fk_levering__geleverdeprestatie_beschikking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beschikking"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="prestatievoor_client_id"
+                                 baseTableName="levering"
+                                 constraintName="fk_levering__prestatievoor_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="geleverdezorg_toewijzing_id"
+                                 baseTableName="levering"
+                                 constraintName="fk_levering__geleverdezorg_toewijzing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="toewijzing"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voorziening_voorziening_id"
+                                 baseTableName="levering"
+                                 constraintName="fk_levering__voorziening_voorziening_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="voorziening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="leverdeprestatie_leverancier_id"
+                                 baseTableName="levering"
+                                 constraintName="fk_levering__leverdeprestatie_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+    </changeSet>
+</databaseChangeLog>

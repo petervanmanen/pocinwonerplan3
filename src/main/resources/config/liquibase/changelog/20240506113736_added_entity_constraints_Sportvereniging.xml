@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Sportvereniging.
+    -->
+    <changeSet id="20240506113736-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="sportvereniging_id"
+                                 baseTableName="rel_sportvereniging__oefentuit_sport"
+                                 constraintName="fk_rel_sportvereniging__oefentuit_sport__sportvereniging_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportvereniging"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="oefentuit_sport_id"
+                                 baseTableName="rel_sportvereniging__oefentuit_sport"
+                                 constraintName="fk_rel_sportvereniging__oefentuit_sport__oefentuit_sport_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sport"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="sportvereniging_id"
+                                 baseTableName="rel_sportvereniging__gebruikt_sportlocatie"
+                                 constraintName="fk_rel_sportvereniging__gebruik__sportvereniging_9c_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportvereniging"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gebruikt_sportlocatie_id"
+                                 baseTableName="rel_sportvereniging__gebruikt_sportlocatie"
+                                 constraintName="fk_rel_sportvereniging__gebruik__gebruikt_sportlocatie_fb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportlocatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Kostenplaats.
+    -->
+    <changeSet id="20240506114236-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="kostenplaats_id"
+                                 baseTableName="rel_kostenplaats__heeft_inkooporder"
+                                 constraintName="fk_rel_kostenplaats__heeft_inkooporder__kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_inkooporder_id"
+                                 baseTableName="rel_kostenplaats__heeft_inkooporder"
+                                 constraintName="fk_rel_kostenplaats__heeft_inkooporder__heeft_inkooporder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="kostenplaats_id"
+                                 baseTableName="rel_kostenplaats__heeft_taakveld"
+                                 constraintName="fk_rel_kostenplaats__heeft_taakveld__kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_taakveld_id"
+                                 baseTableName="rel_kostenplaats__heeft_taakveld"
+                                 constraintName="fk_rel_kostenplaats__heeft_taakveld__heeft_taakveld_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="taakveld"
+                                 />
+    </changeSet>
+</databaseChangeLog>

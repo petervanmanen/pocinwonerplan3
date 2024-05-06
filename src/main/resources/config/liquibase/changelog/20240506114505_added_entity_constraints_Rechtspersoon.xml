@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Rechtspersoon.
+    -->
+    <changeSet id="20240506114505-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="rechtspersoon_id"
+                                 baseTableName="rel_rechtspersoon__betrokkenen_kadastralemutatie"
+                                 constraintName="fk_rel_rechtspersoon__betrokken__rechtspersoon_af_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechtspersoon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betrokkenen_kadastralemutatie_id"
+                                 baseTableName="rel_rechtspersoon__betrokkenen_kadastralemutatie"
+                                 constraintName="fk_rel_rechtspersoon__betrokken__betrokkenen_kadastralemu_a5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kadastralemutatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

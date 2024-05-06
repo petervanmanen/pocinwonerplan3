@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Hoofdrekening.
+    -->
+    <changeSet id="20240506114233-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="hoofdrekening_id"
+                                 baseTableName="rel_hoofdrekening__heeft_activa"
+                                 constraintName="fk_rel_hoofdrekening__heeft_activa__hoofdrekening_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdrekening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_activa_id"
+                                 baseTableName="rel_hoofdrekening__heeft_activa"
+                                 constraintName="fk_rel_hoofdrekening__heeft_activa__heeft_activa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activa"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="hoofdrekening_id"
+                                 baseTableName="rel_hoofdrekening__heeft_kostenplaats"
+                                 constraintName="fk_rel_hoofdrekening__heeft_kostenplaats__hoofdrekening_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdrekening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_kostenplaats_id"
+                                 baseTableName="rel_hoofdrekening__heeft_kostenplaats"
+                                 constraintName="fk_rel_hoofdrekening__heeft_kostenplaats__heeft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_hoofdrekening2_id"
+                                 baseTableName="hoofdrekening"
+                                 constraintName="fk_hoofdrekening__valtbinnen_hoofdrekening2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdrekening"
+                                 />
+    </changeSet>
+</databaseChangeLog>

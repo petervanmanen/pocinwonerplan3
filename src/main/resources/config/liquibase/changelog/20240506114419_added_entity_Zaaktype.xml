@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Zaaktype.
+    -->
+    <changeSet id="20240506114419-1" author="jhipster">
+        <createTable tableName="zaaktype">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="archiefcode" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumbegingeldigheidzaaktype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeindegeldigheidzaaktype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="doorlooptijdbehandeling" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatiepublicatie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="publicatietekst" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="servicenormbehandeling" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="trefwoord" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vertrouwelijkaanduiding" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zaakcategorie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zaaktypeomschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zaaktypeomschrijvinggeneriek" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_producttype_id" type="bigint">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_zaaktype__heeft_producttype_id" />
+            </column>
+            <column name="betreft_product_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_bedrijfsprocestype_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="isverantwoordelijkevoor_medewerker_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114419-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/zaaktype.csv"
+                  separator=";"
+                  tableName="zaaktype"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="archiefcode" type="string"/>
+            <column name="datumbegingeldigheidzaaktype" type="string"/>
+            <column name="datumeindegeldigheidzaaktype" type="string"/>
+            <column name="doorlooptijdbehandeling" type="string"/>
+            <column name="indicatiepublicatie" type="string"/>
+            <column name="publicatietekst" type="string"/>
+            <column name="servicenormbehandeling" type="string"/>
+            <column name="trefwoord" type="string"/>
+            <column name="vertrouwelijkaanduiding" type="string"/>
+            <column name="zaakcategorie" type="string"/>
+            <column name="zaaktypeomschrijving" type="string"/>
+            <column name="zaaktypeomschrijvinggeneriek" type="string"/>
+            <column name="heeft_producttype_id" type="numeric"/>
+            <column name="heeft_bedrijfsprocestype_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

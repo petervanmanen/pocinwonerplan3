@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Inkooporder.
+    -->
+    <changeSet id="20240506114235-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_contract_id"
+                                 baseTableName="inkooporder"
+                                 constraintName="fk_inkooporder__betreft_contract_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contract"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="oorspronkelijk_inkooporder_id"
+                                 baseTableName="inkooporder"
+                                 constraintName="fk_inkooporder__oorspronkelijk_inkooporder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_inkooppakket_id"
+                                 baseTableName="inkooporder"
+                                 constraintName="fk_inkooporder__heeft_inkooppakket_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooppakket"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verplichtingaan_leverancier_id"
+                                 baseTableName="inkooporder"
+                                 constraintName="fk_inkooporder__verplichtingaan_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="inkooporder_id"
+                                 baseTableName="rel_inkooporder__wordtgeschrevenop_hoofdrekening"
+                                 constraintName="fk_rel_inkooporder__wordtgeschr__inkooporder_fc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="wordtgeschrevenop_hoofdrekening_id"
+                                 baseTableName="rel_inkooporder__wordtgeschrevenop_hoofdrekening"
+                                 constraintName="fk_rel_inkooporder__wordtgeschr__wordtgeschrevenop_hoofdr_e5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdrekening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gerelateerd_inkooporder2_id"
+                                 baseTableName="inkooporder"
+                                 constraintName="fk_inkooporder__gerelateerd_inkooporder2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Stremming.
+    -->
+    <changeSet id="20240506113536-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="stremming_id"
+                                 baseTableName="rel_stremming__betreft_wegdeel"
+                                 constraintName="fk_rel_stremming__betreft_wegdeel__stremming_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stremming"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_wegdeel_id"
+                                 baseTableName="rel_stremming__betreft_wegdeel"
+                                 constraintName="fk_rel_stremming__betreft_wegdeel__betreft_wegdeel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wegdeel"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ingevoerddoor_medewerker_id"
+                                 baseTableName="stremming"
+                                 constraintName="fk_stremming__ingevoerddoor_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gewijzigddoor_medewerker_id"
+                                 baseTableName="stremming"
+                                 constraintName="fk_stremming__gewijzigddoor_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Project.
+    -->
+    <changeSet id="20240506113624-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftuitstroomreden_uitstroomreden_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project__heeftuitstroomreden_uitstroomreden_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uitstroomreden"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftresultaat_resultaat_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project__heeftresultaat_resultaat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resultaat"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="soortproject_projectsoort_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project__soortproject_projectsoort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projectsoort"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="rel_project__wordtbegrensddoor_locatie"
+                                 constraintName="fk_rel_project__wordtbegrensddoor_locatie__project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="wordtbegrensddoor_locatie_id"
+                                 baseTableName="rel_project__wordtbegrensddoor_locatie"
+                                 constraintName="fk_rel_project__wordtbegrensddo__wordtbegrensddoor_locati_74_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="rel_project__heeft_kostenplaats"
+                                 constraintName="fk_rel_project__heeft_kostenplaats__project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_kostenplaats_id"
+                                 baseTableName="rel_project__heeft_kostenplaats"
+                                 constraintName="fk_rel_project__heeft_kostenplaats__heeft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftproject_traject_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project__heeftproject_traject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="traject"
+                                 />
+    </changeSet>
+</databaseChangeLog>

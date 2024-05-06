@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Overigbouwwerk.
+    -->
+    <changeSet id="20240506114459-1" author="jhipster">
+        <createTable tableName="overigbouwwerk">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="datumbegingeldigheidoverigbouwwerk" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeindegeldigheidoverigbouwwerk" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="geometrieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="identificatieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lod_0_geometrieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lod_1_geometrieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lod_2_geometrieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lod_3_geometrieoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="relatievehoogteliggingoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="statusoverigbouwwerk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114459-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/overigbouwwerk.csv"
+                  separator=";"
+                  tableName="overigbouwwerk"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="datumbegingeldigheidoverigbouwwerk" type="date"/>
+            <column name="datumeindegeldigheidoverigbouwwerk" type="date"/>
+            <column name="geometrieoverigbouwwerk" type="string"/>
+            <column name="identificatieoverigbouwwerk" type="string"/>
+            <column name="lod_0_geometrieoverigbouwwerk" type="string"/>
+            <column name="lod_1_geometrieoverigbouwwerk" type="string"/>
+            <column name="lod_2_geometrieoverigbouwwerk" type="string"/>
+            <column name="lod_3_geometrieoverigbouwwerk" type="string"/>
+            <column name="relatievehoogteliggingoverigbouwwerk" type="string"/>
+            <column name="statusoverigbouwwerk" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

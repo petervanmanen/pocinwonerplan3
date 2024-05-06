@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Mailing.
+    -->
+    <changeSet id="20240506113709-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mailing_id"
+                                 baseTableName="rel_mailing__versturenaan_museumrelatie"
+                                 constraintName="fk_rel_mailing__versturenaan_museumrelatie__mailing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mailing"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="versturenaan_museumrelatie_id"
+                                 baseTableName="rel_mailing__versturenaan_museumrelatie"
+                                 constraintName="fk_rel_mailing__versturenaan_mu__versturenaan_museumrelat_20_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="museumrelatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

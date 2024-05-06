@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Product.
+    -->
+    <changeSet id="20240506113714-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="leverancier_leverancier_id"
+                                 baseTableName="product"
+                                 constraintName="fk_product__leverancier_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_kostenplaats_id"
+                                 baseTableName="product"
+                                 constraintName="fk_product__heeft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="rel_product__valtbinnen_omzetgroep"
+                                 constraintName="fk_rel_product__valtbinnen_omzetgroep__product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_omzetgroep_id"
+                                 baseTableName="rel_product__valtbinnen_omzetgroep"
+                                 constraintName="fk_rel_product__valtbinnen_omzetgroep__valtbinnen_omzetgroep_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omzetgroep"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="rel_product__valtbinnen_productgroep"
+                                 constraintName="fk_rel_product__valtbinnen_productgroep__product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_productgroep_id"
+                                 baseTableName="rel_product__valtbinnen_productgroep"
+                                 constraintName="fk_rel_product__valtbinnen_prod__valtbinnen_productgroep_59_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productgroep"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_doelstelling_id"
+                                 baseTableName="product"
+                                 constraintName="fk_product__heeft_doelstelling_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doelstelling"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isopdrachtgever_opdrachtgever_id"
+                                 baseTableName="product"
+                                 constraintName="fk_product__isopdrachtgever_opdrachtgever_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opdrachtgever"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isopdrachtnemer_opdrachtnemer_id"
+                                 baseTableName="product"
+                                 constraintName="fk_product__isopdrachtnemer_opdrachtnemer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opdrachtnemer"
+                                 />
+    </changeSet>
+</databaseChangeLog>

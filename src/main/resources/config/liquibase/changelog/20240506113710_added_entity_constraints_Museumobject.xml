@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Museumobject.
+    -->
+    <changeSet id="20240506113710-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_bruikleen_id"
+                                 baseTableName="museumobject"
+                                 constraintName="fk_museumobject__betreft_bruikleen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bruikleen"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="locatie_standplaats_id"
+                                 baseTableName="museumobject"
+                                 constraintName="fk_museumobject__locatie_standplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="standplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="museumobject_id"
+                                 baseTableName="rel_museumobject__heeft_belanghebbende"
+                                 constraintName="fk_rel_museumobject__heeft_belanghebbende__museumobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="museumobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_belanghebbende_id"
+                                 baseTableName="rel_museumobject__heeft_belanghebbende"
+                                 constraintName="fk_rel_museumobject__heeft_bela__heeft_belanghebbende_70_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="belanghebbende"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="museumobject_id"
+                                 baseTableName="rel_museumobject__onderdeel_tentoonstelling"
+                                 constraintName="fk_rel_museumobject__onderdeel_tentoonstelling__museumobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="museumobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="onderdeel_tentoonstelling_id"
+                                 baseTableName="rel_museumobject__onderdeel_tentoonstelling"
+                                 constraintName="fk_rel_museumobject__onderdeel___onderdeel_tentoonstellin_7c_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tentoonstelling"
+                                 />
+    </changeSet>
+</databaseChangeLog>

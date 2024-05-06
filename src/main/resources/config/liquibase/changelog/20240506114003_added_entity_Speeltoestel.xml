@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Speeltoestel.
+    -->
+    <changeSet id="20240506114003-1" author="jhipster">
+        <createTable tableName="speeltoestel">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="catalogusprijs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="certificaat" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="certificaatnummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="certificeringsinstantie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="controlefrequentie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumcertificaat" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="gemakkelijktoegankelijk" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="inspectievolgorde" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="installatiekosten" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="speelterrein" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="speeltoesteltoestelonderdeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="technischelevensduur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="toestelcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="toestelgroep" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="toestelnaam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typenummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus_2" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="valruimtehoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="valruimteomvang" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vrijevalhoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114003-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/speeltoestel.csv"
+                  separator=";"
+                  tableName="speeltoestel"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="catalogusprijs" type="string"/>
+            <column name="certificaat" type="boolean"/>
+            <column name="certificaatnummer" type="string"/>
+            <column name="certificeringsinstantie" type="string"/>
+            <column name="controlefrequentie" type="string"/>
+            <column name="datumcertificaat" type="date"/>
+            <column name="gemakkelijktoegankelijk" type="boolean"/>
+            <column name="inspectievolgorde" type="string"/>
+            <column name="installatiekosten" type="string"/>
+            <column name="speelterrein" type="string"/>
+            <column name="speeltoesteltoestelonderdeel" type="string"/>
+            <column name="technischelevensduur" type="string"/>
+            <column name="toestelcode" type="string"/>
+            <column name="toestelgroep" type="string"/>
+            <column name="toestelnaam" type="string"/>
+            <column name="type" type="string"/>
+            <column name="typenummer" type="string"/>
+            <column name="typeplus" type="string"/>
+            <column name="typeplus_2" type="string"/>
+            <column name="valruimtehoogte" type="string"/>
+            <column name="valruimteomvang" type="string"/>
+            <column name="vrijevalhoogte" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

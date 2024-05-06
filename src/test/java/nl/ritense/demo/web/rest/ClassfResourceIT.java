@@ -1,0 +1,196 @@
+package nl.ritense.demo.web.rest;
+
+import static nl.ritense.demo.domain.ClassfAsserts.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.EntityManager;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
+import nl.ritense.demo.IntegrationTest;
+import nl.ritense.demo.domain.Classf;
+import nl.ritense.demo.repository.ClassfRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Integration tests for the {@link ClassfResource} REST controller.
+ */
+@IntegrationTest
+@AutoConfigureMockMvc
+@WithMockUser
+class ClassfResourceIT {
+
+    private static final String ENTITY_API_URL = "/api/classfs";
+    private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
+
+    private static Random random = new Random();
+    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+
+    @Autowired
+    private ObjectMapper om;
+
+    @Autowired
+    private ClassfRepository classfRepository;
+
+    @Autowired
+    private EntityManager em;
+
+    @Autowired
+    private MockMvc restClassfMockMvc;
+
+    private Classf classf;
+
+    /**
+     * Create an entity for this test.
+     *
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static Classf createEntity(EntityManager em) {
+        Classf classf = new Classf();
+        return classf;
+    }
+
+    /**
+     * Create an updated entity for this test.
+     *
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static Classf createUpdatedEntity(EntityManager em) {
+        Classf classf = new Classf();
+        return classf;
+    }
+
+    @BeforeEach
+    public void initTest() {
+        classf = createEntity(em);
+    }
+
+    @Test
+    @Transactional
+    void createClassf() throws Exception {
+        long databaseSizeBeforeCreate = getRepositoryCount();
+        // Create the Classf
+        var returnedClassf = om.readValue(
+            restClassfMockMvc
+                .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(om.writeValueAsBytes(classf)))
+                .andExpect(status().isCreated())
+                .andReturn()
+                .getResponse()
+                .getContentAsString(),
+            Classf.class
+        );
+
+        // Validate the Classf in the database
+        assertIncrementedRepositoryCount(databaseSizeBeforeCreate);
+        assertClassfUpdatableFieldsEquals(returnedClassf, getPersistedClassf(returnedClassf));
+    }
+
+    @Test
+    @Transactional
+    void createClassfWithExistingId() throws Exception {
+        // Create the Classf with an existing ID
+        classf.setId(1L);
+
+        long databaseSizeBeforeCreate = getRepositoryCount();
+
+        // An entity with an existing ID cannot be created, so this API call must fail
+        restClassfMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(om.writeValueAsBytes(classf)))
+            .andExpect(status().isBadRequest());
+
+        // Validate the Classf in the database
+        assertSameRepositoryCount(databaseSizeBeforeCreate);
+    }
+
+    @Test
+    @Transactional
+    void getAllClassfs() throws Exception {
+        // Initialize the database
+        classfRepository.saveAndFlush(classf);
+
+        // Get all the classfList
+        restClassfMockMvc
+            .perform(get(ENTITY_API_URL + "?sort=id,desc"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+            .andExpect(jsonPath("$.[*].id").value(hasItem(classf.getId().intValue())));
+    }
+
+    @Test
+    @Transactional
+    void getClassf() throws Exception {
+        // Initialize the database
+        classfRepository.saveAndFlush(classf);
+
+        // Get the classf
+        restClassfMockMvc
+            .perform(get(ENTITY_API_URL_ID, classf.getId()))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+            .andExpect(jsonPath("$.id").value(classf.getId().intValue()));
+    }
+
+    @Test
+    @Transactional
+    void getNonExistingClassf() throws Exception {
+        // Get the classf
+        restClassfMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+    }
+
+    @Test
+    @Transactional
+    void deleteClassf() throws Exception {
+        // Initialize the database
+        classfRepository.saveAndFlush(classf);
+
+        long databaseSizeBeforeDelete = getRepositoryCount();
+
+        // Delete the classf
+        restClassfMockMvc
+            .perform(delete(ENTITY_API_URL_ID, classf.getId()).accept(MediaType.APPLICATION_JSON))
+            .andExpect(status().isNoContent());
+
+        // Validate the database contains one less item
+        assertDecrementedRepositoryCount(databaseSizeBeforeDelete);
+    }
+
+    protected long getRepositoryCount() {
+        return classfRepository.count();
+    }
+
+    protected void assertIncrementedRepositoryCount(long countBefore) {
+        assertThat(countBefore + 1).isEqualTo(getRepositoryCount());
+    }
+
+    protected void assertDecrementedRepositoryCount(long countBefore) {
+        assertThat(countBefore - 1).isEqualTo(getRepositoryCount());
+    }
+
+    protected void assertSameRepositoryCount(long countBefore) {
+        assertThat(countBefore).isEqualTo(getRepositoryCount());
+    }
+
+    protected Classf getPersistedClassf(Classf classf) {
+        return classfRepository.findById(classf.getId()).orElseThrow();
+    }
+
+    protected void assertPersistedClassfToMatchAllProperties(Classf expectedClassf) {
+        assertClassfAllPropertiesEquals(expectedClassf, getPersistedClassf(expectedClassf));
+    }
+
+    protected void assertPersistedClassfToMatchUpdatableProperties(Classf expectedClassf) {
+        assertClassfAllUpdatablePropertiesEquals(expectedClassf, getPersistedClassf(expectedClassf));
+    }
+}

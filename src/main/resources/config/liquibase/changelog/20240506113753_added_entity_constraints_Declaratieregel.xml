@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Declaratieregel.
+    -->
+    <changeSet id="20240506113753-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="isvoor_beschikking_id"
+                                 baseTableName="declaratieregel"
+                                 constraintName="fk_declaratieregel__isvoor_beschikking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beschikking"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_client_id"
+                                 baseTableName="declaratieregel"
+                                 constraintName="fk_declaratieregel__betreft_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_declaratie_id"
+                                 baseTableName="declaratieregel"
+                                 constraintName="fk_declaratieregel__valtbinnen_declaratie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="declaratie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isopbasisvan_toewijzing_id"
+                                 baseTableName="declaratieregel"
+                                 constraintName="fk_declaratieregel__isopbasisvan_toewijzing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="toewijzing"
+                                 />
+    </changeSet>
+</databaseChangeLog>

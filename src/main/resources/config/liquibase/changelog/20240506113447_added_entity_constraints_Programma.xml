@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Programma.
+    -->
+    <changeSet id="20240506113447-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_kostenplaats_id"
+                                 baseTableName="programma"
+                                 constraintName="fk_programma__heeft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="programma_id"
+                                 baseTableName="rel_programma__voor_programmasoort"
+                                 constraintName="fk_rel_programma__voor_programmasoort__programma_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="programma"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voor_programmasoort_id"
+                                 baseTableName="rel_programma__voor_programmasoort"
+                                 constraintName="fk_rel_programma__voor_programmasoort__voor_programmasoort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="programmasoort"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voor_museumrelatie_id"
+                                 baseTableName="programma"
+                                 constraintName="fk_programma__voor_museumrelatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="museumrelatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

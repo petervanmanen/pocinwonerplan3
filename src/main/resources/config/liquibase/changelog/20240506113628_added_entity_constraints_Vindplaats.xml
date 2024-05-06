@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Vindplaats.
+    -->
+    <changeSet id="20240506113628-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="hoortbij_project_id"
+                                 baseTableName="vindplaats"
+                                 constraintName="fk_vindplaats__hoortbij_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="istevindenin_depot_id"
+                                 baseTableName="vindplaats"
+                                 constraintName="fk_vindplaats__istevindenin_depot_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="depot"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="istevindenin_kast_id"
+                                 baseTableName="vindplaats"
+                                 constraintName="fk_vindplaats__istevindenin_kast_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kast"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="istevindenin_plank_id"
+                                 baseTableName="vindplaats"
+                                 constraintName="fk_vindplaats__istevindenin_plank_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="plank"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="istevindenin_stelling_id"
+                                 baseTableName="vindplaats"
+                                 constraintName="fk_vindplaats__istevindenin_stelling_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stelling"
+                                 />
+    </changeSet>
+</databaseChangeLog>

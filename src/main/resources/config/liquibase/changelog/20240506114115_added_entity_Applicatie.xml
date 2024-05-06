@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Applicatie.
+    -->
+    <changeSet id="20240506114115-1" author="jhipster">
+        <createTable tableName="applicatie">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="applicatieurl" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beheerstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beleidsdomein" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="categorie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="guid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="naam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="omschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="packagingstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeftleverancier_leverancier_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20240506114115-1-relations" author="jhipster">
+
+        <createTable tableName="rel_applicatie__heeftdocumenten_document">
+            <column name="heeftdocumenten_document_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="applicatie_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="applicatie_id, heeftdocumenten_document_id" tableName="rel_applicatie__heeftdocumenten_document"/>
+
+        <createTable tableName="rel_applicatie__rollen_medewerker">
+            <column name="rollen_medewerker_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="applicatie_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="applicatie_id, rollen_medewerker_id" tableName="rel_applicatie__rollen_medewerker"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114115-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/applicatie.csv"
+                  separator=";"
+                  tableName="applicatie"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="applicatieurl" type="string"/>
+            <column name="beheerstatus" type="string"/>
+            <column name="beleidsdomein" type="string"/>
+            <column name="categorie" type="string"/>
+            <column name="guid" type="string"/>
+            <column name="naam" type="string"/>
+            <column name="omschrijving" type="string"/>
+            <column name="packagingstatus" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Factuur.
+    -->
+    <changeSet id="20240506114231-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="schrijftop_kostenplaats_id"
+                                 baseTableName="factuur"
+                                 constraintName="fk_factuur__schrijftop_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gedektvia_inkooporder_id"
+                                 baseTableName="factuur"
+                                 constraintName="fk_factuur__gedektvia_inkooporder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="crediteur_leverancier_id"
+                                 baseTableName="factuur"
+                                 constraintName="fk_factuur__crediteur_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_debiteur_id"
+                                 baseTableName="factuur"
+                                 constraintName="fk_factuur__heeft_debiteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="debiteur"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Artefact.
+    -->
+    <changeSet id="20240506113617-1" author="jhipster">
+        <createTable tableName="artefact">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="artefectnummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conserveren" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="datering" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dateringcomplex" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="determinatieniveau" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dianummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="doosnummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="exposabel" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="fotonummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="functie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="herkomst" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="keydoos" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="keymagazijnplaatsing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="keyput" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="keyvondst" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="literatuur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="maten" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="naam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="opmerkingen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="origine" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectcd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="putnummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="restauratiewenselijk" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="tekeningnummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vondstnummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zitin_doos_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="isvansoort_artefactsoort_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="bevat_vondst_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113617-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/artefact.csv"
+                  separator=";"
+                  tableName="artefact"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="artefectnummer" type="string"/>
+            <column name="beschrijving" type="string"/>
+            <column name="conserveren" type="boolean"/>
+            <column name="datering" type="string"/>
+            <column name="dateringcomplex" type="string"/>
+            <column name="determinatieniveau" type="string"/>
+            <column name="dianummer" type="string"/>
+            <column name="doosnummer" type="string"/>
+            <column name="exposabel" type="boolean"/>
+            <column name="fotonummer" type="string"/>
+            <column name="functie" type="string"/>
+            <column name="herkomst" type="string"/>
+            <column name="key" type="string"/>
+            <column name="keydoos" type="string"/>
+            <column name="keymagazijnplaatsing" type="string"/>
+            <column name="keyput" type="string"/>
+            <column name="keyvondst" type="string"/>
+            <column name="literatuur" type="string"/>
+            <column name="maten" type="string"/>
+            <column name="naam" type="string"/>
+            <column name="opmerkingen" type="string"/>
+            <column name="origine" type="string"/>
+            <column name="projectcd" type="string"/>
+            <column name="putnummer" type="string"/>
+            <column name="restauratiewenselijk" type="boolean"/>
+            <column name="tekeningnummer" type="string"/>
+            <column name="type" type="string"/>
+            <column name="vondstnummer" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

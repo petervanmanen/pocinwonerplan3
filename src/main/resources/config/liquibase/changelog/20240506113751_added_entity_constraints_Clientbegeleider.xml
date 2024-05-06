@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Clientbegeleider.
+    -->
+    <changeSet id="20240506113751-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="maaktonderdeeluitvan_team_id"
+                                 baseTableName="clientbegeleider"
+                                 constraintName="fk_clientbegeleider__maaktonderdeeluitvan_team_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="team"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="begeleidt_traject_id"
+                                 baseTableName="clientbegeleider"
+                                 constraintName="fk_clientbegeleider__begeleidt_traject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="traject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="clientbegeleider_id"
+                                 baseTableName="rel_clientbegeleider__ondersteuntclient_client"
+                                 constraintName="fk_rel_clientbegeleider__onders__clientbegeleider_e4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="clientbegeleider"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ondersteuntclient_client_id"
+                                 baseTableName="rel_clientbegeleider__ondersteuntclient_client"
+                                 constraintName="fk_rel_clientbegeleider__onders__ondersteuntclient_client_6c_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"
+                                 />
+    </changeSet>
+</databaseChangeLog>

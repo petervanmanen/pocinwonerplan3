@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Bruikleen.
+    -->
+    <changeSet id="20240506113703-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bruikleen_id"
+                                 baseTableName="rel_bruikleen__isbedoeldvoor_tentoonstelling"
+                                 constraintName="fk_rel_bruikleen__isbedoeldvoor_tentoonstelling__bruikleen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bruikleen"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isbedoeldvoor_tentoonstelling_id"
+                                 baseTableName="rel_bruikleen__isbedoeldvoor_tentoonstelling"
+                                 constraintName="fk_rel_bruikleen__isbedoeldvoor__isbedoeldvoor_tentoonste_be_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tentoonstelling"
+                                 />
+    </changeSet>
+</databaseChangeLog>

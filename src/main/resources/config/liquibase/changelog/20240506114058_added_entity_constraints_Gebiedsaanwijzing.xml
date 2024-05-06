@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Gebiedsaanwijzing.
+    -->
+    <changeSet id="20240506114058-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="gebiedsaanwijzing_id"
+                                 baseTableName="rel_gebiedsaanwijzing__verwijstnaar_locatie"
+                                 constraintName="fk_rel_gebiedsaanwijzing__verwi__gebiedsaanwijzing_04_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gebiedsaanwijzing"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verwijstnaar_locatie_id"
+                                 baseTableName="rel_gebiedsaanwijzing__verwijstnaar_locatie"
+                                 constraintName="fk_rel_gebiedsaanwijzing__verwi__verwijstnaar_locatie_f7_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

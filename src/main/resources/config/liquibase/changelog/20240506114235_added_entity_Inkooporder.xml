@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Inkooporder.
+    -->
+    <changeSet id="20240506114235-1" author="jhipster">
+        <createTable tableName="inkooporder">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="artikelcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="betalingmeerderejaren" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="betreft" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeinde" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumingediend" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumstart" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="goederencode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="omschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ordernummer" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="saldo" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="totaalnettobedrag" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wijzevanaanbesteden" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="betreft_contract_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_inkooporder__betreft_contract_id" />
+            </column>
+            <column name="oorspronkelijk_inkooporder_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_inkooporder__oorspronkelijk_inkooporder_id" />
+            </column>
+            <column name="heeft_inkooppakket_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="verplichtingaan_leverancier_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="gerelateerd_inkooporder2_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20240506114235-1-relations" author="jhipster">
+
+        <createTable tableName="rel_inkooporder__wordtgeschrevenop_hoofdrekening">
+            <column name="wordtgeschrevenop_hoofdrekening_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inkooporder_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="inkooporder_id, wordtgeschrevenop_hoofdrekening_id" tableName="rel_inkooporder__wordtgeschrevenop_hoofdrekening"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114235-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/inkooporder.csv"
+                  separator=";"
+                  tableName="inkooporder"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="artikelcode" type="string"/>
+            <column name="betalingmeerderejaren" type="boolean"/>
+            <column name="betreft" type="string"/>
+            <column name="datumeinde" type="string"/>
+            <column name="datumingediend" type="string"/>
+            <column name="datumstart" type="string"/>
+            <column name="goederencode" type="string"/>
+            <column name="omschrijving" type="string"/>
+            <column name="ordernummer" type="string"/>
+            <column name="saldo" type="numeric"/>
+            <column name="totaalnettobedrag" type="numeric"/>
+            <column name="wijzevanaanbesteden" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

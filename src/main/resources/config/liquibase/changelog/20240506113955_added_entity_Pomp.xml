@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Pomp.
+    -->
+    <changeSet id="20240506113955-1" author="jhipster">
+        <createTable tableName="pomp">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aanslagniveau" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beginstanddraaiurenteller" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="besturingskast" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="laatstestanddraaiurenteller" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="laatstestandkwhteller" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="levensduur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="model" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="motorvermogen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="onderdeelmetpomp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ontwerpcapaciteit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pompcapaciteit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="serienummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeonderdeelmetpomp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typewaaier" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="uitslagpeil" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113955-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/pomp.csv"
+                  separator=";"
+                  tableName="pomp"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aanslagniveau" type="string"/>
+            <column name="beginstanddraaiurenteller" type="string"/>
+            <column name="besturingskast" type="string"/>
+            <column name="laatstestanddraaiurenteller" type="string"/>
+            <column name="laatstestandkwhteller" type="string"/>
+            <column name="levensduur" type="string"/>
+            <column name="model" type="string"/>
+            <column name="motorvermogen" type="string"/>
+            <column name="onderdeelmetpomp" type="string"/>
+            <column name="ontwerpcapaciteit" type="string"/>
+            <column name="pompcapaciteit" type="string"/>
+            <column name="serienummer" type="string"/>
+            <column name="type" type="string"/>
+            <column name="typeonderdeelmetpomp" type="string"/>
+            <column name="typeplus" type="string"/>
+            <column name="typewaaier" type="string"/>
+            <column name="uitslagpeil" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

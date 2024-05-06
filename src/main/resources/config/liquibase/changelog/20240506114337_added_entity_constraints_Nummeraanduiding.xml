@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Nummeraanduiding.
+    -->
+    <changeSet id="20240506114337-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ligtin_woonplaats_id"
+                                 baseTableName="nummeraanduiding"
+                                 constraintName="fk_nummeraanduiding__ligtin_woonplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="woonplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ligtin_buurt_id"
+                                 baseTableName="nummeraanduiding"
+                                 constraintName="fk_nummeraanduiding__ligtin_buurt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="buurt"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="nummeraanduiding_id"
+                                 baseTableName="rel_nummeraanduiding__ligtin_gebied"
+                                 constraintName="fk_rel_nummeraanduiding__ligtin_gebied__nummeraanduiding_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nummeraanduiding"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ligtin_gebied_id"
+                                 baseTableName="rel_nummeraanduiding__ligtin_gebied"
+                                 constraintName="fk_rel_nummeraanduiding__ligtin_gebied__ligtin_gebied_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gebied"
+                                 />
+    </changeSet>
+</databaseChangeLog>

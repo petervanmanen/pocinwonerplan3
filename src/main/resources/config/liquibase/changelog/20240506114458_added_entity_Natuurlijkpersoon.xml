@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Natuurlijkpersoon.
+    -->
+    <changeSet id="20240506114458-1" author="jhipster">
+        <createTable tableName="natuurlijkpersoon">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="empty" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanduidingbijzondernederlanderschappersoon" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanduidingnaamgebruik" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanhefaanschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="academischetitel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="achternaam" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="adellijketitelofpredikaat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="anummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="burgerservicenummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumgeboorte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumoverlijden" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geboorteland" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geboorteplaats" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geslachtsaanduiding" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geslachtsnaam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geslachtsnaamaanschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="handlichting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatieafschermingpersoonsgegevens" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatieoverleden" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="landoverlijden" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nationaliteit" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="overlijdensplaats" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="voorlettersaanschrijving" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="voornamen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="voornamenaanschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="voorvoegselgeslachtsnaam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114458-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/natuurlijkpersoon.csv"
+                  separator=";"
+                  tableName="natuurlijkpersoon"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="empty" type="string"/>
+            <column name="aanduidingbijzondernederlanderschappersoon" type="string"/>
+            <column name="aanduidingnaamgebruik" type="string"/>
+            <column name="aanhefaanschrijving" type="string"/>
+            <column name="academischetitel" type="string"/>
+            <column name="achternaam" type="string"/>
+            <column name="adellijketitelofpredikaat" type="string"/>
+            <column name="anummer" type="string"/>
+            <column name="burgerservicenummer" type="string"/>
+            <column name="datumgeboorte" type="string"/>
+            <column name="datumoverlijden" type="string"/>
+            <column name="geboorteland" type="string"/>
+            <column name="geboorteplaats" type="string"/>
+            <column name="geslachtsaanduiding" type="string"/>
+            <column name="geslachtsnaam" type="string"/>
+            <column name="geslachtsnaamaanschrijving" type="string"/>
+            <column name="handlichting" type="string"/>
+            <column name="indicatieafschermingpersoonsgegevens" type="boolean"/>
+            <column name="indicatieoverleden" type="boolean"/>
+            <column name="landoverlijden" type="string"/>
+            <column name="nationaliteit" type="string"/>
+            <column name="overlijdensplaats" type="string"/>
+            <column name="voorlettersaanschrijving" type="string"/>
+            <column name="voornamen" type="string"/>
+            <column name="voornamenaanschrijving" type="string"/>
+            <column name="voorvoegselgeslachtsnaam" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

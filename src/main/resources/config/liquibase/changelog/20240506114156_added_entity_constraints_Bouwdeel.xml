@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Bouwdeel.
+    -->
+    <changeSet id="20240506114156-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bestaatuit_vastgoedobject_id"
+                                 baseTableName="bouwdeel"
+                                 constraintName="fk_bouwdeel__bestaatuit_vastgoedobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vastgoedobject"
+                                 />
+    </changeSet>
+</databaseChangeLog>

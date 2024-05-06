@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Telefoontje.
+    -->
+    <changeSet id="20240506114336-1" author="jhipster">
+        <createTable tableName="telefoontje">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="afhandeltijdnagesprek" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deltaisdnconnectie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eindtijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="starttijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="totaleonholdtijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="totalespreektijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="totalewachttijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="totlatetijdsduur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="trackid" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_telefoonstatus_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_telefoononderwerp_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114336-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/telefoontje.csv"
+                  separator=";"
+                  tableName="telefoontje"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="afhandeltijdnagesprek" type="string"/>
+            <column name="deltaisdnconnectie" type="string"/>
+            <column name="eindtijd" type="string"/>
+            <column name="starttijd" type="string"/>
+            <column name="totaleonholdtijd" type="string"/>
+            <column name="totalespreektijd" type="string"/>
+            <column name="totalewachttijd" type="string"/>
+            <column name="totlatetijdsduur" type="string"/>
+            <column name="trackid" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Sollicitatiegesprek.
+    -->
+    <changeSet id="20240506114300-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="inkadervan_sollicitatie_id"
+                                 baseTableName="sollicitatiegesprek"
+                                 constraintName="fk_sollicitatiegesprek__inkadervan_sollicitatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sollicitatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="sollicitatiegesprek_id"
+                                 baseTableName="rel_sollicitatiegesprek__kandidaat_sollicitant"
+                                 constraintName="fk_rel_sollicitatiegesprek__kan__sollicitatiegesprek_28_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sollicitatiegesprek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="kandidaat_sollicitant_id"
+                                 baseTableName="rel_sollicitatiegesprek__kandidaat_sollicitant"
+                                 constraintName="fk_rel_sollicitatiegesprek__kan__kandidaat_sollicitant_44_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sollicitant"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="sollicitatiegesprek_id"
+                                 baseTableName="rel_sollicitatiegesprek__doetsollicitatiegesprek_werknemer"
+                                 constraintName="fk_rel_sollicitatiegesprek__doe__sollicitatiegesprek_42_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sollicitatiegesprek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="doetsollicitatiegesprek_werknemer_id"
+                                 baseTableName="rel_sollicitatiegesprek__doetsollicitatiegesprek_werknemer"
+                                 constraintName="fk_rel_sollicitatiegesprek__doe__doetsollicitatiegesprek__f9_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="werknemer"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Gemaal.
+    -->
+    <changeSet id="20240506113939-1" author="jhipster">
+        <createTable tableName="gemaal">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aantalbedrijfsaansluitingen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aantalhuisaansluitingen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aantalpompen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="bedienaar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="effectievegemaalcapaciteit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hijsinrichting" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="lanceerinrichting" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="pompeninsamenloop" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="veiligheidsrooster" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113939-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/gemaal.csv"
+                  separator=";"
+                  tableName="gemaal"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aantalbedrijfsaansluitingen" type="string"/>
+            <column name="aantalhuisaansluitingen" type="string"/>
+            <column name="aantalpompen" type="string"/>
+            <column name="bedienaar" type="string"/>
+            <column name="effectievegemaalcapaciteit" type="string"/>
+            <column name="hijsinrichting" type="boolean"/>
+            <column name="lanceerinrichting" type="boolean"/>
+            <column name="pompeninsamenloop" type="boolean"/>
+            <column name="type" type="string"/>
+            <column name="veiligheidsrooster" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

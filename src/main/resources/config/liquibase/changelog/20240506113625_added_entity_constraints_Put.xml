@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Put.
+    -->
+    <changeSet id="20240506113625-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="put_id"
+                                 baseTableName="rel_put__heeftlocatie_locatie"
+                                 constraintName="fk_rel_put__heeftlocatie_locatie__put_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="put"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftlocatie_locatie_id"
+                                 baseTableName="rel_put__heeftlocatie_locatie"
+                                 constraintName="fk_rel_put__heeftlocatie_locatie__heeftlocatie_locatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_project_id"
+                                 baseTableName="put"
+                                 constraintName="fk_put__heeft_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"
+                                 />
+    </changeSet>
+</databaseChangeLog>

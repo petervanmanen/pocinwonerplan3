@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Leverancier.
+    -->
+    <changeSet id="20240506113756-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="leverancier_id"
+                                 baseTableName="rel_leverancier__gekwalificeerd_categorie"
+                                 constraintName="fk_rel_leverancier__gekwalificeerd_categorie__leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="gekwalificeerd_categorie_id"
+                                 baseTableName="rel_leverancier__gekwalificeerd_categorie"
+                                 constraintName="fk_rel_leverancier__gekwalifice__gekwalificeerd_categorie_ea_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Subsidie.
+    -->
+    <changeSet id="20240506114149-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_zaak_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__heeft_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_sector_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__valtbinnen_sector_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sector"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="behandelaar_medewerker_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__behandelaar_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verstrekker_rechtspersoon_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__verstrekker_rechtspersoon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechtspersoon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_kostenplaats_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__heeft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_document_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__heeft_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="aanvrager_rechtspersoon_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__aanvrager_rechtspersoon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechtspersoon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="aanvrager_medewerker_id"
+                                 baseTableName="subsidie"
+                                 constraintName="fk_subsidie__aanvrager_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Parkeerzone.
+    -->
+    <changeSet id="20240506113531-1" author="jhipster">
+        <createTable tableName="parkeerzone">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aantalparkeervlakken" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="alleendagtarief" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="dagtarief" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eindedag" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eindtijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gebruik" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geometrie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ipmcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ipmnaam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="naam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="parkeergarage" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="sectorcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="soortcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="startdag" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="starttarief" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="starttijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typecode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typenaam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="uurtarief" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113531-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/parkeerzone.csv"
+                  separator=";"
+                  tableName="parkeerzone"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aantalparkeervlakken" type="string"/>
+            <column name="alleendagtarief" type="boolean"/>
+            <column name="dagtarief" type="numeric"/>
+            <column name="eindedag" type="string"/>
+            <column name="eindtijd" type="string"/>
+            <column name="gebruik" type="string"/>
+            <column name="geometrie" type="string"/>
+            <column name="ipmcode" type="string"/>
+            <column name="ipmnaam" type="string"/>
+            <column name="naam" type="string"/>
+            <column name="parkeergarage" type="boolean"/>
+            <column name="sectorcode" type="string"/>
+            <column name="soortcode" type="string"/>
+            <column name="startdag" type="string"/>
+            <column name="starttarief" type="numeric"/>
+            <column name="starttijd" type="string"/>
+            <column name="typecode" type="string"/>
+            <column name="typenaam" type="string"/>
+            <column name="uurtarief" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

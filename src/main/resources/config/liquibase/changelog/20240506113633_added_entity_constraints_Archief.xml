@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Archief.
+    -->
+    <changeSet id="20240506113633-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_rechthebbende_id"
+                                 baseTableName="archief"
+                                 constraintName="fk_archief__heeft_rechthebbende_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechthebbende"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="archief_id"
+                                 baseTableName="rel_archief__valtbinnen_archiefcategorie"
+                                 constraintName="fk_rel_archief__valtbinnen_archiefcategorie__archief_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archief"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_archiefcategorie_id"
+                                 baseTableName="rel_archief__valtbinnen_archiefcategorie"
+                                 constraintName="fk_rel_archief__valtbinnen_arch__valtbinnen_archiefcatego_3c_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archiefcategorie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="archief_id"
+                                 baseTableName="rel_archief__stamtuit_periode"
+                                 constraintName="fk_rel_archief__stamtuit_periode__archief_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archief"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="stamtuit_periode_id"
+                                 baseTableName="rel_archief__stamtuit_periode"
+                                 constraintName="fk_rel_archief__stamtuit_periode__stamtuit_periode_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="periode"
+                                 />
+    </changeSet>
+</databaseChangeLog>

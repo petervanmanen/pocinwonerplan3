@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Zaaktype.
+    -->
+    <changeSet id="20240506114419-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_producttype_id"
+                                 baseTableName="zaaktype"
+                                 constraintName="fk_zaaktype__heeft_producttype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="producttype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_product_id"
+                                 baseTableName="zaaktype"
+                                 constraintName="fk_zaaktype__betreft_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_bedrijfsprocestype_id"
+                                 baseTableName="zaaktype"
+                                 constraintName="fk_zaaktype__heeft_bedrijfsprocestype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bedrijfsprocestype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isverantwoordelijkevoor_medewerker_id"
+                                 baseTableName="zaaktype"
+                                 constraintName="fk_zaaktype__isverantwoordelijkevoor_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

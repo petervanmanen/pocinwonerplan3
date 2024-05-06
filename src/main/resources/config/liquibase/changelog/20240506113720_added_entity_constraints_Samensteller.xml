@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Samensteller.
+    -->
+    <changeSet id="20240506113720-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="samensteller_id"
+                                 baseTableName="rel_samensteller__steltsamen_tentoonstelling"
+                                 constraintName="fk_rel_samensteller__steltsamen__samensteller_fc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="samensteller"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="steltsamen_tentoonstelling_id"
+                                 baseTableName="rel_samensteller__steltsamen_tentoonstelling"
+                                 constraintName="fk_rel_samensteller__steltsamen__steltsamen_tentoonstelli_f3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tentoonstelling"
+                                 />
+    </changeSet>
+</databaseChangeLog>

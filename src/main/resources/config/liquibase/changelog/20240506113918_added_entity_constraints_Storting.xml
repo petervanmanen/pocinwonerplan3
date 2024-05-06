@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Storting.
+    -->
+    <changeSet id="20240506113918-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bij_milieustraat_id"
+                                 baseTableName="storting"
+                                 constraintName="fk_storting__bij_milieustraat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="milieustraat"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="storting_id"
+                                 baseTableName="rel_storting__fractie_fractie"
+                                 constraintName="fk_rel_storting__fractie_fractie__storting_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="storting"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="fractie_fractie_id"
+                                 baseTableName="rel_storting__fractie_fractie"
+                                 constraintName="fk_rel_storting__fractie_fractie__fractie_fractie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fractie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="uitgevoerdestorting_pas_id"
+                                 baseTableName="storting"
+                                 constraintName="fk_storting__uitgevoerdestorting_pas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pas"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Beheerobject.
+    -->
+    <changeSet id="20240506113925-1" author="jhipster">
+        <createTable tableName="beheerobject">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aangemaaktdoor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="begingarantieperiode" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="beheergebied" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beheerobjectbeheervak" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beheerobjectgebruiksfunctie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beheerobjectmemo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beschermdefloraenfauna" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="buurt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conversieid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datummutatie" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumoplevering" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumpublicatielv" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumverwijdering" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="eindegarantieperiode" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="gebiedstype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gemeente" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geometrie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gewijzigddoor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grondsoort" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grondsoortplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="identificatieimbor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="identificatieimgeo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="jaarvanaanleg" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eobjectbegintijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eobjecteindtijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="onderhoudsplichtige" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="openbareruimte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="postcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="relatievehoogteligging" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stadsdeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="theoretischeindejaar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tijdstipregistratie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typebeheerder" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typebeheerderplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeeigenaar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeeigenaarplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeligging" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterschap" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wijk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="woonplaats" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zettingsgevoeligheid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zettingsgevoeligheidplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113925-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/beheerobject.csv"
+                  separator=";"
+                  tableName="beheerobject"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aangemaaktdoor" type="string"/>
+            <column name="begingarantieperiode" type="date"/>
+            <column name="beheergebied" type="string"/>
+            <column name="beheerobjectbeheervak" type="string"/>
+            <column name="beheerobjectgebruiksfunctie" type="string"/>
+            <column name="beheerobjectmemo" type="string"/>
+            <column name="beschermdefloraenfauna" type="boolean"/>
+            <column name="buurt" type="string"/>
+            <column name="conversieid" type="string"/>
+            <column name="datummutatie" type="date"/>
+            <column name="datumoplevering" type="date"/>
+            <column name="datumpublicatielv" type="date"/>
+            <column name="datumverwijdering" type="date"/>
+            <column name="eindegarantieperiode" type="date"/>
+            <column name="gebiedstype" type="string"/>
+            <column name="gemeente" type="string"/>
+            <column name="geometrie" type="string"/>
+            <column name="gewijzigddoor" type="string"/>
+            <column name="grondsoort" type="string"/>
+            <column name="grondsoortplus" type="string"/>
+            <column name="identificatieimbor" type="string"/>
+            <column name="identificatieimgeo" type="string"/>
+            <column name="jaarvanaanleg" type="string"/>
+            <column name="eobjectbegintijd" type="string"/>
+            <column name="eobjecteindtijd" type="string"/>
+            <column name="onderhoudsplichtige" type="string"/>
+            <column name="openbareruimte" type="string"/>
+            <column name="postcode" type="string"/>
+            <column name="relatievehoogteligging" type="string"/>
+            <column name="stadsdeel" type="string"/>
+            <column name="status" type="string"/>
+            <column name="theoretischeindejaar" type="string"/>
+            <column name="tijdstipregistratie" type="string"/>
+            <column name="typebeheerder" type="string"/>
+            <column name="typebeheerderplus" type="string"/>
+            <column name="typeeigenaar" type="string"/>
+            <column name="typeeigenaarplus" type="string"/>
+            <column name="typeligging" type="string"/>
+            <column name="waterschap" type="string"/>
+            <column name="wijk" type="string"/>
+            <column name="woonplaats" type="string"/>
+            <column name="zettingsgevoeligheid" type="string"/>
+            <column name="zettingsgevoeligheidplus" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

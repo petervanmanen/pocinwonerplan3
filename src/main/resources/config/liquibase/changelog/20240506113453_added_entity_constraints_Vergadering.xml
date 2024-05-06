@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Vergadering.
+    -->
+    <changeSet id="20240506113453-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftverslag_raadsstuk_id"
+                                 baseTableName="vergadering"
+                                 constraintName="fk_vergadering__heeftverslag_raadsstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadsstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_raadscommissie_id"
+                                 baseTableName="vergadering"
+                                 constraintName="fk_vergadering__heeft_raadscommissie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadscommissie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Subsidie.
+    -->
+    <changeSet id="20240506114149-1" author="jhipster">
+        <createTable tableName="subsidie">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="accountantscontrole" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cofinanciering" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumbehandeltermijn" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumbewaartermijn" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeinde" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumstart" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumsubsidievaststelling" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumverzendingeindeafrekening" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="deadlineindiening" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="doelstelling" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gerealiseerdeprojectkosten" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="hoogtesubsidie" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="niveau" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="onderwerp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ontvangenbedrag" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="opmerkingen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="opmerkingenvoorschotten" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="prestatiesubsidie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="socialreturnbedrag" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="socialreturnnagekomen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="socialreturnverplichting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subsidiebedrag" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subsidiesoort" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subsidievaststellingbedrag" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="uitgaandesubsidie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verantwoordenop" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_zaak_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_subsidie__heeft_zaak_id" />
+            </column>
+            <column name="valtbinnen_sector_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="behandelaar_medewerker_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="verstrekker_rechtspersoon_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_kostenplaats_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_document_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanvrager_rechtspersoon_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanvrager_medewerker_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114149-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/subsidie.csv"
+                  separator=";"
+                  tableName="subsidie"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="accountantscontrole" type="string"/>
+            <column name="cofinanciering" type="numeric"/>
+            <column name="datumbehandeltermijn" type="date"/>
+            <column name="datumbewaartermijn" type="date"/>
+            <column name="datumeinde" type="date"/>
+            <column name="datumstart" type="date"/>
+            <column name="datumsubsidievaststelling" type="date"/>
+            <column name="datumverzendingeindeafrekening" type="date"/>
+            <column name="deadlineindiening" type="date"/>
+            <column name="doelstelling" type="string"/>
+            <column name="gerealiseerdeprojectkosten" type="date"/>
+            <column name="hoogtesubsidie" type="numeric"/>
+            <column name="niveau" type="string"/>
+            <column name="onderwerp" type="string"/>
+            <column name="ontvangenbedrag" type="numeric"/>
+            <column name="opmerkingen" type="string"/>
+            <column name="opmerkingenvoorschotten" type="string"/>
+            <column name="prestatiesubsidie" type="string"/>
+            <column name="socialreturnbedrag" type="numeric"/>
+            <column name="socialreturnnagekomen" type="string"/>
+            <column name="socialreturnverplichting" type="string"/>
+            <column name="status" type="string"/>
+            <column name="subsidiebedrag" type="numeric"/>
+            <column name="subsidiesoort" type="string"/>
+            <column name="subsidievaststellingbedrag" type="numeric"/>
+            <column name="uitgaandesubsidie" type="string"/>
+            <column name="verantwoordenop" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

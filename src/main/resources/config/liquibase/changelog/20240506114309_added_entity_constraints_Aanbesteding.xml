@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Aanbesteding.
+    -->
+    <changeSet id="20240506114309-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_zaak_id"
+                                 baseTableName="aanbesteding"
+                                 constraintName="fk_aanbesteding__betreft_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="mondtuit_gunning_id"
+                                 baseTableName="aanbesteding"
+                                 constraintName="fk_aanbesteding__mondtuit_gunning_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gunning"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="procesleider_medewerker_id"
+                                 baseTableName="aanbesteding"
+                                 constraintName="fk_aanbesteding__procesleider_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

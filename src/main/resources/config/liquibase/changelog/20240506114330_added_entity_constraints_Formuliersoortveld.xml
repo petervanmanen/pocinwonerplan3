@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Formuliersoortveld.
+    -->
+    <changeSet id="20240506114330-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftvelden_formuliersoort_id"
+                                 baseTableName="formuliersoortveld"
+                                 constraintName="fk_formuliersoortveld__heeftvelden_formuliersoort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formuliersoort"
+                                 />
+    </changeSet>
+</databaseChangeLog>

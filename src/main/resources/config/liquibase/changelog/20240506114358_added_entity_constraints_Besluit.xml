@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Besluit.
+    -->
+    <changeSet id="20240506114358-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="isvastgelegdin_document_id"
+                                 baseTableName="besluit"
+                                 constraintName="fk_besluit__isvastgelegdin_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isuitkomstvan_zaak_id"
+                                 baseTableName="besluit"
+                                 constraintName="fk_besluit__isuitkomstvan_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isvan_besluittype_id"
+                                 baseTableName="besluit"
+                                 constraintName="fk_besluit__isvan_besluittype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="besluittype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="besluit_id"
+                                 baseTableName="rel_besluit__kanvastgelegdzijnals_document"
+                                 constraintName="fk_rel_besluit__kanvastgelegdzijnals_document__besluit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="besluit"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="kanvastgelegdzijnals_document_id"
+                                 baseTableName="rel_besluit__kanvastgelegdzijnals_document"
+                                 constraintName="fk_rel_besluit__kanvastgelegdzi__kanvastgelegdzijnals_doc_cc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"
+                                 />
+    </changeSet>
+</databaseChangeLog>

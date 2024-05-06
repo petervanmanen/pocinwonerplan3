@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Balieafspraak.
+    -->
+    <changeSet id="20240506114328-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mondtuitin_klantcontact_id"
+                                 baseTableName="balieafspraak"
+                                 constraintName="fk_balieafspraak__mondtuitin_klantcontact_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="klantcontact"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_afspraakstatus_id"
+                                 baseTableName="balieafspraak"
+                                 constraintName="fk_balieafspraak__heeft_afspraakstatus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="afspraakstatus"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="met_medewerker_id"
+                                 baseTableName="balieafspraak"
+                                 constraintName="fk_balieafspraak__met_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftbetrekkingop_zaak_id"
+                                 baseTableName="balieafspraak"
+                                 constraintName="fk_balieafspraak__heeftbetrekkingop_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,179 @@
+package nl.ritense.demo.web.rest;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import nl.ritense.demo.domain.Belangtype;
+import nl.ritense.demo.repository.BelangtypeRepository;
+import nl.ritense.demo.web.rest.errors.BadRequestAlertException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+import tech.jhipster.web.util.HeaderUtil;
+import tech.jhipster.web.util.ResponseUtil;
+
+/**
+ * REST controller for managing {@link nl.ritense.demo.domain.Belangtype}.
+ */
+@RestController
+@RequestMapping("/api/belangtypes")
+@Transactional
+public class BelangtypeResource {
+
+    private final Logger log = LoggerFactory.getLogger(BelangtypeResource.class);
+
+    private static final String ENTITY_NAME = "belangtype";
+
+    @Value("${jhipster.clientApp.name}")
+    private String applicationName;
+
+    private final BelangtypeRepository belangtypeRepository;
+
+    public BelangtypeResource(BelangtypeRepository belangtypeRepository) {
+        this.belangtypeRepository = belangtypeRepository;
+    }
+
+    /**
+     * {@code POST  /belangtypes} : Create a new belangtype.
+     *
+     * @param belangtype the belangtype to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new belangtype, or with status {@code 400 (Bad Request)} if the belangtype has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("")
+    public ResponseEntity<Belangtype> createBelangtype(@RequestBody Belangtype belangtype) throws URISyntaxException {
+        log.debug("REST request to save Belangtype : {}", belangtype);
+        if (belangtype.getId() != null) {
+            throw new BadRequestAlertException("A new belangtype cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        belangtype = belangtypeRepository.save(belangtype);
+        return ResponseEntity.created(new URI("/api/belangtypes/" + belangtype.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, belangtype.getId().toString()))
+            .body(belangtype);
+    }
+
+    /**
+     * {@code PUT  /belangtypes/:id} : Updates an existing belangtype.
+     *
+     * @param id the id of the belangtype to save.
+     * @param belangtype the belangtype to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated belangtype,
+     * or with status {@code 400 (Bad Request)} if the belangtype is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the belangtype couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<Belangtype> updateBelangtype(
+        @PathVariable(value = "id", required = false) final Long id,
+        @RequestBody Belangtype belangtype
+    ) throws URISyntaxException {
+        log.debug("REST request to update Belangtype : {}, {}", id, belangtype);
+        if (belangtype.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        if (!Objects.equals(id, belangtype.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!belangtypeRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+
+        belangtype = belangtypeRepository.save(belangtype);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, belangtype.getId().toString()))
+            .body(belangtype);
+    }
+
+    /**
+     * {@code PATCH  /belangtypes/:id} : Partial updates given fields of an existing belangtype, field will ignore if it is null
+     *
+     * @param id the id of the belangtype to save.
+     * @param belangtype the belangtype to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated belangtype,
+     * or with status {@code 400 (Bad Request)} if the belangtype is not valid,
+     * or with status {@code 404 (Not Found)} if the belangtype is not found,
+     * or with status {@code 500 (Internal Server Error)} if the belangtype couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
+    public ResponseEntity<Belangtype> partialUpdateBelangtype(
+        @PathVariable(value = "id", required = false) final Long id,
+        @RequestBody Belangtype belangtype
+    ) throws URISyntaxException {
+        log.debug("REST request to partial update Belangtype partially : {}, {}", id, belangtype);
+        if (belangtype.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        if (!Objects.equals(id, belangtype.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!belangtypeRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+
+        Optional<Belangtype> result = belangtypeRepository
+            .findById(belangtype.getId())
+            .map(existingBelangtype -> {
+                if (belangtype.getNaam() != null) {
+                    existingBelangtype.setNaam(belangtype.getNaam());
+                }
+                if (belangtype.getOmschrijving() != null) {
+                    existingBelangtype.setOmschrijving(belangtype.getOmschrijving());
+                }
+
+                return existingBelangtype;
+            })
+            .map(belangtypeRepository::save);
+
+        return ResponseUtil.wrapOrNotFound(
+            result,
+            HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, belangtype.getId().toString())
+        );
+    }
+
+    /**
+     * {@code GET  /belangtypes} : get all the belangtypes.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of belangtypes in body.
+     */
+    @GetMapping("")
+    public List<Belangtype> getAllBelangtypes() {
+        log.debug("REST request to get all Belangtypes");
+        return belangtypeRepository.findAll();
+    }
+
+    /**
+     * {@code GET  /belangtypes/:id} : get the "id" belangtype.
+     *
+     * @param id the id of the belangtype to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the belangtype, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<Belangtype> getBelangtype(@PathVariable("id") Long id) {
+        log.debug("REST request to get Belangtype : {}", id);
+        Optional<Belangtype> belangtype = belangtypeRepository.findById(id);
+        return ResponseUtil.wrapOrNotFound(belangtype);
+    }
+
+    /**
+     * {@code DELETE  /belangtypes/:id} : delete the "id" belangtype.
+     *
+     * @param id the id of the belangtype to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBelangtype(@PathVariable("id") Long id) {
+        log.debug("REST request to delete Belangtype : {}", id);
+        belangtypeRepository.deleteById(id);
+        return ResponseEntity.noContent()
+            .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
+            .build();
+    }
+}

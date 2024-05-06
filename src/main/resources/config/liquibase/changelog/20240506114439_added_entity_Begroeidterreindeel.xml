@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Begroeidterreindeel.
+    -->
+    <changeSet id="20240506114439-1" author="jhipster">
+        <createTable tableName="begroeidterreindeel">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="begroeidterreindeeloptalud" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumbegingeldigheidbegroeidterreindeel" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeindegeldigheidbegroeidterreindeel" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="fysiekvoorkomenbegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geometriebegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="identificatiebegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kruinlijngeometriebegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lod_0_geometriebegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="plusfysiekvoorkomenbegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="relatievehoogteliggingbegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="statusbegroeidterreindeel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114439-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/begroeidterreindeel.csv"
+                  separator=";"
+                  tableName="begroeidterreindeel"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="begroeidterreindeeloptalud" type="string"/>
+            <column name="datumbegingeldigheidbegroeidterreindeel" type="date"/>
+            <column name="datumeindegeldigheidbegroeidterreindeel" type="date"/>
+            <column name="fysiekvoorkomenbegroeidterreindeel" type="string"/>
+            <column name="geometriebegroeidterreindeel" type="string"/>
+            <column name="identificatiebegroeidterreindeel" type="string"/>
+            <column name="kruinlijngeometriebegroeidterreindeel" type="string"/>
+            <column name="lod_0_geometriebegroeidterreindeel" type="string"/>
+            <column name="plusfysiekvoorkomenbegroeidterreindeel" type="string"/>
+            <column name="relatievehoogteliggingbegroeidterreindeel" type="string"/>
+            <column name="statusbegroeidterreindeel" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

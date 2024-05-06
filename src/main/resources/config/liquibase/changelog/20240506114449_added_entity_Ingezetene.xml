@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Ingezetene.
+    -->
+    <changeSet id="20240506114449-1" author="jhipster">
+        <createTable tableName="ingezetene">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aanduidingeuropeeskiesrecht" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanduidinguitgeslotenkiesrecht" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumverkrijgingverblijfstitel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumverliesverblijfstitel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatieblokkering" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatiecurateleregister" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatiegezagminderjarige" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_verblijfstitel_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114449-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/ingezetene.csv"
+                  separator=";"
+                  tableName="ingezetene"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aanduidingeuropeeskiesrecht" type="boolean"/>
+            <column name="aanduidinguitgeslotenkiesrecht" type="boolean"/>
+            <column name="datumverkrijgingverblijfstitel" type="string"/>
+            <column name="datumverliesverblijfstitel" type="string"/>
+            <column name="indicatieblokkering" type="string"/>
+            <column name="indicatiecurateleregister" type="string"/>
+            <column name="indicatiegezagminderjarige" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

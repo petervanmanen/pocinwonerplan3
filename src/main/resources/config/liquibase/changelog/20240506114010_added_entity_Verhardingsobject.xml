@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Verhardingsobject.
+    -->
+    <changeSet id="20240506114010-1" author="jhipster">
+        <createTable tableName="verhardingsobject">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="aanleghoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aanofvrijliggend" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aantaldeklagen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aantalonderlagen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aantaltussenlagen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="afmeting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="belasting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="bergendvermogen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="bgtfysiekvoorkomen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="breedte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dikteconstructie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="draagkrachtig" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="formaat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fysiekvoorkomenimgeo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="geluidsreducerend" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="jaarconserveren" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="jaaronderhouduitgevoerd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="jaarpraktischeinde" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kleur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kwaliteitsniveauactueel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kwaliteitsniveaugewenst" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lengte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lengtekunstgras" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lengtevoegen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="levensduur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="materiaal" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="maximalevalhoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="omtrek" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ondergrondcode" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="oppervlakte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="optalud" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="plaatsorientatie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="prijsaanschaf" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rijstrook" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="soortvoeg" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="toelichtinggemengdebestrating" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeconstructie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typefundering" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus_2" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typerijstrook" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typevoeg" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typevoegvulling" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vegen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verhardingsobjectconstructielaag" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verhardingsobjectmodaliteit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verhardingsobjectrand" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verhardingsobjectwegfunctie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verhoogdeligging" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="vulmateriaalkunstgras" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterdoorlatendheid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegas" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegcategoriedv" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegcategoriedvplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegnummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegtypebestaand" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegvak" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="wegvaknummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114010-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/verhardingsobject.csv"
+                  separator=";"
+                  tableName="verhardingsobject"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="aanleghoogte" type="string"/>
+            <column name="aanofvrijliggend" type="string"/>
+            <column name="aantaldeklagen" type="string"/>
+            <column name="aantalonderlagen" type="string"/>
+            <column name="aantaltussenlagen" type="string"/>
+            <column name="afmeting" type="string"/>
+            <column name="belasting" type="string"/>
+            <column name="bergendvermogen" type="string"/>
+            <column name="bgtfysiekvoorkomen" type="string"/>
+            <column name="breedte" type="string"/>
+            <column name="dikteconstructie" type="string"/>
+            <column name="draagkrachtig" type="boolean"/>
+            <column name="formaat" type="string"/>
+            <column name="fysiekvoorkomenimgeo" type="string"/>
+            <column name="geluidsreducerend" type="boolean"/>
+            <column name="jaarconserveren" type="string"/>
+            <column name="jaaronderhouduitgevoerd" type="string"/>
+            <column name="jaarpraktischeinde" type="string"/>
+            <column name="kleur" type="string"/>
+            <column name="kwaliteitsniveauactueel" type="string"/>
+            <column name="kwaliteitsniveaugewenst" type="string"/>
+            <column name="lengte" type="string"/>
+            <column name="lengtekunstgras" type="string"/>
+            <column name="lengtevoegen" type="string"/>
+            <column name="levensduur" type="string"/>
+            <column name="materiaal" type="string"/>
+            <column name="maximalevalhoogte" type="string"/>
+            <column name="omtrek" type="string"/>
+            <column name="ondergrondcode" type="string"/>
+            <column name="oppervlakte" type="string"/>
+            <column name="optalud" type="string"/>
+            <column name="plaatsorientatie" type="string"/>
+            <column name="prijsaanschaf" type="string"/>
+            <column name="rijstrook" type="string"/>
+            <column name="soortvoeg" type="string"/>
+            <column name="toelichtinggemengdebestrating" type="string"/>
+            <column name="type" type="string"/>
+            <column name="typeconstructie" type="string"/>
+            <column name="typefundering" type="string"/>
+            <column name="typeplus" type="string"/>
+            <column name="typeplus_2" type="string"/>
+            <column name="typerijstrook" type="string"/>
+            <column name="typevoeg" type="string"/>
+            <column name="typevoegvulling" type="string"/>
+            <column name="vegen" type="string"/>
+            <column name="verhardingsobjectconstructielaag" type="string"/>
+            <column name="verhardingsobjectmodaliteit" type="string"/>
+            <column name="verhardingsobjectrand" type="string"/>
+            <column name="verhardingsobjectwegfunctie" type="string"/>
+            <column name="verhoogdeligging" type="boolean"/>
+            <column name="vulmateriaalkunstgras" type="string"/>
+            <column name="waterdoorlatendheid" type="string"/>
+            <column name="wegas" type="string"/>
+            <column name="wegcategoriedv" type="string"/>
+            <column name="wegcategoriedvplus" type="string"/>
+            <column name="wegnummer" type="string"/>
+            <column name="wegtypebestaand" type="string"/>
+            <column name="wegvak" type="string"/>
+            <column name="wegvaknummer" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

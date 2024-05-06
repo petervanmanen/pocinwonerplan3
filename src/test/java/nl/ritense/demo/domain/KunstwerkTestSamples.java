@@ -1,0 +1,122 @@
+package nl.ritense.demo.domain;
+
+import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
+
+public class KunstwerkTestSamples {
+
+    private static final Random random = new Random();
+    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+
+    public static Kunstwerk getKunstwerkSample1() {
+        return new Kunstwerk()
+            .id(1L)
+            .aanleghoogte("aanleghoogte1")
+            .bereikbaarheid("bereikbaarheid1")
+            .breedte("breedte1")
+            .constructietype("constructietype1")
+            .gewicht("gewicht1")
+            .hoogte("hoogte1")
+            .installateur("installateur1")
+            .jaarconserveren("jaarconserveren1")
+            .jaaronderhouduitgevoerd("jaaronderhouduitgevoerd1")
+            .jaarrenovatie("jaarrenovatie1")
+            .jaarvervanging("jaarvervanging1")
+            .kilometreringbegin("kilometreringbegin1")
+            .kilometreringeinde("kilometreringeinde1")
+            .kleur("kleur1")
+            .kunstwerkbereikbaarheidplus("kunstwerkbereikbaarheidplus1")
+            .kunstwerkmateriaal("kunstwerkmateriaal1")
+            .kwaliteitsniveauactueel("kwaliteitsniveauactueel1")
+            .kwaliteitsniveaugewenst("kwaliteitsniveaugewenst1")
+            .lengte("lengte1")
+            .leverancier("leverancier1")
+            .minimumconditiescore("minimumconditiescore1")
+            .monumentnummer("monumentnummer1")
+            .eobjectnaam("eobjectnaam1")
+            .eobjectnummer("eobjectnummer1")
+            .onderhoudsregime("onderhoudsregime1")
+            .oppervlakte("oppervlakte1")
+            .orientatie("orientatie1")
+            .technischelevensduur("technischelevensduur1")
+            .typefundering("typefundering1")
+            .typemonument("typemonument1")
+            .vervangingswaarde("vervangingswaarde1")
+            .wegnummer("wegnummer1");
+    }
+
+    public static Kunstwerk getKunstwerkSample2() {
+        return new Kunstwerk()
+            .id(2L)
+            .aanleghoogte("aanleghoogte2")
+            .bereikbaarheid("bereikbaarheid2")
+            .breedte("breedte2")
+            .constructietype("constructietype2")
+            .gewicht("gewicht2")
+            .hoogte("hoogte2")
+            .installateur("installateur2")
+            .jaarconserveren("jaarconserveren2")
+            .jaaronderhouduitgevoerd("jaaronderhouduitgevoerd2")
+            .jaarrenovatie("jaarrenovatie2")
+            .jaarvervanging("jaarvervanging2")
+            .kilometreringbegin("kilometreringbegin2")
+            .kilometreringeinde("kilometreringeinde2")
+            .kleur("kleur2")
+            .kunstwerkbereikbaarheidplus("kunstwerkbereikbaarheidplus2")
+            .kunstwerkmateriaal("kunstwerkmateriaal2")
+            .kwaliteitsniveauactueel("kwaliteitsniveauactueel2")
+            .kwaliteitsniveaugewenst("kwaliteitsniveaugewenst2")
+            .lengte("lengte2")
+            .leverancier("leverancier2")
+            .minimumconditiescore("minimumconditiescore2")
+            .monumentnummer("monumentnummer2")
+            .eobjectnaam("eobjectnaam2")
+            .eobjectnummer("eobjectnummer2")
+            .onderhoudsregime("onderhoudsregime2")
+            .oppervlakte("oppervlakte2")
+            .orientatie("orientatie2")
+            .technischelevensduur("technischelevensduur2")
+            .typefundering("typefundering2")
+            .typemonument("typemonument2")
+            .vervangingswaarde("vervangingswaarde2")
+            .wegnummer("wegnummer2");
+    }
+
+    public static Kunstwerk getKunstwerkRandomSampleGenerator() {
+        return new Kunstwerk()
+            .id(longCount.incrementAndGet())
+            .aanleghoogte(UUID.randomUUID().toString())
+            .bereikbaarheid(UUID.randomUUID().toString())
+            .breedte(UUID.randomUUID().toString())
+            .constructietype(UUID.randomUUID().toString())
+            .gewicht(UUID.randomUUID().toString())
+            .hoogte(UUID.randomUUID().toString())
+            .installateur(UUID.randomUUID().toString())
+            .jaarconserveren(UUID.randomUUID().toString())
+            .jaaronderhouduitgevoerd(UUID.randomUUID().toString())
+            .jaarrenovatie(UUID.randomUUID().toString())
+            .jaarvervanging(UUID.randomUUID().toString())
+            .kilometreringbegin(UUID.randomUUID().toString())
+            .kilometreringeinde(UUID.randomUUID().toString())
+            .kleur(UUID.randomUUID().toString())
+            .kunstwerkbereikbaarheidplus(UUID.randomUUID().toString())
+            .kunstwerkmateriaal(UUID.randomUUID().toString())
+            .kwaliteitsniveauactueel(UUID.randomUUID().toString())
+            .kwaliteitsniveaugewenst(UUID.randomUUID().toString())
+            .lengte(UUID.randomUUID().toString())
+            .leverancier(UUID.randomUUID().toString())
+            .minimumconditiescore(UUID.randomUUID().toString())
+            .monumentnummer(UUID.randomUUID().toString())
+            .eobjectnaam(UUID.randomUUID().toString())
+            .eobjectnummer(UUID.randomUUID().toString())
+            .onderhoudsregime(UUID.randomUUID().toString())
+            .oppervlakte(UUID.randomUUID().toString())
+            .orientatie(UUID.randomUUID().toString())
+            .technischelevensduur(UUID.randomUUID().toString())
+            .typefundering(UUID.randomUUID().toString())
+            .typemonument(UUID.randomUUID().toString())
+            .vervangingswaarde(UUID.randomUUID().toString())
+            .wegnummer(UUID.randomUUID().toString());
+    }
+}

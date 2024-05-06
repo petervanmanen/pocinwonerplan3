@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Archiefstuk.
+    -->
+    <changeSet id="20240506113635-1" author="jhipster">
+        <createTable tableName="archiefstuk">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="beschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="inventarisnummer" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="omvang" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="openbaarheidsbeperking" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="trefwoorden" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="uiterlijkevorm" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="isonderdeelvan_archief_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_uitgever_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="heeft_vindplaats_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="valtbinnen_indeling_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20240506113635-1-relations" author="jhipster">
+
+        <createTable tableName="rel_archiefstuk__heeft_ordeningsschema">
+            <column name="heeft_ordeningsschema_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="archiefstuk_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="archiefstuk_id, heeft_ordeningsschema_id" tableName="rel_archiefstuk__heeft_ordeningsschema"/>
+
+        <createTable tableName="rel_archiefstuk__stamtuit_periode">
+            <column name="stamtuit_periode_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="archiefstuk_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="archiefstuk_id, stamtuit_periode_id" tableName="rel_archiefstuk__stamtuit_periode"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113635-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/archiefstuk.csv"
+                  separator=";"
+                  tableName="archiefstuk"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="beschrijving" type="string"/>
+            <column name="inventarisnummer" type="string"/>
+            <column name="omvang" type="string"/>
+            <column name="openbaarheidsbeperking" type="string"/>
+            <column name="trefwoorden" type="string"/>
+            <column name="uiterlijkevorm" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

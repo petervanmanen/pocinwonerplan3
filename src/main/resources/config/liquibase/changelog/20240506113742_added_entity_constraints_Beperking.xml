@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Beperking.
+    -->
+    <changeSet id="20240506113742-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="iseen_beperkingscategorie_id"
+                                 baseTableName="beperking"
+                                 constraintName="fk_beperking__iseen_beperkingscategorie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beperkingscategorie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isgebaseerdop_beschikking_id"
+                                 baseTableName="beperking"
+                                 constraintName="fk_beperking__isgebaseerdop_beschikking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beschikking"
+                                 />
+    </changeSet>
+</databaseChangeLog>

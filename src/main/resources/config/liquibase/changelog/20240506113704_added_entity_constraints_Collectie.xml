@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Collectie.
+    -->
+    <changeSet id="20240506113704-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="collectie_id"
+                                 baseTableName="rel_collectie__bevat_museumobject"
+                                 constraintName="fk_rel_collectie__bevat_museumobject__collectie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collectie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bevat_museumobject_id"
+                                 baseTableName="rel_collectie__bevat_museumobject"
+                                 constraintName="fk_rel_collectie__bevat_museumobject__bevat_museumobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="museumobject"
+                                 />
+    </changeSet>
+</databaseChangeLog>

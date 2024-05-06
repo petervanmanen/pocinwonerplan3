@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Opleiding.
+    -->
+    <changeSet id="20240506114256-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="opleiding_id"
+                                 baseTableName="rel_opleiding__wordtgegevendoor_onderwijsinstituut"
+                                 constraintName="fk_rel_opleiding__wordtgegevend__opleiding_92_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opleiding"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="wordtgegevendoor_onderwijsinstituut_id"
+                                 baseTableName="rel_opleiding__wordtgegevendoor_onderwijsinstituut"
+                                 constraintName="fk_rel_opleiding__wordtgegevend__wordtgegevendoor_onderwi_4b_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="onderwijsinstituut"
+                                 />
+    </changeSet>
+</databaseChangeLog>

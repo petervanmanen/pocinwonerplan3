@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Aanvraag.
+    -->
+    <changeSet id="20240506113632-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="aanvraag_id"
+                                 baseTableName="rel_aanvraag__voor_archiefstuk"
+                                 constraintName="fk_rel_aanvraag__voor_archiefstuk__aanvraag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aanvraag"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voor_archiefstuk_id"
+                                 baseTableName="rel_aanvraag__voor_archiefstuk"
+                                 constraintName="fk_rel_aanvraag__voor_archiefstuk__voor_archiefstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archiefstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="doet_bezoeker_id"
+                                 baseTableName="aanvraag"
+                                 constraintName="fk_aanvraag__doet_bezoeker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bezoeker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Gunning.
+    -->
+    <changeSet id="20240506114317-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_inschrijving_id"
+                                 baseTableName="gunning"
+                                 constraintName="fk_gunning__betreft_inschrijving_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inschrijving"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_kandidaat_id"
+                                 baseTableName="gunning"
+                                 constraintName="fk_gunning__betreft_kandidaat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kandidaat"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_offerte_id"
+                                 baseTableName="gunning"
+                                 constraintName="fk_gunning__betreft_offerte_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offerte"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="inhuur_medewerker_id"
+                                 baseTableName="gunning"
+                                 constraintName="fk_gunning__inhuur_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

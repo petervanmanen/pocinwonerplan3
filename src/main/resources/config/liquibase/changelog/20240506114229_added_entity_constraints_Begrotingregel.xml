@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Begrotingregel.
+    -->
+    <changeSet id="20240506114229-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_doelstelling_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__betreft_doelstelling_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doelstelling"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_product_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__betreft_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_kostenplaats_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__betreft_kostenplaats_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kostenplaats"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_hoofdrekening_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__betreft_hoofdrekening_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdrekening"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_hoofdstuk_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__betreft_hoofdstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoofdstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_begroting_id"
+                                 baseTableName="begrotingregel"
+                                 constraintName="fk_begrotingregel__heeft_begroting_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="begroting"
+                                 />
+    </changeSet>
+</databaseChangeLog>

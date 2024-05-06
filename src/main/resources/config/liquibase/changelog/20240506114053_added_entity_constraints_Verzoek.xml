@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Verzoek.
+    -->
+    <changeSet id="20240506114053-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="leidttot_zaak_id"
+                                 baseTableName="verzoek"
+                                 constraintName="fk_verzoek__leidttot_zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betrefteerderverzoek_verzoek_id"
+                                 baseTableName="verzoek"
+                                 constraintName="fk_verzoek__betrefteerderverzoek_verzoek_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verzoek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verzoek_id"
+                                 baseTableName="rel_verzoek__betreft_projectactiviteit"
+                                 constraintName="fk_rel_verzoek__betreft_projectactiviteit__verzoek_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verzoek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_projectactiviteit_id"
+                                 baseTableName="rel_verzoek__betreft_projectactiviteit"
+                                 constraintName="fk_rel_verzoek__betreft_project__betreft_projectactivitei_30_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projectactiviteit"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verzoek_id"
+                                 baseTableName="rel_verzoek__betreft_projectlocatie"
+                                 constraintName="fk_rel_verzoek__betreft_projectlocatie__verzoek_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verzoek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_projectlocatie_id"
+                                 baseTableName="rel_verzoek__betreft_projectlocatie"
+                                 constraintName="fk_rel_verzoek__betreft_project__betreft_projectlocatie_6f_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projectlocatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verzoek_id"
+                                 baseTableName="rel_verzoek__betreft_activiteit"
+                                 constraintName="fk_rel_verzoek__betreft_activiteit__verzoek_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verzoek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_activiteit_id"
+                                 baseTableName="rel_verzoek__betreft_activiteit"
+                                 constraintName="fk_rel_verzoek__betreft_activiteit__betreft_activiteit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activiteit"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="verzoek_id"
+                                 baseTableName="rel_verzoek__betreft_locatie"
+                                 constraintName="fk_rel_verzoek__betreft_locatie__verzoek_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verzoek"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_locatie_id"
+                                 baseTableName="rel_verzoek__betreft_locatie"
+                                 constraintName="fk_rel_verzoek__betreft_locatie__betreft_locatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftalsverantwoordelijke_initiatiefnemer_id"
+                                 baseTableName="verzoek"
+                                 constraintName="fk_verzoek__heeftalsverantwoordelijke_initiatiefnemer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="initiatiefnemer"
+                                 />
+    </changeSet>
+</databaseChangeLog>

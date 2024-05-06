@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Raadsstuk.
+    -->
+    <changeSet id="20240506113450-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeft_taakveld_id"
+                                 baseTableName="raadsstuk"
+                                 constraintName="fk_raadsstuk__heeft_taakveld_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="taakveld"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="raadsstuk_id"
+                                 baseTableName="rel_raadsstuk__behandelt_agendapunt"
+                                 constraintName="fk_rel_raadsstuk__behandelt_agendapunt__raadsstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadsstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="behandelt_agendapunt_id"
+                                 baseTableName="rel_raadsstuk__behandelt_agendapunt"
+                                 constraintName="fk_rel_raadsstuk__behandelt_agendapunt__behandelt_agendapunt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agendapunt"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="raadsstuk_id"
+                                 baseTableName="rel_raadsstuk__hoortbij_programma"
+                                 constraintName="fk_rel_raadsstuk__hoortbij_programma__raadsstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadsstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="hoortbij_programma_id"
+                                 baseTableName="rel_raadsstuk__hoortbij_programma"
+                                 constraintName="fk_rel_raadsstuk__hoortbij_programma__hoortbij_programma_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="programma"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="raadsstuk_id"
+                                 baseTableName="rel_raadsstuk__wordtbehandeldin_vergadering"
+                                 constraintName="fk_rel_raadsstuk__wordtbehandeldin_vergadering__raadsstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadsstuk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="wordtbehandeldin_vergadering_id"
+                                 baseTableName="rel_raadsstuk__wordtbehandeldin_vergadering"
+                                 constraintName="fk_rel_raadsstuk__wordtbehandel__wordtbehandeldin_vergade_d6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vergadering"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_categorie_id"
+                                 baseTableName="raadsstuk"
+                                 constraintName="fk_raadsstuk__heeft_categorie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

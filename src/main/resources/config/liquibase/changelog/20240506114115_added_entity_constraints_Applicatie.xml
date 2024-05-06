@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Applicatie.
+    -->
+    <changeSet id="20240506114115-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftleverancier_leverancier_id"
+                                 baseTableName="applicatie"
+                                 constraintName="fk_applicatie__heeftleverancier_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="applicatie_id"
+                                 baseTableName="rel_applicatie__heeftdocumenten_document"
+                                 constraintName="fk_rel_applicatie__heeftdocumenten_document__applicatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="applicatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftdocumenten_document_id"
+                                 baseTableName="rel_applicatie__heeftdocumenten_document"
+                                 constraintName="fk_rel_applicatie__heeftdocumen__heeftdocumenten_document_31_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="applicatie_id"
+                                 baseTableName="rel_applicatie__rollen_medewerker"
+                                 constraintName="fk_rel_applicatie__rollen_medewerker__applicatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="applicatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="rollen_medewerker_id"
+                                 baseTableName="rel_applicatie__rollen_medewerker"
+                                 constraintName="fk_rel_applicatie__rollen_medewerker__rollen_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Document.
+    -->
+    <changeSet id="20240506114404-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftkenmerk_identificatiekenmerk_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__heeftkenmerk_identificatiekenmerk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="identificatiekenmerk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isvan_documenttype_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__isvan_documenttype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documenttype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="inspectierapport_binnenlocatie_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__inspectierapport_binnenlocatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="binnenlocatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_rapportagemoment_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__heeft_rapportagemoment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rapportagemoment"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Waterobject.
+    -->
+    <changeSet id="20240506114015-1" author="jhipster">
+        <createTable tableName="waterobject">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="breedte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="folie" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="hoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="infiltrerendoppervlak" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="infiltrerendvermogen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lengte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lozingspunt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="oppervlakte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="porositeit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="streefdiepte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus_2" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typevaarwater" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typewaterplant" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="uitstroomniveau" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vaarwegtraject" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vorm" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waternaam" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterpeil" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterpeilwinter" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterpeilzomer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="waterplanten" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114015-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/waterobject.csv"
+                  separator=";"
+                  tableName="waterobject"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="breedte" type="string"/>
+            <column name="folie" type="boolean"/>
+            <column name="hoogte" type="string"/>
+            <column name="infiltrerendoppervlak" type="string"/>
+            <column name="infiltrerendvermogen" type="string"/>
+            <column name="lengte" type="string"/>
+            <column name="lozingspunt" type="string"/>
+            <column name="oppervlakte" type="string"/>
+            <column name="porositeit" type="string"/>
+            <column name="streefdiepte" type="string"/>
+            <column name="type" type="string"/>
+            <column name="typeplus" type="string"/>
+            <column name="typeplus_2" type="string"/>
+            <column name="typevaarwater" type="string"/>
+            <column name="typewaterplant" type="string"/>
+            <column name="uitstroomniveau" type="string"/>
+            <column name="vaarwegtraject" type="string"/>
+            <column name="vorm" type="string"/>
+            <column name="waternaam" type="string"/>
+            <column name="waterpeil" type="string"/>
+            <column name="waterpeilwinter" type="string"/>
+            <column name="waterpeilzomer" type="string"/>
+            <column name="waterplanten" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

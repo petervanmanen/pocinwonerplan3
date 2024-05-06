@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Ingeschrevenpersoon.
+    -->
+    <changeSet id="20240506114447-1" author="jhipster">
+        <createTable tableName="ingeschrevenpersoon">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="adresherkomst" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="anummer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beschrijvinglocatie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="buitenlandsreisdocument" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="burgerlijkestaat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumbegingeldigheidverblijfplaats" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumeindegeldigheidverblijfsplaats" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="datuminschrijvinggemeente" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumopschortingbijhouding" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumvertrekuitnederland" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datumvestigingnederland" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gemeentevaninschrijving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gezinsrelatie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="indicatiegeheim" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ingezetene" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="landwaarnaarvertrokken" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="landwaarvandaaningeschreven" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ouder_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ouder_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="partnerid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="redeneindebewoning" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="redenopschortingbijhouding" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="signaleringreisdocument" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verblijfstitel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506114447-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/ingeschrevenpersoon.csv"
+                  separator=";"
+                  tableName="ingeschrevenpersoon"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="adresherkomst" type="string"/>
+            <column name="anummer" type="string"/>
+            <column name="beschrijvinglocatie" type="string"/>
+            <column name="buitenlandsreisdocument" type="string"/>
+            <column name="burgerlijkestaat" type="string"/>
+            <column name="datumbegingeldigheidverblijfplaats" type="string"/>
+            <column name="datumeindegeldigheidverblijfsplaats" type="date"/>
+            <column name="datuminschrijvinggemeente" type="string"/>
+            <column name="datumopschortingbijhouding" type="string"/>
+            <column name="datumvertrekuitnederland" type="string"/>
+            <column name="datumvestigingnederland" type="string"/>
+            <column name="gemeentevaninschrijving" type="string"/>
+            <column name="gezinsrelatie" type="string"/>
+            <column name="indicatiegeheim" type="string"/>
+            <column name="ingezetene" type="string"/>
+            <column name="landwaarnaarvertrokken" type="string"/>
+            <column name="landwaarvandaaningeschreven" type="string"/>
+            <column name="ouder_1" type="string"/>
+            <column name="ouder_2" type="string"/>
+            <column name="partnerid" type="string"/>
+            <column name="redeneindebewoning" type="string"/>
+            <column name="redenopschortingbijhouding" type="string"/>
+            <column name="signaleringreisdocument" type="string"/>
+            <column name="verblijfstitel" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

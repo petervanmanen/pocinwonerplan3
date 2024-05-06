@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Binnenlocatie.
+    -->
+    <changeSet id="20240506113730-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="isgevestigdin_verblijfsobject_id"
+                                 baseTableName="binnenlocatie"
+                                 constraintName="fk_binnenlocatie__isgevestigdin_verblijfsobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="verblijfsobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bedient_wijk_id"
+                                 baseTableName="binnenlocatie"
+                                 constraintName="fk_binnenlocatie__bedient_wijk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wijk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="binnenlocatie_id"
+                                 baseTableName="rel_binnenlocatie__heeft_belijning"
+                                 constraintName="fk_rel_binnenlocatie__heeft_belijning__binnenlocatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="binnenlocatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_belijning_id"
+                                 baseTableName="rel_binnenlocatie__heeft_belijning"
+                                 constraintName="fk_rel_binnenlocatie__heeft_belijning__heeft_belijning_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="belijning"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="binnenlocatie_id"
+                                 baseTableName="rel_binnenlocatie__heeft_sportmateriaal"
+                                 constraintName="fk_rel_binnenlocatie__heeft_sportmateriaal__binnenlocatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="binnenlocatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_sportmateriaal_id"
+                                 baseTableName="rel_binnenlocatie__heeft_sportmateriaal"
+                                 constraintName="fk_rel_binnenlocatie__heeft_spo__heeft_sportmateriaal_4f_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportmateriaal"
+                                 />
+    </changeSet>
+</databaseChangeLog>

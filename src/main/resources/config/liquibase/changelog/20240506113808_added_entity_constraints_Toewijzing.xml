@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Toewijzing.
+    -->
+    <changeSet id="20240506113808-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="levertvoorziening_leverancier_id"
+                                 baseTableName="toewijzing"
+                                 constraintName="fk_toewijzing__levertvoorziening_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="toewijzing_beschikking_id"
+                                 baseTableName="toewijzing"
+                                 constraintName="fk_toewijzing__toewijzing_beschikking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beschikking"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Areaal.
+    -->
+    <changeSet id="20240506114018-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="areaal_id"
+                                 baseTableName="rel_areaal__ligtin_buurt"
+                                 constraintName="fk_rel_areaal__ligtin_buurt__areaal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="areaal"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ligtin_buurt_id"
+                                 baseTableName="rel_areaal__ligtin_buurt"
+                                 constraintName="fk_rel_areaal__ligtin_buurt__ligtin_buurt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="buurt"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="areaal_id"
+                                 baseTableName="rel_areaal__valtbinnen_wijk"
+                                 constraintName="fk_rel_areaal__valtbinnen_wijk__areaal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="areaal"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="valtbinnen_wijk_id"
+                                 baseTableName="rel_areaal__valtbinnen_wijk"
+                                 constraintName="fk_rel_areaal__valtbinnen_wijk__valtbinnen_wijk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wijk"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="areaal_id"
+                                 baseTableName="rel_areaal__binnen_schouwronde"
+                                 constraintName="fk_rel_areaal__binnen_schouwronde__areaal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="areaal"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="binnen_schouwronde_id"
+                                 baseTableName="rel_areaal__binnen_schouwronde"
+                                 constraintName="fk_rel_areaal__binnen_schouwronde__binnen_schouwronde_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schouwronde"
+                                 />
+    </changeSet>
+</databaseChangeLog>

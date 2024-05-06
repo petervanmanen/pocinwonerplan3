@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Notitie.
+    -->
+    <changeSet id="20240506114134-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="auteur_medewerker_id"
+                                 baseTableName="notitie"
+                                 constraintName="fk_notitie__auteur_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftnotities_applicatie_id"
+                                 baseTableName="notitie"
+                                 constraintName="fk_notitie__heeftnotities_applicatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="applicatie"
+                                 />
+    </changeSet>
+</databaseChangeLog>

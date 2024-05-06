@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Melding.
+    -->
+    <changeSet id="20240506113910-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="hoofdcategorie_categorie_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__hoofdcategorie_categorie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="subcategorie_categorie_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__subcategorie_categorie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_containertype_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__betreft_containertype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="containertype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_fractie_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__betreft_fractie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fractie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_locatie_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__betreft_locatie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="melder_medewerker_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__melder_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="uitvoerder_leverancier_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__uitvoerder_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="uitvoerder_medewerker_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__uitvoerder_medewerker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="melding_id"
+                                 baseTableName="rel_melding__betreft_beheerobject"
+                                 constraintName="fk_rel_melding__betreft_beheerobject__melding_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="melding"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_beheerobject_id"
+                                 baseTableName="rel_melding__betreft_beheerobject"
+                                 constraintName="fk_rel_melding__betreft_beheerobject__betreft_beheerobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beheerobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_schouwronde_id"
+                                 baseTableName="melding"
+                                 constraintName="fk_melding__heeft_schouwronde_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schouwronde"
+                                 />
+    </changeSet>
+</databaseChangeLog>

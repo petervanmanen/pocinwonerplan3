@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Boom.
+    -->
+    <changeSet id="20240506113928-1" author="jhipster">
+        <createTable tableName="boom">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="beleidsstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="beoogdeomlooptijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boombeeld" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boombeschermer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomgroep" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomhoogteactueel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomhoogteklasseactueel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomhoogteklasseeindebeeld" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomspiegel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomtypebeschermingsstatusplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boomvoorziening" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="controlefrequentie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="feestverlichting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="groeifase" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="groeiplaatsinrichting" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="herplantplicht" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="kiemjaar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kroondiameterklasseactueel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kroondiameterklasseeindebeeld" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kroonvolume" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="leeftijd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="meerstammig" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="monetaireboomwaarde" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="snoeifase" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stamdiameter" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stamdiameterklasse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="takvrijeruimtetotgebouw" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="takvrijestam" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="takvrijezoneprimair" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="takvrijezonesecundair" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transponder" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typebeschermingsstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeomgevingsrisicoklasse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typeplus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="typevermeerderingsvorm" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="veiligheidsklasseboom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="verplant" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="verplantbaar" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="vrijedoorrijhoogte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vrijedoorrijhoogteprimair" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vrijedoorrijhoogtesecundair" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vrijetakval" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240506113928-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/boom.csv"
+                  separator=";"
+                  tableName="boom"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="beleidsstatus" type="string"/>
+            <column name="beoogdeomlooptijd" type="string"/>
+            <column name="boombeeld" type="string"/>
+            <column name="boombeschermer" type="string"/>
+            <column name="boomgroep" type="string"/>
+            <column name="boomhoogteactueel" type="string"/>
+            <column name="boomhoogteklasseactueel" type="string"/>
+            <column name="boomhoogteklasseeindebeeld" type="string"/>
+            <column name="boomspiegel" type="string"/>
+            <column name="boomtypebeschermingsstatusplus" type="string"/>
+            <column name="boomvoorziening" type="string"/>
+            <column name="controlefrequentie" type="string"/>
+            <column name="feestverlichting" type="string"/>
+            <column name="groeifase" type="string"/>
+            <column name="groeiplaatsinrichting" type="string"/>
+            <column name="herplantplicht" type="boolean"/>
+            <column name="kiemjaar" type="string"/>
+            <column name="kroondiameterklasseactueel" type="string"/>
+            <column name="kroondiameterklasseeindebeeld" type="string"/>
+            <column name="kroonvolume" type="string"/>
+            <column name="leeftijd" type="string"/>
+            <column name="meerstammig" type="boolean"/>
+            <column name="monetaireboomwaarde" type="string"/>
+            <column name="snoeifase" type="string"/>
+            <column name="stamdiameter" type="string"/>
+            <column name="stamdiameterklasse" type="string"/>
+            <column name="takvrijeruimtetotgebouw" type="string"/>
+            <column name="takvrijestam" type="string"/>
+            <column name="takvrijezoneprimair" type="string"/>
+            <column name="takvrijezonesecundair" type="string"/>
+            <column name="transponder" type="string"/>
+            <column name="type" type="string"/>
+            <column name="typebeschermingsstatus" type="string"/>
+            <column name="typeomgevingsrisicoklasse" type="string"/>
+            <column name="typeplus" type="string"/>
+            <column name="typevermeerderingsvorm" type="string"/>
+            <column name="veiligheidsklasseboom" type="string"/>
+            <column name="verplant" type="boolean"/>
+            <column name="verplantbaar" type="boolean"/>
+            <column name="vrijedoorrijhoogte" type="string"/>
+            <column name="vrijedoorrijhoogteprimair" type="string"/>
+            <column name="vrijedoorrijhoogtesecundair" type="string"/>
+            <column name="vrijetakval" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

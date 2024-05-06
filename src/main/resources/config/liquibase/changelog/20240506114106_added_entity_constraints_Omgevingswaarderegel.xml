@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Omgevingswaarderegel.
+    -->
+    <changeSet id="20240506114106-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="omgevingswaarderegel_id"
+                                 baseTableName="rel_omgevingswaarderegel__beschrijft_omgevingsnorm"
+                                 constraintName="fk_rel_omgevingswaarderegel__be__omgevingswaarderegel_6d_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omgevingswaarderegel"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="beschrijft_omgevingsnorm_id"
+                                 baseTableName="rel_omgevingswaarderegel__beschrijft_omgevingsnorm"
+                                 constraintName="fk_rel_omgevingswaarderegel__be__beschrijft_omgevingsnorm_28_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omgevingsnorm"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="omgevingswaarderegel_id"
+                                 baseTableName="rel_omgevingswaarderegel__beschrijft_omgevingswaarde"
+                                 constraintName="fk_rel_omgevingswaarderegel__be__omgevingswaarderegel_02_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omgevingswaarderegel"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="beschrijft_omgevingswaarde_id"
+                                 baseTableName="rel_omgevingswaarderegel__beschrijft_omgevingswaarde"
+                                 constraintName="fk_rel_omgevingswaarderegel__be__beschrijft_omgevingswaar_7e_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omgevingswaarde"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Regeltekst.
+    -->
+    <changeSet id="20240506114055-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="regeltekst_id"
+                                 baseTableName="rel_regeltekst__heeftthema_thema"
+                                 constraintName="fk_rel_regeltekst__heeftthema_thema__regeltekst_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regeltekst"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftthema_thema_id"
+                                 baseTableName="rel_regeltekst__heeftthema_thema"
+                                 constraintName="fk_rel_regeltekst__heeftthema_thema__heeftthema_thema_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thema"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="regeltekst_id"
+                                 baseTableName="rel_regeltekst__heeftidealisatie_idealisatie"
+                                 constraintName="fk_rel_regeltekst__heeftidealisatie_idealisatie__regeltekst_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regeltekst"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeftidealisatie_idealisatie_id"
+                                 baseTableName="rel_regeltekst__heeftidealisatie_idealisatie"
+                                 constraintName="fk_rel_regeltekst__heeftidealis__heeftidealisatie_idealis_13_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="idealisatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="regeltekst_id"
+                                 baseTableName="rel_regeltekst__werkingsgebied_locatie"
+                                 constraintName="fk_rel_regeltekst__werkingsgebied_locatie__regeltekst_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regeltekst"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="werkingsgebied_locatie_id"
+                                 baseTableName="rel_regeltekst__werkingsgebied_locatie"
+                                 constraintName="fk_rel_regeltekst__werkingsgebi__werkingsgebied_locatie_d3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locatie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bevat_omgevingsdocument_id"
+                                 baseTableName="regeltekst"
+                                 constraintName="fk_regeltekst__bevat_omgevingsdocument_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="omgevingsdocument"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="werkingsgebied_regeltekst2_id"
+                                 baseTableName="regeltekst"
+                                 constraintName="fk_regeltekst__werkingsgebied_regeltekst2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regeltekst"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isgerelateerd_regeltekst2_id"
+                                 baseTableName="regeltekst"
+                                 constraintName="fk_regeltekst__isgerelateerd_regeltekst2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regeltekst"
+                                 />
+    </changeSet>
+</databaseChangeLog>

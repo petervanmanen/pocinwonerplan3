@@ -1,0 +1,108 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Button, Row, Col, FormText } from 'reactstrap';
+import { isNumber, ValidatedField, ValidatedForm } from 'react-jhipster';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
+import { mapIdList } from 'app/shared/util/entity-utils';
+import { useAppDispatch, useAppSelector } from 'app/config/store';
+
+import { IMeldingeigenbijdrage } from 'app/shared/model/meldingeigenbijdrage.model';
+import { getEntity, updateEntity, createEntity, reset } from './meldingeigenbijdrage.reducer';
+
+export const MeldingeigenbijdrageUpdate = () => {
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  const { id } = useParams<'id'>();
+  const isNew = id === undefined;
+
+  const meldingeigenbijdrageEntity = useAppSelector(state => state.meldingeigenbijdrage.entity);
+  const loading = useAppSelector(state => state.meldingeigenbijdrage.loading);
+  const updating = useAppSelector(state => state.meldingeigenbijdrage.updating);
+  const updateSuccess = useAppSelector(state => state.meldingeigenbijdrage.updateSuccess);
+
+  const handleClose = () => {
+    navigate('/meldingeigenbijdrage');
+  };
+
+  useEffect(() => {
+    if (isNew) {
+      dispatch(reset());
+    } else {
+      dispatch(getEntity(id));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (updateSuccess) {
+      handleClose();
+    }
+  }, [updateSuccess]);
+
+  // eslint-disable-next-line complexity
+  const saveEntity = values => {
+    if (values.id !== undefined && typeof values.id !== 'number') {
+      values.id = Number(values.id);
+    }
+
+    const entity = {
+      ...meldingeigenbijdrageEntity,
+      ...values,
+    };
+
+    if (isNew) {
+      dispatch(createEntity(entity));
+    } else {
+      dispatch(updateEntity(entity));
+    }
+  };
+
+  const defaultValues = () =>
+    isNew
+      ? {}
+      : {
+          ...meldingeigenbijdrageEntity,
+        };
+
+  return (
+    <div>
+      <Row className="justify-content-center">
+        <Col md="8">
+          <h2 id="demo3App.meldingeigenbijdrage.home.createOrEditLabel" data-cy="MeldingeigenbijdrageCreateUpdateHeading">
+            Create or edit a Meldingeigenbijdrage
+          </h2>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col md="8">
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+              {!isNew ? (
+                <ValidatedField name="id" required readOnly id="meldingeigenbijdrage-id" label="ID" validate={{ required: true }} />
+              ) : null}
+              <ValidatedField label="Datumstart" id="meldingeigenbijdrage-datumstart" name="datumstart" data-cy="datumstart" type="date" />
+              <ValidatedField label="Datumstop" id="meldingeigenbijdrage-datumstop" name="datumstop" data-cy="datumstop" type="date" />
+              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/meldingeigenbijdrage" replace color="info">
+                <FontAwesomeIcon icon="arrow-left" />
+                &nbsp;
+                <span className="d-none d-md-inline">Back</span>
+              </Button>
+              &nbsp;
+              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+                <FontAwesomeIcon icon="save" />
+                &nbsp; Save
+              </Button>
+            </ValidatedForm>
+          )}
+        </Col>
+      </Row>
+    </div>
+  );
+};
+
+export default MeldingeigenbijdrageUpdate;

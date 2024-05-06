@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Werkbon.
+    -->
+    <changeSet id="20240506114217-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="betreft_vastgoedobject_id"
+                                 baseTableName="werkbon"
+                                 constraintName="fk_werkbon__betreft_vastgoedobject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vastgoedobject"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="werkbon_id"
+                                 baseTableName="rel_werkbon__betreft_bouwdeel"
+                                 constraintName="fk_rel_werkbon__betreft_bouwdeel__werkbon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="werkbon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_bouwdeel_id"
+                                 baseTableName="rel_werkbon__betreft_bouwdeel"
+                                 constraintName="fk_rel_werkbon__betreft_bouwdeel__betreft_bouwdeel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bouwdeel"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="werkbon_id"
+                                 baseTableName="rel_werkbon__betreft_bouwdeelelement"
+                                 constraintName="fk_rel_werkbon__betreft_bouwdeelelement__werkbon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="werkbon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_bouwdeelelement_id"
+                                 baseTableName="rel_werkbon__betreft_bouwdeelelement"
+                                 constraintName="fk_rel_werkbon__betreft_bouwdee__betreft_bouwdeelelement_89_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bouwdeelelement"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="hoortbij_inkooporder_id"
+                                 baseTableName="werkbon"
+                                 constraintName="fk_werkbon__hoortbij_inkooporder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inkooporder"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voertwerkuitconform_leverancier_id"
+                                 baseTableName="werkbon"
+                                 constraintName="fk_werkbon__voertwerkuitconform_leverancier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leverancier"
+                                 />
+    </changeSet>
+</databaseChangeLog>

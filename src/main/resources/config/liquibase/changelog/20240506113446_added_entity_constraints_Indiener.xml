@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Indiener.
+    -->
+    <changeSet id="20240506113446-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="is_collegelid_id"
+                                 baseTableName="indiener"
+                                 constraintName="fk_indiener__is_collegelid_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collegelid"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="is_raadslid_id"
+                                 baseTableName="indiener"
+                                 constraintName="fk_indiener__is_raadslid_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadslid"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="is_rechtspersoon_id"
+                                 baseTableName="indiener"
+                                 constraintName="fk_indiener__is_rechtspersoon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rechtspersoon"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="indiener_id"
+                                 baseTableName="rel_indiener__heeft_raadsstuk"
+                                 constraintName="fk_rel_indiener__heeft_raadsstuk__indiener_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="indiener"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_raadsstuk_id"
+                                 baseTableName="rel_indiener__heeft_raadsstuk"
+                                 constraintName="fk_rel_indiener__heeft_raadsstuk__heeft_raadsstuk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="raadsstuk"
+                                 />
+    </changeSet>
+</databaseChangeLog>

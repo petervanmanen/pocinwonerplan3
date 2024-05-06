@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Zaak.
+    -->
+    <changeSet id="20240506114417-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="heeftproduct_producttype_id"
+                                 baseTableName="zaak"
+                                 constraintName="fk_zaak__heeftproduct_producttype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="producttype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_klantbeoordeling_id"
+                                 baseTableName="zaak"
+                                 constraintName="fk_zaak__heeft_klantbeoordeling_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="klantbeoordeling"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="heeft_heffing_id"
+                                 baseTableName="zaak"
+                                 constraintName="fk_zaak__heeft_heffing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="heffing"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="betreft_project_id"
+                                 baseTableName="zaak"
+                                 constraintName="fk_zaak__betreft_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="isvan_zaaktype_id"
+                                 baseTableName="zaak"
+                                 constraintName="fk_zaak__isvan_zaaktype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaaktype"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="zaak_id"
+                                 baseTableName="rel_zaak__kent_document"
+                                 constraintName="fk_rel_zaak__kent_document__zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="kent_document_id"
+                                 baseTableName="rel_zaak__kent_document"
+                                 constraintName="fk_rel_zaak__kent_document__kent_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="zaak_id"
+                                 baseTableName="rel_zaak__afhandelendmedewerker_medewerker"
+                                 constraintName="fk_rel_zaak__afhandelendmedewerker_medewerker__zaak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zaak"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="afhandelendmedewerker_medewerker_id"
+                                 baseTableName="rel_zaak__afhandelendmedewerker_medewerker"
+                                 constraintName="fk_rel_zaak__afhandelendmedewer__afhandelendmedewerker_me_2a_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medewerker"
+                                 />
+    </changeSet>
+</databaseChangeLog>
