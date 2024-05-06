@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Alert } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
+import EntitiesMenuItems from 'app/entities/menu';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -21,6 +22,7 @@ export const Home = () => {
         {account?.login ? (
           <div>
             <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>
+            <EntitiesMenuItems />
           </div>
         ) : (
           <div>
@@ -43,43 +45,6 @@ export const Home = () => {
             </Alert>
           </div>
         )}
-        <p>If you have any question on JHipster:</p>
-
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              JHipster homepage
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              JHipster on Stack Overflow
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              JHipster bug tracker
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              JHipster public chat room
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              follow @jhipster on Twitter
-            </a>
-          </li>
-        </ul>
-
-        <p>
-          If you like JHipster, don&apos;t forget to give us a star on{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
       </Col>
     </Row>
   );
